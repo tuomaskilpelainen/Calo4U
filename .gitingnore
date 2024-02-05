@@ -1,5 +1,2 @@
 # Ignore Visual Studio specific files and directories
-.vs/Gitti-solmuu/v17/.wsuo
-.vs/VSWorkspaceState.json
-.vs/slnx.sqlite
 .vs/*

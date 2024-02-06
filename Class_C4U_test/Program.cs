@@ -26,6 +26,8 @@ class Program
         Sipuli.Grams = 100;
         newRecepty.Ingridienses.Add(Sipuli);
 
+        //Testi alapuolella toimiiko else.
+
         //Recepty.Ingridiense Suola = new Recepty.Ingridiense();
         //Suola.Name = "Suola";
         //Suola.Grams = 5;

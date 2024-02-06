@@ -100,12 +100,6 @@ namespace Class_C4U_test
                 caloryList = IngridienseCalories.LoadJson();
                 Console.WriteLine("\n\n\nLadattu resepti:\n");
                 TulostaResepti(loadRecepty, caloryList);
-                //Console.WriteLine(loadRecepty.Name + ". Annopksia " + loadRecepty.Servings);
-                //foreach (Ingridiense x in loadRecepty.Ingridienses)
-                //{
-                    //Console.WriteLine(x.Name + " " + x.Grams + " grammaa");
-                //}
-                //Console.WriteLine("Ohjeet:\n" + loadRecepty.Instructions);
             }
             else { Console.WriteLine("Hakusanalla ei löytynyt reseptiä"); }
         }

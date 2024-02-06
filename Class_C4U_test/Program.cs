@@ -37,18 +37,24 @@ class Program
         peruna.Name = "Peruna";
         peruna.Calories = 100;
         CaloryList.Add( peruna );
+        IngridienseCalories.SaveJson(peruna);
 
         IngridienseCalories makkara = new IngridienseCalories();
         makkara.Name = "Makkara";
         makkara.Calories = 200;
         CaloryList.Add(makkara);
+        IngridienseCalories.SaveJson(makkara);
 
         IngridienseCalories sipuli = new IngridienseCalories();
         sipuli.Name = "Sipuli";
         sipuli.Calories = 50;
         CaloryList.Add(sipuli);
+        IngridienseCalories.SaveJson(sipuli);
 
         Recepty.TulostaResepti(newRecepty, CaloryList);
+        Recepty.SaveJson(newRecepty);
+        string hakuSana = "Makkara Perunat";
+        Recepty.LataaResepti(hakuSana);
 
 
     }

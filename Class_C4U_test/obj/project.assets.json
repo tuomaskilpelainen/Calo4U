@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elmer\\source\\repos\\Class_C4U_test\\Class_C4U_test\\Class_C4U_test.csproj",
+      "projectUniqueName": "C:\\Users\\elmer\\source\\repos\\Calo4U\\Class_C4U_test\\Class_C4U_test.csproj",
       "projectName": "Class_C4U_test",
-      "projectPath": "C:\\Users\\elmer\\source\\repos\\Class_C4U_test\\Class_C4U_test\\Class_C4U_test.csproj",
+      "projectPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\Class_C4U_test\\Class_C4U_test.csproj",
       "packagesPath": "C:\\Users\\elmer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elmer\\source\\repos\\Class_C4U_test\\Class_C4U_test\\obj\\",
+      "outputPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\Class_C4U_test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\elmer\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,21 @@
+[
+  {
+    "Name": "Makkara Perunat",
+    "Instructions": "Paista perunoita 5min. Lis\u00E4\u00E4 sipulit ja makkarat. Paista kunnes perunat ja makkarat ovat kypsi\u00E4. Lis\u00E4\u00E4 mausteet oman maun mukaan.",
+    "Servings": 5,
+    "Ingridienses": [
+      {
+        "Name": "Peruna",
+        "Grams": 500
+      },
+      {
+        "Name": "Makkara",
+        "Grams": 400
+      },
+      {
+        "Name": "Sipuli",
+        "Grams": 100
+      }
+    ]
+  }
+]

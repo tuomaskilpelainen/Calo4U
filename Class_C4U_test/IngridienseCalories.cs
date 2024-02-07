@@ -21,15 +21,12 @@ namespace Class_C4U_test
 
         public static void SaveJson(IngridienseCalories saveIngridianse)
         {
-            Saver.SaveJsonCalories(saveIngridianse);
-        
+            Saver.SaveJsonCalories(saveIngridianse);       
         }
         public static List<IngridienseCalories> LoadJson()
         {
-
             List<IngridienseCalories> allCalories = Saver.LoadAllJsonCalories();
             return allCalories;
-
         }
     }
 

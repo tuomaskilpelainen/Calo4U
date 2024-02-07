@@ -19,5 +19,6 @@ namespace WpfApp2
         this.maara = maara;
         this.kalori = kalori;
     }
+
     }
 }

@@ -40,6 +40,7 @@ namespace WpfApp2
             {
                 var uusiAines = new ainesosat(aines, maarat, kalorit);
                 aineslista.Add(uusiAines);
+                Tallentaja.TalennaAinesosa(uusiAines);
             }
             PaivitaAinekset();
         }

@@ -11,7 +11,7 @@ namespace WpfApp2
 {
     internal class Tallentaja
     {
-        private const string TIEDOSTON_NIMI = "ainesosaKirjasto.json"; 
+        private const string TIEDOSTON_NIMI = "ainesosaKirjasto.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/ainesosaKirjasto.json.
 
         public static List<ainesosat> LataakaikkiAinesosat()
         {
@@ -45,7 +45,7 @@ namespace WpfApp2
                 {
                 kaikkiainekset.Add(uusiAine);
                 var option = new JsonSerializerOptions();
-                option.WriteIndented = true;
+                option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa.
 
                 string json = JsonSerializer.Serialize<List<ainesosat>>(kaikkiainekset, option);
                 File.WriteAllText(TIEDOSTON_NIMI, json);

@@ -14,11 +14,21 @@ namespace Class_C4U_test
         public string Instructions { get; set; }
         public int Servings { get; set; }
         public List<Ingridiense> Ingridienses { get; set; } = new List<Ingridiense>();
-
+        public Recepty(string name, string instructions, int servings)
+        {
+            this.Name = name;
+            this.Instructions = instructions;
+            this.Servings = servings;
+        }
         internal class Ingridiense
         {
             public string Name { get; set; }
             public int Grams { get; set; }
+            public Ingridiense(string name, int grams)
+            {
+                this.Name=name;
+                this.Grams = grams;
+            }
         }
         public static void TulostaResepti(Recepty newRecepty, List<IngridienseCalories> caloryList)
         {
@@ -38,9 +48,9 @@ namespace Class_C4U_test
                 {
                     Console.WriteLine(x.Name + ". Kaloritietoja ei löytynyt anna raaka-aineen kalorimäärä 100 gramssa");
                     string kalorit = Console.ReadLine();
-                    IngridienseCalories newCalory = new IngridienseCalories();
-                    newCalory.Name = x.Name;
-                    newCalory.Calories = int.Parse(kalorit);
+                    string name = x.Name;
+                    double calories = int.Parse(kalorit);
+                    IngridienseCalories newCalory = new IngridienseCalories(name, calories);
                     Console.WriteLine(x.Name + ": " + x.Grams + " grammaa. " + newCalory.Calories + " kaloria 100 grammassa.");
                     totalCalories += newCalory.Calories * x.Grams / 100;
                 }
@@ -51,57 +61,11 @@ namespace Class_C4U_test
         }
         public static void SaveJson(Recepty saveRecepty)
         {
-            bool save = true;
-            var option = new JsonSerializerOptions();
-            option.WriteIndented = true;
-            string json = File.ReadAllText("resepti_testi.json");
-            List<Recepty> allRecepties;
-            try
-            {
-                allRecepties = JsonSerializer.Deserialize<List<Recepty>>(json);
-            }
-            catch (JsonException) 
-            {
-                allRecepties = new List<Recepty>();
-            }
-            foreach(Recepty x in allRecepties)
-            {
-                if (x.Name == saveRecepty.Name) { save = false; }
-            }
-            if (save)
-            {
-                allRecepties.Add(saveRecepty);
-                string saveJson = JsonSerializer.Serialize<List<Recepty>>(allRecepties, option);
-                File.WriteAllText("resepti_testi.json", saveJson);
-                Console.WriteLine("TAlenettu resepti");
-            }
-            else
-            {
-                Console.WriteLine(saveRecepty.Name + " ei talenettu! Saman niminen resepti on jo olemassa.");
-            }
-
+            Saver.SaveJsonRecepty(saveRecepty);
         }
-        public static void LataaResepti(string name)
+        public static void LataaResepti(string hakuSana)
         {
-            Recepty loadRecepty = new Recepty();
-            string json = File.ReadAllText("resepti_testi.json");
-            List<Recepty> allRecepties = JsonSerializer.Deserialize<List<Recepty>>(json);
-            foreach (Recepty x in allRecepties)
-            {
-                if (x.Name == name)
-                {
-                    loadRecepty = x;
-                    break;
-                }
-            }
-            if (loadRecepty != null)
-            {
-                List<IngridienseCalories> caloryList = new List<IngridienseCalories>();
-                caloryList = IngridienseCalories.LoadJson();
-                Console.WriteLine("\n\n\nLadattu resepti:\n");
-                TulostaResepti(loadRecepty, caloryList);
-            }
-            else { Console.WriteLine("Hakusanalla ei löytynyt reseptiä"); }
+            Saver.LoadRecepty(hakuSana);
         }
     }
 }

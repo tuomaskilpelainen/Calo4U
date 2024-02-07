@@ -6,24 +6,25 @@ class Program
 {
     static void Main()
     {
-        Recepty newRecepty = new Recepty();
-        newRecepty.Name = "Makkara Perunat";
-        newRecepty.Instructions = "Paista perunoita 5min. Lisää sipulit ja makkarat. Paista kunnes perunat ja makkarat ovat kypsiä. Lisää mausteet oman maun mukaan.";
-        newRecepty.Servings = 5;
+        
+        string name = "Makkara Perunat";
+        string instructions = "Paista perunoita 5min. Lisää sipulit ja makkarat. Paista kunnes perunat ja makkarat ovat kypsiä. Lisää mausteet oman maun mukaan.";
+        int servings = 5;
+        Recepty newRecepty = new Recepty(name, instructions, servings);
 
-        Recepty.Ingridiense Peruna = new Recepty.Ingridiense();
-        Peruna.Name = "Peruna";
-        Peruna.Grams = 500;
+        name = "Peruna";
+        int grams = 500;
+        Recepty.Ingridiense Peruna = new Recepty.Ingridiense(name, grams);
         newRecepty.Ingridienses.Add( Peruna );
 
-        Recepty.Ingridiense Makkara = new Recepty.Ingridiense();
-        Makkara.Name = "Makkara";
-        Makkara.Grams = 400;
+        name = "Makkara";
+        grams = 400;
+        Recepty.Ingridiense Makkara = new Recepty.Ingridiense(name, grams);
         newRecepty.Ingridienses.Add(Makkara);
 
-        Recepty.Ingridiense Sipuli = new Recepty.Ingridiense();
-        Sipuli.Name = "Sipuli";
-        Sipuli.Grams = 100;
+        name = "Sipuli";
+        grams = 100;
+        Recepty.Ingridiense Sipuli = new Recepty.Ingridiense(name, grams);
         newRecepty.Ingridienses.Add(Sipuli);
 
         //Testi alapuolella toimiiko else.
@@ -35,23 +36,23 @@ class Program
 
         List<IngridienseCalories> CaloryList = new List<IngridienseCalories>();
 
-        IngridienseCalories peruna = new IngridienseCalories();
-        peruna.Name = "Peruna";
-        peruna.Calories = 100;
-        CaloryList.Add( peruna );
+        name = "Peruna";
+        double calories = 100;
+        IngridienseCalories peruna = new IngridienseCalories(name, calories);
         IngridienseCalories.SaveJson(peruna);
+        CaloryList.Add(peruna);
 
-        IngridienseCalories makkara = new IngridienseCalories();
-        makkara.Name = "Makkara";
-        makkara.Calories = 200;
-        CaloryList.Add(makkara);
+        name = "Makkara";
+        calories = 200;
+        IngridienseCalories makkara = new IngridienseCalories(name, calories);
         IngridienseCalories.SaveJson(makkara);
+        CaloryList.Add(makkara);
 
-        IngridienseCalories sipuli = new IngridienseCalories();
-        sipuli.Name = "Sipuli";
-        sipuli.Calories = 50;
-        CaloryList.Add(sipuli);
+        name = "Sipuli";
+        calories = 50;
+        IngridienseCalories sipuli = new IngridienseCalories(name, calories);
         IngridienseCalories.SaveJson(sipuli);
+        CaloryList.Add(sipuli);
 
         Recepty.TulostaResepti(newRecepty, CaloryList);
         Recepty.SaveJson(newRecepty);

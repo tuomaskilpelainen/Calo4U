@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,10 +20,13 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<ainesosat> aineslista = new List<ainesosat>();
+        List<Resepti.RaakaAine> uusiRaakaAineLista = new List<Resepti.RaakaAine>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,22 +39,33 @@ namespace WpfApp2
                 aines = aine.Text;
         int.TryParse(maara.Text, out maarat);
         int.TryParse(kalori.Text, out kalorit);
+            List<Resepti.RaakaAine> uusiRaakaAineLista = new List<Resepti.RaakaAine>();
 
             if (!string.IsNullOrEmpty(aines) && maarat > 0)
             {
-                var uusiAines = new ainesosat(aines, maarat, kalorit);
-                aineslista.Add(uusiAines);
+                var uusiRaakaAine = new Resepti.RaakaAine(aines, maarat);
+                uusiRaakaAineLista.Add(uusiRaakaAine);
+                var uusiAines = new ainesosat(aines, kalorit);
                 Tallentaja.TalennaAinesosa(uusiAines);
+                
             }
-            PaivitaAinekset();
+            var Tulostus = new Tulostaja();
+            Tulostus.PaivitaAinekset(uusiRaakaAineLista);
+
         }
 
-        public void PaivitaAinekset()
+    }
+    internal partial class Tulostaja : MainWindow // Ideana että tämä class hoitaa kaikki tulostukseen liittyvät asiat :).
+    {
+        public void PaivitaAinekset(List<Resepti.RaakaAine> aineslista)
         {
             var newString = "";
-            foreach (var tieto in aineslista)
-                newString += $"{tieto.aine} {tieto.maara} g {tieto.kalori} kcal \n";
-            ainekset.Text = newString;
+            List<ainesosat> kaikkiAinesosat = Tallentaja.LataakaikkiAinesosat();
+            foreach (Resepti.RaakaAine tieto in aineslista)
+                foreach (ainesosat raakaAine in kaikkiAinesosat)
+                    if (raakaAine.aine == tieto.Nimi)
+                        newString += $"{tieto.Nimi} {tieto.Maara} g {raakaAine.kalori} kcal \n";
+                        ainekset.Text = newString;
         }
     }
 }

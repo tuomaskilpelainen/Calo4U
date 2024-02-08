@@ -16,18 +16,18 @@ namespace WpfApp2
         public static List<ainesosat> LataakaikkiAinesosat()
         {
 
-            List<ainesosat> kaikkiAinesosat = new List<ainesosat>();
+            List<ainesosat> kaikkiAinesosat;
+            string json = File.ReadAllText(Tallentaja.TIEDOSTON_NIMI);
             try
-            {
-                string json = File.ReadAllText(TIEDOSTON_NIMI);
+            { 
                 kaikkiAinesosat = JsonSerializer.Deserialize<List<ainesosat>>(json);
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                string saveJson = JsonSerializer.Serialize<List<ainesosat>>(kaikkiAinesosat);
-                File.WriteAllText(TIEDOSTON_NIMI, saveJson);
+
+                kaikkiAinesosat = new List<ainesosat>();
             }
             return kaikkiAinesosat;
         }
@@ -35,6 +35,10 @@ namespace WpfApp2
         {
             bool lisaa = true;
             List<ainesosat> kaikkiainekset = LataakaikkiAinesosat();
+            if (!kaikkiainekset.Any())
+            {
+                kaikkiainekset = new List<ainesosat>();
+            }
             foreach (ainesosat vertailtavaAine in kaikkiainekset)
                 if (vertailtavaAine.aine == uusiAine.aine)
                 {

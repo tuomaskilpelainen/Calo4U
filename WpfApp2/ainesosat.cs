@@ -12,10 +12,10 @@ namespace WpfApp2
         public int kalori { get; set; } // raaka-aineen kalorimäärä
 
 
-    public ainesosat(string aine, int kalorit)
+    public ainesosat(string aine, int kalori)
     {
         this.aine = aine;
-        this.kalori = kalorit;
+        this.kalori = kalori;
     }
 
     }

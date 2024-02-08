@@ -1,6 +1,14 @@
 [
   {
-    "aine": "sda",
-    "kalori": 5
+    "aine": "Peruna",
+    "kalori": 50
+  },
+  {
+    "aine": "Makkara",
+    "kalori": 50
+  },
+  {
+    "aine": "Salaatti",
+    "kalori": 20
   }
 ]

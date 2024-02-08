@@ -20,7 +20,7 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Resepti.RaakaAine> uusiRaakaAineLista = new List<Resepti.RaakaAine>();
+
 
         public MainWindow()
         {

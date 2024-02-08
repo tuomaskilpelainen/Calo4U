@@ -15,17 +15,28 @@ namespace WpfApp2
 
         public static List<ainesosat> LataakaikkiAinesosat()
         {
+            var options = new JsonSerializerOptions();
+            options.PropertyNameCaseInsensitive = true;
 
-            List<ainesosat> kaikkiAinesosat;
+            List<ainesosat> kaikkiAinesosat = new List<ainesosat>();
+            try
+            {
+                string json_test = File.ReadAllText(Tallentaja.TIEDOSTON_NIMI); 
+            }
+            catch (Exception ex)
+            {
+                kaikkiAinesosat = new List<ainesosat>();
+                return kaikkiAinesosat;
+            }
             string json = File.ReadAllText(Tallentaja.TIEDOSTON_NIMI);
             try
-            { 
+            {
                 kaikkiAinesosat = JsonSerializer.Deserialize<List<ainesosat>>(json);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(ex); //Tää menee aina Expetioniin
 
                 kaikkiAinesosat = new List<ainesosat>();
             }
@@ -52,7 +63,7 @@ namespace WpfApp2
                 option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa.
 
                 string json = JsonSerializer.Serialize<List<ainesosat>>(kaikkiainekset, option);
-                File.WriteAllText(TIEDOSTON_NIMI, json);
+                File.WriteAllText(Tallentaja.TIEDOSTON_NIMI, json);
                 }
 
                             

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Class_C4U_test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e15321cecf1787220e19f381ac47cc09773a7614")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5986717e8ad16b7d672bb8ea94d9654105a29c48")]
 [assembly: System.Reflection.AssemblyProductAttribute("Class_C4U_test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Class_C4U_test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -10,5 +10,13 @@
   {
     "aine": "Salaatti",
     "kalori": 20
+  },
+  {
+    "aine": "Kukkakaali",
+    "kalori": 500
+  },
+  {
+    "aine": "asasas",
+    "kalori": 500
   }
 ]

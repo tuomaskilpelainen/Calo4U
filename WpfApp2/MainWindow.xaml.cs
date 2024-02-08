@@ -47,25 +47,25 @@ namespace WpfApp2
                 uusiRaakaAineLista.Add(uusiRaakaAine);
                 var uusiAines = new ainesosat(aines, kalorit);
                 Tallentaja.TalennaAinesosa(uusiAines);
-                
+                var Tulostus = new Tulostaja();
+                Tulostus.PaivitaAinekset(uusiRaakaAine);
+
             }
-            var Tulostus = new Tulostaja();
-            Tulostus.PaivitaAinekset(uusiRaakaAineLista);
+
 
         }
 
     }
     internal partial class Tulostaja : MainWindow // Ideana että tämä class hoitaa kaikki tulostukseen liittyvät asiat :).
     {
-        public void PaivitaAinekset(List<Resepti.RaakaAine> aineslista)
+        public void PaivitaAinekset(Resepti.RaakaAine aine)
         {
             var newString = "";
             List<ainesosat> kaikkiAinesosat = Tallentaja.LataakaikkiAinesosat();
-            foreach (Resepti.RaakaAine tieto in aineslista)
-                foreach (ainesosat raakaAine in kaikkiAinesosat)
-                    if (raakaAine.aine == tieto.Nimi)
-                        newString += $"{tieto.Nimi} {tieto.Maara} g {raakaAine.kalori} kcal \n";
-                        ainekset.Text = newString;
+            foreach (ainesosat tieto in kaikkiAinesosat)
+                if (aine.Nimi == tieto.aine)
+                    newString = $"{aine.Nimi} {aine.Maara} g {tieto.kalori} kcal \n";
+                    ainekset.Text += newString;
         }
     }
 }

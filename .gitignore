@@ -1,2 +1,4 @@
 # Ignore Visual Studio specific files and directories
 .vs/*
+WpfApp2/bin/
+WpfApp2/obj/

@@ -12,7 +12,7 @@ namespace WpfApp2
     internal class Tallentaja
     {
         private const string TIEDOSTON_NIMI = "ainesosaKirjasto.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/ainesosaKirjasto.json.
-        private const string RESEPTI_TIEDOSTO = "resptiKirjasto.json";
+        private const string RESEPTI_TIEDOSTO = "resptiKirjasto.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/reseptiKirjasto.json.
 
         public static List<ainesosat> LataakaikkiAinesosat()
         {

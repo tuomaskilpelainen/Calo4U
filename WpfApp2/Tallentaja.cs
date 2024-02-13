@@ -12,6 +12,7 @@ namespace WpfApp2
     internal class Tallentaja
     {
         private const string TIEDOSTON_NIMI = "ainesosaKirjasto.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/ainesosaKirjasto.json.
+        private const string RESEPTI_TIEDOSTO = "resptiKirjasto.json";
 
         public static List<ainesosat> LataakaikkiAinesosat()
         {
@@ -36,7 +37,7 @@ namespace WpfApp2
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex); //Tää menee aina Expetioniin
+                Console.WriteLine(ex);
 
                 kaikkiAinesosat = new List<ainesosat>();
             }
@@ -69,6 +70,44 @@ namespace WpfApp2
                             
 
 
+        }
+        public static List<Resepti> LaataakaikkiReseptit()
+        {
+            List<Resepti> kaikkiReseptit = new List<Resepti>();
+            var options = new JsonSerializerOptions();
+            options.PropertyNameCaseInsensitive = true;
+            try
+            {
+                string json = File.ReadAllText(RESEPTI_TIEDOSTO);
+                try
+                {
+                    kaikkiReseptit = JsonSerializer.Deserialize<List<Resepti>>(json);
+                    return kaikkiReseptit;
+                }
+                catch { return kaikkiReseptit; }
+
+            }
+            catch (Exception ex)
+            {
+                return kaikkiReseptit;
+            }
+
+        }
+        public static void TallennaResepti(Resepti uusiResepti)
+        {
+            var option = new JsonSerializerOptions();
+            option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa.
+            List<Resepti> kaikkiReseptit = Tallentaja.LaataakaikkiReseptit();
+            foreach (Resepti resepti in kaikkiReseptit)
+            {
+                if (resepti.Nimi == uusiResepti.Nimi)
+                {
+                    return;
+                }
+            }
+            kaikkiReseptit.Add(uusiResepti);
+            string json = JsonSerializer.Serialize<List<Resepti>>(kaikkiReseptit, option);
+            File.WriteAllText(RESEPTI_TIEDOSTO, json);
         }
     }
 }

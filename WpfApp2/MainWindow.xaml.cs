@@ -20,6 +20,7 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Resepti.RaakaAine> raakaAineLista = new List<Resepti.RaakaAine>();
 
 
         public MainWindow()
@@ -39,33 +40,83 @@ namespace WpfApp2
                 aines = aine.Text;
         int.TryParse(maara.Text, out maarat);
         int.TryParse(kalori.Text, out kalorit);
-            List<Resepti.RaakaAine> uusiRaakaAineLista = new List<Resepti.RaakaAine>();
 
             if (!string.IsNullOrEmpty(aines) && maarat > 0)
             {
                 var uusiRaakaAine = new Resepti.RaakaAine(aines, maarat);
-                uusiRaakaAineLista.Add(uusiRaakaAine);
+                raakaAineLista.Add(uusiRaakaAine);
                 var uusiAines = new ainesosat(aines, kalorit);
                 Tallentaja.TalennaAinesosa(uusiAines);
                 var Tulostus = new Tulostaja();
-                Tulostus.PaivitaAinekset(uusiRaakaAine);
+                string ainesstring = Tulostus.PaivitaAinekset(uusiRaakaAine);
+                ainekset.Text = ainesstring;
 
             }
 
 
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string nimi;
+            string ohjeet;
+            int annokset;
+
+            string maara = ReseptiAnnokset.Text.ToString();
+            nimi = ReseptiNimi.Text.ToString();
+            ohjeet = ReseptiOhjeet.Text.ToString();
+            int.TryParse(maara, out annokset);
+            if (!string.IsNullOrEmpty(nimi) && !string.IsNullOrEmpty(ohjeet))
+            {
+                var Tulostus = new Tulostaja();
+                Resepti uusiResepti = new Resepti(nimi, ohjeet, annokset);
+                uusiResepti.RaakaAineLista = raakaAineLista;
+                string tulostus = Tulostus.ReseptiTulostus(uusiResepti);
+                ReseptiNaytto.Text = tulostus;
+                Tallentaja.TallennaResepti(uusiResepti);
+                raakaAineLista.Clear();
+
+
+            }
+        }
     }
     internal partial class Tulostaja : MainWindow // Ideana että tämä class hoitaa kaikki tulostukseen liittyvät asiat :).
     {
-        public void PaivitaAinekset(Resepti.RaakaAine aine)
+        public string PaivitaAinekset(Resepti.RaakaAine aine)
         {
             var newString = "";
             List<ainesosat> kaikkiAinesosat = Tallentaja.LataakaikkiAinesosat();
             foreach (ainesosat tieto in kaikkiAinesosat)
                 if (aine.Nimi == tieto.aine)
                     newString = $"{aine.Nimi} {aine.Maara} g {tieto.kalori} kcal \n";
-                    ainekset.Text += newString;
+                    return newString ;
         }
+        public string ReseptiTulostus(Resepti newRecepty)
+        {
+            int kokoKalorit = 0;
+
+            List<ainesosat> kaikkiAinesosat = Tallentaja.LataakaikkiAinesosat();
+            var newstring = $"{newRecepty.Nimi}. Annoskisa: {newRecepty.Annokset}";
+            foreach (Resepti.RaakaAine raakaAine in newRecepty.RaakaAineLista)
+            {
+                foreach(ainesosat aine in kaikkiAinesosat)
+                {
+                    if (aine.aine ==  raakaAine.Nimi)
+                    {
+                        ainesosat kalorit = aine;
+                        newstring += $"\n{raakaAine.Nimi} {raakaAine.Maara}g {kalorit.kalori} kc/100g";
+                        kokoKalorit += kalorit.kalori * raakaAine.Maara / 100;
+                    }
+                }
+            }
+            
+            int annosKalorit = kokoKalorit / newRecepty.Annokset;
+            newstring += $"\nOhjeet: \n{newRecepty.Ohjeet}\nKokonais kalori määrä on: {kokoKalorit}\nYhden annoksen kalorit ovat: {annosKalorit}";
+            
+            return newstring ;
+
+
+        }
+
     }
 }

@@ -15,7 +15,7 @@
         <TextBox Name="aine" HorizontalAlignment="Left" Margin="0,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <TextBox Name="maara" HorizontalAlignment="Left" Margin="0,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <TextBox Name="kalori" HorizontalAlignment="Left" Margin="0,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Button Content="Tallenna resepti&#xD;&#xA;" HorizontalAlignment="Left" Margin="283,393,0,0" VerticalAlignment="Top"/>
+        <Button Content="Tallenna resepti&#xD;&#xA;" HorizontalAlignment="Left" Margin="283,393,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
         <TextBlock Name="ainekset" HorizontalAlignment="Left" Margin="0,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="185" Text=""/>
         <TextBlock HorizontalAlignment="Left" Margin="33,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.623,-0.037" Height="18"><Run Language="fi-fi" Text="ainesket"/><LineBreak/><Run Language="fi-fi"/></TextBlock>
         <TextBox x:Name="ReseptiAnnokset" HorizontalAlignment="Left" Margin="223,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="30" />

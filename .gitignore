@@ -2,4 +2,4 @@
 .vs/*
 WpfApp2/bin/
 WpfApp2/obj/
-!/WpfApp2/bin/Debug/net8.0-windows/ainesosaKirjasto.json
+# !/WpfApp2/bin/Debug/net8.0-windows/ainesosaKirjasto.json

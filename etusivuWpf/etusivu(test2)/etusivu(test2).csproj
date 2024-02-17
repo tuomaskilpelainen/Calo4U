@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>etusivu_test2_</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="core\kuvat\logo_calo4u.PNG" />
+    <None Remove="core\kuvat\pastapng.png" />
+    <None Remove="core\kuvat\piechart.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="core\fontit\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="core\kuvat\logo_calo4u.PNG" />
+    <Resource Include="core\kuvat\pastapng.png" />
+    <Resource Include="core\kuvat\piechart.png" />
+  </ItemGroup>
+
+</Project>

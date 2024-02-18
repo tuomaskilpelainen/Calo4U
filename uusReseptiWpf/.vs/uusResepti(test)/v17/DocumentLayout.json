@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kuuli\\OneDrive - H\u00E4meen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\",
+  "WorkspaceRootPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\uusReseptiWpf\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|c:\\users\\kuuli\\onedrive - h\u00E4meen ammattikorkeakoulu\\module 3\\ohjelmistokehitys\\projekti(bunyisa)\\test for wpf\\calo4u\\uusreseptiwpf\\uusresepti(test)\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|solutionrelative:uusresepti(test)\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|c:\\users\\elmer\\source\\repos\\calo4u\\uusreseptiwpf\\uusresepti(test)\\reseptinlisayssivu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|solutionrelative:uusresepti(test)\\reseptinlisayssivu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|c:\\users\\kuuli\\onedrive - h\u00E4meen ammattikorkeakoulu\\module 3\\ohjelmistokehitys\\projekti(bunyisa)\\test for wpf\\calo4u\\uusreseptiwpf\\uusresepti(test)\\uusresepti(test).csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|c:\\users\\elmer\\source\\repos\\calo4u\\uusreseptiwpf\\uusresepti(test)\\uusresepti(test).csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|solutionrelative:uusresepti(test)\\uusresepti(test).csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|c:\\users\\kuuli\\onedrive - h\u00E4meen ammattikorkeakoulu\\module 3\\ohjelmistokehitys\\projekti(bunyisa)\\test for wpf\\calo4u\\uusreseptiwpf\\uusresepti(test)\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|solutionrelative:uusresepti(test)\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|c:\\users\\elmer\\source\\repos\\calo4u\\uusreseptiwpf\\uusresepti(test)\\reseptinlisayssivu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8638BFEA-AA8B-440E-91E0-64B17A8F3724}|uusResepti(test)\\uusResepti(test).csproj|solutionrelative:uusresepti(test)\\reseptinlisayssivu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,48 +25,42 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\kuuli\\OneDrive - H\u00E4meen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "uusResepti(test)\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\kuuli\\OneDrive - H\u00E4meen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\MainWindow.xaml",
-              "RelativeToolTip": "uusResepti(test)\\MainWindow.xaml",
+              "DocumentIndex": 2,
+              "Title": "ReseptinLisaysSivu.xaml",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\ReseptinLisaysSivu.xaml",
+              "RelativeDocumentMoniker": "uusResepti(test)\\ReseptinLisaysSivu.xaml",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\ReseptinLisaysSivu.xaml",
+              "RelativeToolTip": "uusResepti(test)\\ReseptinLisaysSivu.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-02-16T10:36:21.091Z",
+              "WhenOpened": "2024-02-18T13:11:00.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "uusResepti(test).csproj",
-              "DocumentMoniker": "C:\\Users\\kuuli\\OneDrive - H\u00E4meen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\uusResepti(test).csproj",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\uusResepti(test).csproj",
               "RelativeDocumentMoniker": "uusResepti(test)\\uusResepti(test).csproj",
-              "ToolTip": "C:\\Users\\kuuli\\OneDrive - H\u00E4meen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\uusResepti(test).csproj",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\uusResepti(test).csproj",
               "RelativeToolTip": "uusResepti(test)\\uusResepti(test).csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-02-16T10:38:17.127Z"
+              "WhenOpened": "2024-02-16T10:38:17.127Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\kuuli\\OneDrive - H\u00E4meen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "uusResepti(test)\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\kuuli\\OneDrive - H\u00E4meen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\MainWindow.xaml.cs",
-              "RelativeToolTip": "uusResepti(test)\\MainWindow.xaml.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAEwB4AAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "ReseptinLisaysSivu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\ReseptinLisaysSivu.xaml.cs",
+              "RelativeDocumentMoniker": "uusResepti(test)\\ReseptinLisaysSivu.xaml.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\ReseptinLisaysSivu.xaml.cs",
+              "RelativeToolTip": "uusResepti(test)\\ReseptinLisaysSivu.xaml.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-16T10:36:14.676Z"
+              "WhenOpened": "2024-02-16T10:36:14.676Z",
+              "EditorCaption": ""
             }
           ]
         }

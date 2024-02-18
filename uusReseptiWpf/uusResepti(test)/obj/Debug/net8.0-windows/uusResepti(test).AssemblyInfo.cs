@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("uusResepti(test)")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60d52e612dd163e8c2f7919e7a667d05478aeaf1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b418a7a0cfb0cc86fad26ccf74ec8f0c8752a74")]
 [assembly: System.Reflection.AssemblyProductAttribute("uusResepti(test)")]
 [assembly: System.Reflection.AssemblyTitleAttribute("uusResepti(test)")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\uusResepti(test)\\uusResepti(test)\\uusResepti(test).csproj",
+      "projectUniqueName": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\uusResepti(test).csproj",
       "projectName": "uusResepti(test)",
-      "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\uusResepti(test)\\uusResepti(test)\\uusResepti(test).csproj",
+      "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\uusResepti(test).csproj",
       "packagesPath": "C:\\Users\\kuuli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\uusResepti(test)\\uusResepti(test)\\obj\\",
+      "outputPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo4U\\uusReseptiWpf\\uusResepti(test)\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kuuli\\AppData\\Roaming\\NuGet\\NuGet.Config",

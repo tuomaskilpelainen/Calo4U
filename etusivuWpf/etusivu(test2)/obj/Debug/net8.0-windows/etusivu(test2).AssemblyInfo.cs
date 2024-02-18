@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("etusivu(test2)")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b418a7a0cfb0cc86fad26ccf74ec8f0c8752a74")]
 [assembly: System.Reflection.AssemblyProductAttribute("etusivu(test2)")]
 [assembly: System.Reflection.AssemblyTitleAttribute("etusivu(test2)")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\etusivu(test2)\\etusivu(test2)\\etusivu(test2).csproj": {}
+    "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\etusivu(test2).csproj": {}
   },
   "projects": {
-    "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\etusivu(test2)\\etusivu(test2)\\etusivu(test2).csproj": {
+    "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\etusivu(test2).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\etusivu(test2)\\etusivu(test2)\\etusivu(test2).csproj",
+        "projectUniqueName": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\etusivu(test2).csproj",
         "projectName": "etusivu(test2)",
-        "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\etusivu(test2)\\etusivu(test2)\\etusivu(test2).csproj",
-        "packagesPath": "C:\\Users\\kuuli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\etusivu(test2)\\etusivu(test2)\\obj\\",
+        "projectPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\etusivu(test2).csproj",
+        "packagesPath": "C:\\Users\\elmer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kuuli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\elmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

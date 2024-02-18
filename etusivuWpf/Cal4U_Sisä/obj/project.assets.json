@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {
-      "Cal4U_Sisa/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Cal4U_Sisa.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Cal4U_Sisa.dll": {}
-        }
-      }
-    }
+    "net8.0": {}
   },
-  "libraries": {
-    "Cal4U_Sisa/1.0.0": {
-      "type": "project",
-      "path": "../Cal4U_Sisä/Cal4U_Sisa.csproj",
-      "msbuildProject": "../Cal4U_Sisä/Cal4U_Sisa.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": [
-      "Cal4U_Sisa >= 1.0.0"
-    ]
+    "net8.0": []
   },
   "packageFolders": {
     "C:\\Users\\elmer\\.nuget\\packages\\": {}
@@ -32,31 +13,27 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\Cal4U_GUI.csproj",
-      "projectName": "Cal4U_GUI",
-      "projectPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\Cal4U_GUI.csproj",
+      "projectUniqueName": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sisä\\Cal4U_Sisa.csproj",
+      "projectName": "Cal4U_Sisa",
+      "projectPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sisä\\Cal4U_Sisa.csproj",
       "packagesPath": "C:\\Users\\elmer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\etusivu(test2)\\obj\\",
+      "outputPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sisä\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\elmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
-          "projectReferences": {
-            "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sisä\\Cal4U_Sisa.csproj": {
-              "projectPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sisä\\Cal4U_Sisa.csproj"
-            }
-          }
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -71,8 +48,8 @@
       }
     },
     "frameworks": {
-      "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "imports": [
           "net461",
           "net462",
@@ -87,9 +64,6 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WPF": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"

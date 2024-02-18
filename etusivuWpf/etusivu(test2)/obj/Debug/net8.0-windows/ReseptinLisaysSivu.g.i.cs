@@ -261,7 +261,7 @@ namespace uusResepti_test_ {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/etusivu(test2);V1.0.0.0;component/reseptinlisayssivu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Cal4U_GUI;V1.0.0.0;component/reseptinlisayssivu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ReseptinLisaysSivu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

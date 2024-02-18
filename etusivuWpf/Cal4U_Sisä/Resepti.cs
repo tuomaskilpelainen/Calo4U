@@ -8,11 +8,17 @@ namespace Cal4U_Sisa
 {
     internal class Resepti
     {
-        public string Ohjeet { get; set; }
-        public int Annokset { get; set; }
-        public List<string> Tagit { get; set; }
-        public List<RaakaAine> RaakaAineLista { get; set; }
-
+        public string Nimi { get; set; } // Reseptin nimi
+        public string Ohjeet { get; set; } // Reseptin Ohjeet
+        public int Annokset { get; set; } // Kuinka monta annosta reseptistä tulee
+        public List<string> Tagit { get; set; } //Lista reseptin tageista.
+        public List<RaakaAine> RaakaAineLista { get; set; } //Sisältää kaikki reseptin raaka-aineet ja niiden tiedot.
+        public Resepti(string nimi, string ohjeet, int annokset)
+        {
+            this.Nimi = nimi;
+            this.Ohjeet = ohjeet;
+            this.Annokset = annokset;
+        }
         internal class RaakaAine
         {
             public string Nimi;
@@ -23,6 +29,5 @@ namespace Cal4U_Sisa
                 Maara = maara;
             }
         }
-
     }
 }

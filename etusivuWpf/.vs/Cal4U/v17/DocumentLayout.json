@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|c:\\users\\elmer\\source\\repos\\calo4u\\etusivuwpf\\cal4u_sis\u00E4\\classmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|solutionrelative:cal4u_sis\u00E4\\classmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|c:\\users\\elmer\\source\\repos\\calo4u\\etusivuwpf\\cal4u_sis\u00E4\\tulostaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|solutionrelative:cal4u_sis\u00E4\\tulostaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|c:\\users\\elmer\\source\\repos\\calo4u\\etusivuwpf\\cal4u_sis\u00E4\\raakaainelista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|solutionrelative:cal4u_sis\u00E4\\raakaainelista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|c:\\users\\elmer\\source\\repos\\calo4u\\etusivuwpf\\cal4u_sis\u00E4\\resepti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|solutionrelative:cal4u_sis\u00E4\\resepti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|c:\\users\\elmer\\source\\repos\\calo4u\\etusivuwpf\\cal4u_sis\u00E4\\taglista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|solutionrelative:cal4u_sis\u00E4\\taglista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|c:\\users\\elmer\\source\\repos\\calo4u\\etusivuwpf\\cal4u_sis\u00E4\\raakaainekalorit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|solutionrelative:cal4u_sis\u00E4\\raakaainekalorit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|c:\\users\\elmer\\source\\repos\\calo4u\\etusivuwpf\\cal4u_sis\u00E4\\tallentaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBE3CD7-7AA1-46EA-8948-1208B1E9AF9F}|Cal4U_Sis\u00E4\\Cal4U_Sisa.csproj|solutionrelative:cal4u_sis\u00E4\\tallentaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TagLista.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\TagLista.cs",
+              "RelativeDocumentMoniker": "Cal4U_Sis\u00E4\\TagLista.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\TagLista.cs",
+              "RelativeToolTip": "Cal4U_Sis\u00E4\\TagLista.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T18:53:07.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RaakaAineLista.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\RaakaAineLista.cs",
+              "RelativeDocumentMoniker": "Cal4U_Sis\u00E4\\RaakaAineLista.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\RaakaAineLista.cs",
+              "RelativeToolTip": "Cal4U_Sis\u00E4\\RaakaAineLista.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T18:46:40.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tulostaja.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\Tulostaja.cs",
+              "RelativeDocumentMoniker": "Cal4U_Sis\u00E4\\Tulostaja.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\Tulostaja.cs",
+              "RelativeToolTip": "Cal4U_Sis\u00E4\\Tulostaja.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T18:05:50.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Tallentaja.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\Tallentaja.cs",
+              "RelativeDocumentMoniker": "Cal4U_Sis\u00E4\\Tallentaja.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\Tallentaja.cs",
+              "RelativeToolTip": "Cal4U_Sis\u00E4\\Tallentaja.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAQwC4AAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T17:42:58.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RaakaAineKalorit.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\RaakaAineKalorit.cs",
+              "RelativeDocumentMoniker": "Cal4U_Sis\u00E4\\RaakaAineKalorit.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\RaakaAineKalorit.cs",
+              "RelativeToolTip": "Cal4U_Sis\u00E4\\RaakaAineKalorit.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T17:33:15.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Resepti.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\Resepti.cs",
+              "RelativeDocumentMoniker": "Cal4U_Sis\u00E4\\Resepti.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\Resepti.cs",
+              "RelativeToolTip": "Cal4U_Sis\u00E4\\Resepti.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T17:32:52.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClassMain.cs",
+              "DocumentMoniker": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\ClassMain.cs",
+              "RelativeDocumentMoniker": "Cal4U_Sis\u00E4\\ClassMain.cs",
+              "ToolTip": "C:\\Users\\elmer\\source\\repos\\Calo4U\\etusivuWpf\\Cal4U_Sis\u00E4\\ClassMain.cs",
+              "RelativeToolTip": "Cal4U_Sis\u00E4\\ClassMain.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwB4AAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T17:56:34.289Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

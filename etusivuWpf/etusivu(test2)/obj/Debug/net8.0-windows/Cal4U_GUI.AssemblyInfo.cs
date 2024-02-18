@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cal4U_GUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2dfef979ccadcd5ef0d4d5a8603a3f5970424473")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b92ad0374e0673bf0d1cd0924c70203e9ec85197")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cal4U_GUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cal4U_GUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

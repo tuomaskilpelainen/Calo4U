@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calo4U_GUI", "Calo4U_GUI.csproj", "{53FFDB1E-B6E2-49E5-BF01-98036FBA637C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calo4U_Sisa", "..\Calo4U_Sisa\Calo4U_Sisa.csproj", "{DDFA7618-8CBB-43B0-B802-451B3C9E3059}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{53FFDB1E-B6E2-49E5-BF01-98036FBA637C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53FFDB1E-B6E2-49E5-BF01-98036FBA637C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53FFDB1E-B6E2-49E5-BF01-98036FBA637C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDFA7618-8CBB-43B0-B802-451B3C9E3059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFA7618-8CBB-43B0-B802-451B3C9E3059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFA7618-8CBB-43B0-B802-451B3C9E3059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFA7618-8CBB-43B0-B802-451B3C9E3059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

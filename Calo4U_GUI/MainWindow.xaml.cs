@@ -20,5 +20,30 @@ namespace Calo4U_GUI
         {
             InitializeComponent();
         }
+
+        private void kalorintarveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void uusReseptButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Page1());
+            MainFrame.Visibility = Visibility.Visible;
+        }
+        public void ShowMainWindow()
+        {
+            MainFrame.Visibility = Visibility.Collapsed;
+        }
+
+        private void uusReseptButton_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void uusReseptButton_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

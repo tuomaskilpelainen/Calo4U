@@ -1,2 +1,4 @@
 # Ignore Visual Studio specific files and directories
 .vs/*
+Calo4U_GUI/.vs/*
+Calo4U_Sisa/.vs/*

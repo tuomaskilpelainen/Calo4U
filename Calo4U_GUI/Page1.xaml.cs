@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Calo4U_Sisa;
 
 namespace Calo4U_GUI
 {
@@ -37,6 +38,36 @@ namespace Calo4U_GUI
             {
                 mainWindow.ShowMainWindow();
             }
+        }
+
+        private void LisääRaakaButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main main = new Main();
+            string nimi;
+            int maara;
+            double kalorit;
+            nimi = raaka_aineBox.Text;
+            try
+            {
+                maara = int.Parse(määräBox.Text);
+            }
+            catch
+            {
+                maara = 0;
+            }
+            try
+            {
+                kalorit = double.Parse(kaloritBox.Text);
+            }
+            catch { kalorit = 0; }
+
+            if (!string.IsNullOrEmpty(nimi) && maara > 0)
+            {
+                string raakaAineText = main.LisaaRaakaAine(nimi, maara, kalorit);
+                ainesTextBlock.Text += $"\n {raakaAineText}";
+            }
+
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Calo4U_Sisa
 {
-    public class Main
+    public class Main1
     {
 
     }

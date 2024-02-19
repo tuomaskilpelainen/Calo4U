@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Calo4U_Sisa\Calo4U_Sisa.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="core\kuvat\logo_calo4u.PNG" />
     <Resource Include="core\kuvat\pastapng.png" />
     <Resource Include="core\kuvat\piechart.png" />

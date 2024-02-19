@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "Calo4U_GUI/1.0.0": {
+        "dependencies": {
+          "Calo4U_Sisa": "1.0.0"
+        },
         "runtime": {
           "Calo4U_GUI.dll": {}
+        }
+      },
+      "Calo4U_Sisa/1.0.0": {
+        "runtime": {
+          "Calo4U_Sisa.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Calo4U_GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Calo4U_Sisa/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

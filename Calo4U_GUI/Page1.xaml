@@ -244,11 +244,11 @@
             TextWrapping="Wrap" VerticalAlignment="Top" 
             Width="178" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A"
         />
-        <TextBox x:Name="reseptiBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="352,134,0,0"
+        <TextBox x:Name="reseptiNimiBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="352,134,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
             Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575"
         />
-        <TextBox x:Name="raaka_aineBox_Copy3" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="550,134,0,0"
+        <TextBox x:Name="annoksetText" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="550,134,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
             Width="59" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" TextAlignment="Center"
         />
@@ -260,7 +260,7 @@
                 Height="34" Margin="92,302,0,0" VerticalAlignment="Top" Width="160" BorderBrush="{x:Null}" Background="#FFFFDCCB" Foreground="#FFCA5319" FontFamily="Poppins Medium" Click="LisääRaakaButton_Click"
         />
         <Button Style="{DynamicResource RoundedRaaka}" x:Name="ReseptButton" Content="Tallenna resepti" HorizontalAlignment="Center" 
-            Height="34" Margin="0,462,0,0" VerticalAlignment="Top" Width="160" BorderBrush="{x:Null}" Background="#FFDDE2F4" Foreground="#FF3B5DC4" FontFamily="Poppins Medium"
+            Height="34" Margin="0,462,0,0" VerticalAlignment="Top" Width="160" BorderBrush="{x:Null}" Background="#FFDDE2F4" Foreground="#FF3B5DC4" FontFamily="Poppins Medium" Click="ReseptButton_Click"
         />
         <Button Style="{DynamicResource RoundedRaaka}" x:Name="etusivuButton" Content="Etusivulle" HorizontalAlignment="Left" 
             Height="34" Margin="24,23,0,0" VerticalAlignment="Top" Width="134" BorderBrush="{x:Null}" Background="#FF2E334E" Foreground="White" FontFamily="Poppins Medium" Click="etusivuButton_Click"

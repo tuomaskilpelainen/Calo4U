@@ -1,0 +1,22 @@
+[
+  {
+    "Nimi": "Makkara Perunat",
+    "Ohjeet": "Paista ja Maista",
+    "Annokset": 3,
+    "Tags": [],
+    "RaakaAineLista": [
+      {
+        "Nimi": "Peruna",
+        "Maara": 200
+      },
+      {
+        "Nimi": "Makkara",
+        "Maara": 200
+      },
+      {
+        "Nimi": "Sipuli",
+        "Maara": 200
+      }
+    ]
+  }
+]

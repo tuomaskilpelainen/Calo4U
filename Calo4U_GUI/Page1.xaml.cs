@@ -36,7 +36,7 @@ namespace Calo4U_GUI
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
-                mainWindow.ShowMainWindow();
+                mainWindow.ShowMainWindow(); 
             }
         }
 
@@ -67,6 +67,29 @@ namespace Calo4U_GUI
                 ainesTextBlock.Text += $"\n {raakaAineText}";
             }
 
+
+        }
+
+        private void ReseptButton_Click(object sender, RoutedEventArgs e)
+        {
+            string nimi;
+            string ohjeet;
+            int annokset;
+            try
+            {
+                annokset = int.Parse(annoksetText.Text);
+
+            }
+            catch (Exception ex) { annokset = 0; }
+            if (!string.IsNullOrEmpty(reseptiNimiBox.Text) && !string.IsNullOrEmpty(ohjeetBox.Text))
+            {
+                Main main = new Main();
+                nimi = reseptiNimiBox.Text;
+                ohjeet = ohjeetBox.Text;
+                Main.LisaaResepti(nimi, ohjeet, annokset);
+                string reseptiText = main.LataaResepti(nimi, annokset);
+                NäytäOhjeetTextBlock.Text = reseptiText;
+            }
 
         }
     }

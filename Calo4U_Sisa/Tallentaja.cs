@@ -107,6 +107,19 @@ namespace Calo4U_Sisa
             string json = JsonSerializer.Serialize<List<Resepti>>(kaikkiReseptit, option);
             File.WriteAllText(RESEPTI_TIEDOSTO, json);
         }
+        public Resepti LataaResepti(string nimi)
+        {
+            List<Resepti> kaikkiReseptit = Tallentaja.LaataakaikkiReseptit();
+            foreach (Resepti haettuResepti in kaikkiReseptit)
+            {
+                if (haettuResepti.Nimi == nimi) { return haettuResepti; }
+            }
+            string Nimi = "";
+            int annokset = 0;
+            string ohjeet = "";
+            Resepti resepti = new Resepti(Nimi, ohjeet, annokset);
+            return resepti;
+        }
     }
 }
 

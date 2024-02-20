@@ -272,11 +272,14 @@
         <TextBlock x:Name="AnnosMääräText" HorizontalAlignment="Left" Height="39" Margin="539,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" TextAlignment="Center"><Run Language="en-gb" Text="Annoksien"/><LineBreak/><Run Language="en-gb" Text="määrä"/></TextBlock>
         <TextBlock x:Name="reseptinNimiText_Copy" HorizontalAlignment="Left" Height="22" Margin="360,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
         <TextBlock x:Name="reseptinNimiText_Copy1" HorizontalAlignment="Left" Height="23" Margin="354,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Hashtag"/><Run Text=":"/></TextBlock>
-        <TextBox x:Name="reseptiBox_Copy" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="352,199,0,0"
+        <TextBox x:Name="tagBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="352,199,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
             Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575"
         />
         <TextBlock x:Name="reseptinNimiText_Copy2" HorizontalAlignment="Left" Height="22" Margin="676,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
         <TextBlock x:Name="NäytäOhjeetTextBlock" HorizontalAlignment="Left" Height="237" Margin="676,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Text=""/>
+        <Button Style="{DynamicResource RoundedRaaka}" x:Name="tagButton" Content="Lisää tagi" HorizontalAlignment="Left" 
+            Height="34" Margin="539,195,0,0" VerticalAlignment="Top" Width="76" BorderBrush="{x:Null}" Background="#FFDDE2F4" Foreground="#FF3B5DC4" FontFamily="Poppins Medium" Click="tagButton_Click"
+        />
     </Grid>
 </Page>

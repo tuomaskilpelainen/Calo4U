@@ -24,6 +24,13 @@ namespace Calo4U_Sisa
             string raakaAineText = $"{uusiRaakaAine.Nimi} määrä: {uusiRaakaAine.Maara}g kalorit: {uusiKalori.Kalorit}/100g";
             return raakaAineText;
         }
+
+        public string LisaaTag(string tag)
+        {
+            tagLista.Lisaa(tag);
+            string tagText = $"#{tag}";
+            return tagText;
+        }
         public static void LisaaResepti(string nimi, string ohjeet, int annokset)
         {
             Resepti uusiResepti = new Resepti(nimi, ohjeet, annokset);
@@ -34,6 +41,7 @@ namespace Calo4U_Sisa
         }
         public string LataaResepti(string nimi, int annokset)
         {
+            bool loytyi = false;
             double kokoKalorit = 0;
             double kokogrammat = 0;
             string reseptiText = string.Empty;
@@ -42,24 +50,28 @@ namespace Calo4U_Sisa
             if (!string.IsNullOrEmpty(tResepti.Nimi))
             {
                 List<RaakaAineKalorit> kaikkiKalorit = Tallentaja.LataaKaikkiKalorit();
-                reseptiText += $"{tResepti.Nimi}\nAnnoksia:{annokset}\n";
+                reseptiText += $"{tResepti.Nimi}\nAnnoksia: {annokset}\n";
                 foreach (Resepti.RaakaAine rAine in tResepti.RaakaAineLista)
                 {
                     foreach (RaakaAineKalorit kalorit in kaikkiKalorit)
                     {
                         if (rAine.Nimi == kalorit.Nimi)
                         {
+                            loytyi = true;
                             reseptiText += $"\n{rAine.Nimi} {rAine.Maara / tResepti.Annokset * annokset}g";
                             kokoKalorit += kalorit.Kalorit;
                             kokogrammat += rAine.Maara / tResepti.Annokset * annokset;
                             break;
                         }
-                        reseptiText += $"\n{rAine.Nimi} {rAine.Maara / tResepti.Annokset * annokset}g (Kalori tietoja ei löytynyt!)";
                     }
+                    if (!loytyi) { reseptiText += $"\n{rAine.Nimi} {rAine.Maara / tResepti.Annokset * annokset}g (Kalori tietoja ei löytynyt!)"; }
+                    
                 }
                 kokoKalorit = kokoKalorit / 100 * kokogrammat;
                 double annosKalorit = kokoKalorit / annokset;
-                reseptiText += $"Ohjeet:\n{tResepti.Ohjeet}\nKoko ruuan kalorit: {kokoKalorit}\nAnnoksen kalorit: {annosKalorit}";
+                reseptiText += $"\n\nOhjeet:\n{tResepti.Ohjeet}\nKoko ruuan kalorit: {kokoKalorit}\nAnnoksen kalorit: {annosKalorit}";
+                raakaAineLista.Tyhjenna();
+                tagLista.Tyhjenna();
                 return reseptiText;
             }
             return reseptiText;

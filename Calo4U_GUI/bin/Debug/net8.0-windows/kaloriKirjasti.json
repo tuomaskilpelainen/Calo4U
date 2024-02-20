@@ -8,11 +8,23 @@
     "Kalorit": 50
   },
   {
-    "Nimi": "Maito",
+    "Nimi": "Sipuli",
     "Kalorit": 50
   },
   {
-    "Nimi": "Sipuli",
-    "Kalorit": 200
+    "Nimi": "Leip\u00E4",
+    "Kalorit": 50
+  },
+  {
+    "Nimi": "Kinkku",
+    "Kalorit": 50
+  },
+  {
+    "Nimi": "Juusto",
+    "Kalorit": 50
+  },
+  {
+    "Nimi": "Pitsa",
+    "Kalorit": 5000
   }
 ]

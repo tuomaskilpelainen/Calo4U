@@ -92,6 +92,21 @@ namespace Calo4U_GUI
             }
 
         }
+
+        private void tagButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main main = new Main() ;
+            string tag;
+            tag = tagBox.Text;
+            if (!string.IsNullOrEmpty(tag) )
+            {
+                string tagText = main.LisaaTag(tag);
+                if (!string.IsNullOrEmpty(tagText))
+                {
+                    NäytäAineksetTextBlock.Text += tagText;
+                }
+            }
+        }
     }
 }
 

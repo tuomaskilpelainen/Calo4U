@@ -25,5 +25,12 @@ namespace Calo4U_Sisa
         {
             return raakaAineLista;
         }
+        public bool Tarkista()
+        {
+            bool ok;
+            if (raakaAineLista.Count > 0) { ok = true; }
+            else { ok = false; }
+            return ok;
+        }
     }
 }

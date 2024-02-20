@@ -42,6 +42,7 @@ namespace Calo4U_GUI
 
         private void LisääRaakaButton_Click(object sender, RoutedEventArgs e)
         {
+            bool lisaa = true;
             Main main = new Main();
             string nimi;
             int maara;
@@ -49,46 +50,119 @@ namespace Calo4U_GUI
             nimi = raaka_aineBox.Text;
             try
             {
+
                 maara = int.Parse(määräBox.Text);
+                määräBox.Foreground = Brushes.Black;
+                if (maara <= 0) 
+                {
+                    lisaa = false;
+                    määräBox.Foreground = Brushes.Red;
+                }
             }
             catch
             {
+                määräBox.Foreground = Brushes.Red;
                 maara = 0;
+                lisaa = false;
+                
             }
             try
             {
                 kalorit = double.Parse(kaloritBox.Text);
+                kaloritBox.Foreground = Brushes.Black;
             }
-            catch { kalorit = 0; }
+            catch 
+            { 
+                kaloritBox.Foreground = Brushes.Red;
+                kalorit = 0;
+                lisaa = false;
+            }
 
-            if (!string.IsNullOrEmpty(nimi) && maara > 0)
+            if (!string.IsNullOrEmpty(nimi))
             {
-                string raakaAineText = main.LisaaRaakaAine(nimi, maara, kalorit);
-                ainesTextBlock.Text += $"\n {raakaAineText}";
+                raaka_aineBox.Foreground = Brushes.Black;
+                if (lisaa)
+                {
+                    string raakaAineText = main.LisaaRaakaAine(nimi, maara, kalorit);
+                    ainesTextBlock.Text += $"\n {raakaAineText}";
+                    määräBox.Foreground = Brushes.Black;
+                    kaloritBox.Foreground = Brushes.Black;
+                    raaka_aineBox.Foreground = Brushes.Black;
+                    määräBox.Text = string.Empty;
+                    kaloritBox.Text = string.Empty;
+                    raaka_aineBox.Text = string.Empty;
+                }
+
             }
+            else { raaka_aineBox.Foreground = Brushes.Red; }
 
 
         }
 
         private void ReseptButton_Click(object sender, RoutedEventArgs e)
         {
+            bool lisaa = true;
             string nimi;
             string ohjeet;
             int annokset;
             try
             {
                 annokset = int.Parse(annoksetText.Text);
+                if (annokset <= 0) 
+                {
+                    lisaa = false;
+                    annoksetText.Foreground = Brushes.Red;
+
+                }
+                else { annoksetText.Foreground = Brushes.Black; }
 
             }
-            catch (Exception ex) { annokset = 0; }
-            if (!string.IsNullOrEmpty(reseptiNimiBox.Text) && !string.IsNullOrEmpty(ohjeetBox.Text))
+            catch (Exception ex) 
+            { 
+                annokset = 0; 
+                annoksetText.Foreground = Brushes.Red;
+                lisaa = false;  
+
+            }
+            if (string.IsNullOrEmpty(reseptiNimiBox.Text))
             {
+                lisaa = false;
+                reseptiNimiBox.Foreground = Brushes.Red;
+            }
+            else { reseptiNimiBox.Foreground= Brushes.Black;}
+            if (string.IsNullOrEmpty(ohjeetBox.Text))
+            {
+                lisaa = false;
+                ohjeetBox.Foreground = Brushes.Red;
+            }
+            else { ohjeetBox.Foreground= Brushes.Black;}
+            if (lisaa)
+            {
+                bool tallenna;
+
                 Main main = new Main();
-                nimi = reseptiNimiBox.Text;
-                ohjeet = ohjeetBox.Text;
-                Main.LisaaResepti(nimi, ohjeet, annokset);
-                string reseptiText = main.LataaResepti(nimi, annokset);
-                NäytäOhjeetTextBlock.Text = reseptiText;
+                tallenna = main.TarkistaRaakaAineetLista();
+                if (tallenna)
+                {
+                    nimi = reseptiNimiBox.Text;
+                    ohjeet = ohjeetBox.Text;
+                    Main.LisaaResepti(nimi, ohjeet, annokset);
+                    string reseptiText = main.LataaResepti(nimi, annokset);
+                    NäytäOhjeetTextBlock.Text = reseptiText;
+                    ohjeetBox.Foreground = Brushes.Black;
+                    reseptiNimiBox.Foreground = Brushes.Black;
+                    annoksetText.Foreground = Brushes.Black;
+                    NäytäOhjeetTextBlock.Foreground = Brushes.Black;
+                    ohjeetBox.Text = string.Empty;
+                    reseptiNimiBox.Text = string.Empty;
+                    annoksetText.Text = string.Empty;
+                    ainesTextBlock.Text = string.Empty ;
+                }
+                else
+                {
+                    NäytäOhjeetTextBlock.Foreground = Brushes.Red;
+                    NäytäOhjeetTextBlock.Text = "Lisää ensin raaka-aineet.";
+                }
             }
 
         }

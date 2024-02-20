@@ -21,7 +21,7 @@ namespace Calo4U_Sisa
             RaakaAineKalorit uusiKalori = new RaakaAineKalorit(nimi, kalorit);
             raakaAineLista.Lisaa(uusiRaakaAine);
             Tallentaja.TalennaKalorit(uusiKalori);
-            string raakaAineText = $"{uusiRaakaAine.Nimi} määrä: {uusiRaakaAine.Maara}g kalorit: {uusiKalori.Kalorit}/100g";
+            string raakaAineText = $"{uusiRaakaAine.Nimi} määrä: {uusiRaakaAine.Maara}g kalorit: {uusiKalori.Kalorit}kc/100g";
             return raakaAineText;
         }
 
@@ -76,6 +76,12 @@ namespace Calo4U_Sisa
             }
             return reseptiText;
 
+        }
+        public bool TarkistaRaakaAineetLista()
+        {
+            bool ok;
+            ok = raakaAineLista.Tarkista();
+            return ok;
         }
     }
 }

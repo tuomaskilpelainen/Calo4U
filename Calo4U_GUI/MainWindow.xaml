@@ -87,8 +87,8 @@
         <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="uusReseptButton_Copy" Content="Valmistetut ruoat&#xD;&#xA;&amp; annosmäärä" HorizontalAlignment="Center" Height="48" 
             Margin="0,375,0,0" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" Grid.Column="1" Click="uusReseptButton_Copy_Click"
         />
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="KatsoReseptButton" Content="  Katso reseptit" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="32" 
-            Margin="615,375,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" Grid.Column="1" Click="uusReseptButton_Copy1_Click"
+        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="katsoReseptitButton" Content="  Katso reseptit" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="32" 
+            Margin="615,375,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" Grid.Column="1" Click="katsoReseptitButton_Click"
         />
         <Frame x:Name="MainFrame" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
     </Grid>

@@ -38,12 +38,13 @@ namespace Calo4U_GUI
             MainFrame.Visibility = Visibility.Collapsed;
         }
 
-        private void uusReseptButton_Copy_Click(object sender, RoutedEventArgs e)
+        private void katsoReseptitButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new Page2());
+            MainFrame.Visibility = Visibility.Visible;
         }
 
-        private void uusReseptButton_Copy1_Click(object sender, RoutedEventArgs e)
+        private void uusReseptButton_Copy_Click(object sender, RoutedEventArgs e)
         {
 
         }

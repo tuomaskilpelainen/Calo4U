@@ -24,5 +24,14 @@ namespace Calo4U_GUI
         {
             InitializeComponent();
         }
+
+        private void EtusivuButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow is MainWindow mainWindow)
+            {
+                mainWindow.ShowMainWindow();
+            }
+        }
     }
 }

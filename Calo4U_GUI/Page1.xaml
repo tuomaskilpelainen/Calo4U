@@ -274,7 +274,7 @@
         <TextBlock x:Name="reseptinNimiText_Copy1" HorizontalAlignment="Left" Height="23" Margin="354,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Hashtag"/><Run Text=":"/></TextBlock>
         <TextBox x:Name="tagBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="352,199,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575"
+            Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" TextChanged="tagBox_TextChanged"
         />
         <TextBlock x:Name="reseptinNimiText_Copy2" HorizontalAlignment="Left" Height="22" Margin="676,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
         <TextBlock x:Name="NäytäOhjeetTextBlock" HorizontalAlignment="Left" Height="237" Margin="676,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Text=""/>

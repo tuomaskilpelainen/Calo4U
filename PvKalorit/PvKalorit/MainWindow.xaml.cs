@@ -106,12 +106,12 @@ namespace PvKalorit
                    päivänKalorinTarve = bmr * 1.3;
                 }
 
-                else if (normaaliRbutton.IsChecked == true)
+                else if (tavallinenRbutton.IsChecked == true)
                 {
                     päivänKalorinTarve = bmr * 1.5;
                 }
 
-                else if (normaaliRbutton.IsChecked == true)
+                else if (kohtuullinenRbutton.IsChecked == true)
                 {
                     päivänKalorinTarve = bmr * 1.9;
                 }
@@ -133,12 +133,27 @@ namespace PvKalorit
 
                 return päivänKalorinTarve;
             }
-            
 
-            näytäKaloritBox.Text = (päivänKalorinTarve).ToString();
+            näytäKaloritBlock.Text = $"Kalorintarpeesi päivässä on: {päivänKalorinTarve}";
 
+        }
 
+        private void suositusButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (pudottaaRbutton.IsChecked == true)
+            {
+                näytäSuositusBlock.Text = ("(suositellaan) vähemmän kaloreiden sisältävä ruokavalinta ");
+            }
 
+            else if (ylläpitääRbutton.IsChecked == true)
+            {
+                näytäSuositusBlock.Text = ("(suositellaan) ylläpitää laskettu kalorimäärä");
+            }
+
+            else if (kasvattaaRbutton.IsChecked == true)
+            {
+                näytäSuositusBlock.Text = ("(suositellaan) ravitsevampi kaloreiden sisältävä ruokavalinta ");
+            }
         }
     }
 }

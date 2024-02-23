@@ -14,22 +14,32 @@
         <TextBlock x:Name="ikäText" HorizontalAlignment="Left" Height="25" Margin="50,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"><Run Language="en-gb" Text="Ikä (vuotta)"/></TextBlock>
         <TextBox x:Name="ikäBox" HorizontalAlignment="Left" Height="25" Margin="50,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
         <TextBlock x:Name="sukupuoliText" HorizontalAlignment="Left" Height="30" Margin="50,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"><Run Language="en-gb" Text="Sukupuoli "/></TextBlock>
-        <TextBlock x:Name="aktiivisuusText" HorizontalAlignment="Left" Height="27" Margin="295,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Language="en-gb" Text="Aktiivisuus"/></TextBlock>
-        <RadioButton x:Name="lepoRbutton" Content="lepo" HorizontalAlignment="Left" Height="22" Margin="295,109,0,0" VerticalAlignment="Top" Width="105"/>
-        <RadioButton x:Name="kevytRbutton" Content="Kevyt" HorizontalAlignment="Left" Height="13" Margin="295,136,0,0" VerticalAlignment="Top" Width="105"/>
-        <RadioButton x:Name="normaaliRbutton" Content="Normaali" HorizontalAlignment="Left" Height="25" Margin="295,154,0,0" VerticalAlignment="Top" Width="105"/>
-        <RadioButton x:Name="raskasRbutton" Content="Raskas" HorizontalAlignment="Left" Height="15" Margin="295,184,0,0" VerticalAlignment="Top" Width="105"/>
-        <RadioButton x:Name="erittäinRaskasRbutton" Content="Eriitäin raskas" HorizontalAlignment="Left" Height="26" Margin="295,0,0,0" VerticalAlignment="Center" Width="105"/>
-        <Button x:Name="laskeButton" Content="Laske " HorizontalAlignment="Left" Height="34" Margin="295,260,0,0" VerticalAlignment="Top" Width="150" Click="laskeButton_Click"/>
-        <TextBlock x:Name="näytäKaloritBox" HorizontalAlignment="Left" Height="60" Margin="295,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Background="#FFE7FDFF"/>
-        <StackPanel Margin="10,339,620,10"
-                   
-        
-        >
+        <TextBlock x:Name="aktiivisuusText" HorizontalAlignment="Left" Height="27" Margin="210,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Language="en-gb" Text="Aktiivisuus"/></TextBlock>
+        <RadioButton x:Name="lepoRbutton" Content="lepo" HorizontalAlignment="Left" Height="22" Margin="210,69,0,0" VerticalAlignment="Top" Width="105"/>
+        <RadioButton x:Name="kevytRbutton" Content="Kevyt, istuma työ (vähän tai ei ollenkaan liikunta)" HorizontalAlignment="Left" Height="32" Margin="210,96,0,0" VerticalAlignment="Top" Width="280"/>
+        <RadioButton x:Name="tavallinenRbutton" Content="Tavallinen (kevyt liikunta 1 -2 päivää viikossa)" HorizontalAlignment="Left" Height="25" Margin="210,133,0,0" VerticalAlignment="Top" Width="280"/>
+        <RadioButton x:Name="raskasRbutton" Content="Raskas liikunta 6 - 7 päivää viikossa" HorizontalAlignment="Left" Height="20" Margin="210,193,0,0" VerticalAlignment="Top" Width="250"/>
+        <RadioButton x:Name="erittäinRaskasRbutton" Content="Eriitäin raskas (ammattiurheilija, päivittäiset raskaat liikuntaharjoitukset)" HorizontalAlignment="Left" Height="26" Margin="210,218,0,0" VerticalAlignment="Top" Width="405"/>
+        <Button x:Name="laskeButton" Content="Laske " HorizontalAlignment="Left" Height="34" Margin="250,272,0,0" VerticalAlignment="Top" Width="150" Click="laskeButton_Click"/>
+        <TextBlock x:Name="näytäKaloritBlock" HorizontalAlignment="Left" Height="80" Margin="240,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Background="#FFE7FDFF"/>
+
+        <RadioButton x:Name="kohtuullinenRbutton" Content="Kohtuullinen liikunta 3 - 5 päivää viikossa" HorizontalAlignment="Left" Height="25" Margin="210,163,0,0" VerticalAlignment="Top" Width="280"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="105" Margin="12,329,0,0" VerticalAlignment="Top" Width="166" Background="#FFFFE7E7"/>
+        <StackPanel Margin="10,339,620,10">
             <RadioButton x:Name="miesButton" Content="Mies" Height="25" Width="92"/>
             <RadioButton x:Name="nainenButton" Content="Nainen" Height="25" Width="99"/>
         </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="82" Margin="570,54,0,0" VerticalAlignment="Top" Width="230">
+            <RadioButton x:Name="pudottaaRbutton" Content="pudottaa painoa" Height="25" Width="206"/>
+            <RadioButton x:Name="ylläpitääRbutton" Content="ylläpitää painoa" Height="27" Width="122"/>
+            <RadioButton x:Name="kasvattaaRbutton" Content="kasvattaa painoa" Height="30" Width="112"/>
 
 
+
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="570,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"><Run Language="en-gb" Text="Tavoitteesi on:"/></TextBlock>
+        <TextBlock x:Name="näytäSuositusBlock" HorizontalAlignment="Left" Height="79" Margin="620,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Background="#FFFFF8E2"/>
+        <Button x:Name="suositusButton" Content="Näytä suositus" HorizontalAlignment="Left" Height="35" Margin="615,141,0,0" VerticalAlignment="Top" Width="145" Click="suositusButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="96" Margin="620,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"><Run Language="en-gb" Text="*"/><Run Text="Tämä on vain suuntaa antava"/><LineBreak/><Run Language="en-gb" Text="suositus, sillä painoon vaikuttavat monet eri tekijät, kuten unenlaatu, elämäntapa, liikunta ja psyykkinen terveys."/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>

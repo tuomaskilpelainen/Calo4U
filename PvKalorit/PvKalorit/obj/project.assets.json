@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf (no git)\\PvKalorit\\PvKalorit\\PvKalorit.csproj",
+      "projectUniqueName": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo 4 U\\Calo4U\\PvKalorit\\PvKalorit\\PvKalorit.csproj",
       "projectName": "PvKalorit",
-      "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf (no git)\\PvKalorit\\PvKalorit\\PvKalorit.csproj",
+      "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo 4 U\\Calo4U\\PvKalorit\\PvKalorit\\PvKalorit.csproj",
       "packagesPath": "C:\\Users\\kuuli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf (no git)\\PvKalorit\\PvKalorit\\obj\\",
+      "outputPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\test for wpf\\Calo 4 U\\Calo4U\\PvKalorit\\PvKalorit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kuuli\\AppData\\Roaming\\NuGet\\NuGet.Config",

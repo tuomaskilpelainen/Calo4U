@@ -36,6 +36,7 @@ namespace Calo4U_GUI
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
+                Main.TyhjennaListat();
                 mainWindow.ShowMainWindow(); 
             }
         }

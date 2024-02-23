@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Calo4U_Sisa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2009dd03fb50cebf7400771cc54438a5045d360")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8cb4749a46125621522fad4177c56fa5f3c1ef2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Calo4U_Sisa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Calo4U_Sisa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -83,5 +83,10 @@ namespace Calo4U_Sisa
             ok = raakaAineLista.Tarkista();
             return ok;
         }
+        public static void TyhjennaListat()
+        {
+            raakaAineLista.Tyhjenna();
+            tagLista .Tyhjenna();
+        }
     }
 }

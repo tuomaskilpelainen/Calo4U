@@ -134,7 +134,7 @@ namespace PvKalorit
                 return päivänKalorinTarve;
             }
 
-            näytäKaloritBlock.Text = $"Kalorintarpeesi päivässä on: {päivänKalorinTarve}";
+            näytäKaloritBlock.Text = $"Kaloritarve päivässä: {päivänKalorinTarve} cal";
 
         }
 

@@ -19,7 +19,7 @@
         <RadioButton x:Name="kevytRbutton" Content="Kevyt, istuma työ (vähän tai ei ollenkaan liikunta)" HorizontalAlignment="Left" Height="32" Margin="210,96,0,0" VerticalAlignment="Top" Width="280"/>
         <RadioButton x:Name="tavallinenRbutton" Content="Tavallinen (kevyt liikunta 1 -2 päivää viikossa)" HorizontalAlignment="Left" Height="25" Margin="210,133,0,0" VerticalAlignment="Top" Width="280"/>
         <RadioButton x:Name="raskasRbutton" Content="Raskas liikunta 6 - 7 päivää viikossa" HorizontalAlignment="Left" Height="20" Margin="210,193,0,0" VerticalAlignment="Top" Width="250"/>
-        <RadioButton x:Name="erittäinRaskasRbutton" Content="Eriitäin raskas (ammattiurheilija, päivittäiset raskaat liikuntaharjoitukset)" HorizontalAlignment="Left" Height="26" Margin="210,218,0,0" VerticalAlignment="Top" Width="405"/>
+        <RadioButton x:Name="erittäinRaskasRbutton" Content="Erittäin raskas (ammattiurheilija, päivittäiset raskaat liikuntaharjoitukset)" HorizontalAlignment="Left" Height="26" Margin="210,218,0,0" VerticalAlignment="Top" Width="405"/>
         <Button x:Name="laskeButton" Content="Laske " HorizontalAlignment="Left" Height="34" Margin="250,272,0,0" VerticalAlignment="Top" Width="150" Click="laskeButton_Click"/>
         <TextBlock x:Name="näytäKaloritBlock" HorizontalAlignment="Left" Height="80" Margin="240,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Background="#FFE7FDFF"/>
 

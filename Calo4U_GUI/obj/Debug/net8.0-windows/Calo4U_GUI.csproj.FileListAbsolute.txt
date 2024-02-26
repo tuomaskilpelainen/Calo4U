@@ -54,3 +54,5 @@ C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Calo4U_GUI.csproj.Up2Date
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Calo4U_GUI.genruntimeconfig.cache
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\ref\Calo4U_GUI.dll
+C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Page2.g.cs
+C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Page2.baml

@@ -24,6 +24,7 @@ namespace Calo4U_GUI
         public Page1()
         {
             InitializeComponent();
+
         }
 
         private void LisääUusiResepText_TextChanged(object sender, TextChangedEventArgs e)
@@ -148,8 +149,8 @@ namespace Calo4U_GUI
                     nimi = reseptiNimiBox.Text;
                     ohjeet = ohjeetBox.Text;
                     Main.LisaaResepti(nimi, ohjeet, annokset);
-                    string reseptiText = main.LataaResepti(nimi, annokset);
-                    NäytäOhjeetTextBlock.Text = reseptiText;
+
+                    // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
                     ohjeetBox.Foreground = Brushes.Black;
                     reseptiNimiBox.Foreground = Brushes.Black;
                     annoksetText.Foreground = Brushes.Black;
@@ -158,6 +159,11 @@ namespace Calo4U_GUI
                     reseptiNimiBox.Text = string.Empty;
                     annoksetText.Text = string.Empty;
                     ainesTextBlock.Text = string.Empty ;
+                    // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
+
+                    Page2 page2 = new Page2();
+                    page2.LaataaLuotuResepti(nimi, annokset);
+                    NavigationService.Navigate(page2);
                 }
                 else
                 {

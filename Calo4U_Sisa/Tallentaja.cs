@@ -11,7 +11,51 @@ namespace Calo4U_Sisa
     {
         private const string KALORI_TIEDOSTO = "kaloriKirjasti.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/ainesosaKirjasto.json.
         private const string RESEPTI_TIEDOSTO = "resptiKirjasto.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/reseptiKirjasto.json.
+        private const string KAYTTAJA_TIEDOSTO = "kayttajaKirjasto.json";
 
+        public static List<Kayttaja> LataaKaikkiKayttajat()
+        {
+            var options = new JsonSerializerOptions();
+            options.PropertyNameCaseInsensitive = true;
+            List<Kayttaja> kaikkiKayttajat = new List<Kayttaja>();
+            string json;
+            try
+            {
+                json = File.ReadAllText(Tallentaja.KAYTTAJA_TIEDOSTO);
+            }
+            catch 
+            {
+                kaikkiKayttajat = new List<Kayttaja>();
+                return kaikkiKayttajat;
+            }
+            try
+            {
+                kaikkiKayttajat = JsonSerializer.Deserialize<List<Kayttaja>>(json);
+            }
+            catch (Exception e)
+            {
+                kaikkiKayttajat = new List<Kayttaja>();
+            }
+            return kaikkiKayttajat;
+
+        }
+        public static void TallennaKayttaja(Kayttaja kayttaja)
+        {
+            bool lisaa = true;
+            var options = new JsonSerializerOptions();
+            options.PropertyNameCaseInsensitive = true;
+            List<Kayttaja> kaikkiKayttajat = LataaKaikkiKayttajat();
+            foreach (Kayttaja ladattuKayttaja in kaikkiKayttajat)
+            {
+                if (ladattuKayttaja.Nimi == kayttaja.Nimi) {  lisaa = false; }
+            }
+            if (lisaa)
+            {
+                kaikkiKayttajat.Add(kayttaja);
+                string json = JsonSerializer.Serialize<List<Kayttaja>>(kaikkiKayttajat, options);
+                File.WriteAllText(Tallentaja.KAYTTAJA_TIEDOSTO, json);
+            }
+        }
         public static List<RaakaAineKalorit> LataaKaikkiKalorit()
         {
             var options = new JsonSerializerOptions();
@@ -120,6 +164,7 @@ namespace Calo4U_Sisa
             Resepti resepti = new Resepti(Nimi, ohjeet, annokset);
             return resepti;
         }
+
     }
 }
 

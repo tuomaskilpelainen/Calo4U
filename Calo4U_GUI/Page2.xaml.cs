@@ -19,16 +19,19 @@ namespace Calo4U_GUI
     /// <summary>
     /// Interaction logic for Page2.xaml
     /// </summary>
+    /// 
     public partial class Page2 : Page
     {
         private List<string> Resepetit;
-        public Page2()
+        private Frame mainFrame;
+        public Page2(Frame mainFrame)
         {
 
             InitializeComponent();
             Lista_Box_TextChance_2();
             //Lista_Box.Items.Clear();
             Lista_Box.ItemsSource = Resepetit;
+            this.mainFrame = mainFrame;
 
         }
         public void LaataaLuotuResepti(string resepti, int annokset)
@@ -114,6 +117,21 @@ namespace Calo4U_GUI
             {
                 ReseptinNimiTextBlock.Text = "Reseptiä ei löytynyt";
             }
+        }
+
+        private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow is MainWindow mainWindow)
+            {
+                Main.TyhjennaListat();
+                mainWindow.ShowMainWindow();
+            }
+        }
+
+        private void LisääReseptiNavButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Page1(mainFrame));
         }
     }
 }

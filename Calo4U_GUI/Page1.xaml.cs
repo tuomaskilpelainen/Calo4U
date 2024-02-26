@@ -21,18 +21,14 @@ namespace Calo4U_GUI
     /// </summary>
     public partial class Page1 : Page
     {
-        public Page1()
+        private Frame mainFrame;
+        public Page1(Frame mainFrame)
         {
             InitializeComponent();
-
+            this.mainFrame = mainFrame;
         }
 
-        private void LisääUusiResepText_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void etusivuButton_Click(object sender, RoutedEventArgs e)
+        private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
         {
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
@@ -161,7 +157,7 @@ namespace Calo4U_GUI
                     ainesTextBlock.Text = string.Empty ;
                     // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
 
-                    Page2 page2 = new Page2();
+                    Page2 page2 = new Page2(mainFrame);
                     page2.LaataaLuotuResepti(nimi, annokset);
                     NavigationService.Navigate(page2);
                 }
@@ -189,7 +185,10 @@ namespace Calo4U_GUI
             }
         }
 
-        
+        private void katsoReseptitNavButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Page2(mainFrame));
+        }
     }
 }
 

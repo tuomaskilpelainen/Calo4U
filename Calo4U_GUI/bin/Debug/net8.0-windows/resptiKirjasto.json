@@ -70,5 +70,17 @@
         "Maara": 500
       }
     ]
+  },
+  {
+    "Nimi": "dog",
+    "Ohjeet": "\u00E4l\u00E4 oikeest sy\u00F6 t\u00E4t\u00E4 wtf",
+    "Annokset": 1,
+    "Tags": [],
+    "RaakaAineLista": [
+      {
+        "Nimi": "Koira",
+        "Maara": 500
+      }
+    ]
   }
 ]

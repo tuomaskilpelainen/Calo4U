@@ -268,11 +268,11 @@
 
         </Border>
 
-        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="160,0,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513"/>
+        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="160,0,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
         <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="44" Margin="337,0,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14"/>
         <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="484,2,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14"/>
         <Button x:Name="kalorinSeurantaNavButton" Content="Kalorinseuranta" HorizontalAlignment="Left" Height="40" Margin="609,1,0,0" VerticalAlignment="Top" Width="139" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14"/>
-        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,2,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14"/>
+        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,2,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
         <TextBox x:Name="Haku_Box" HorizontalAlignment="Left" Margin="23,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="20" TextChanged="Lista_Box_TextChance"/>
 
     </Grid>

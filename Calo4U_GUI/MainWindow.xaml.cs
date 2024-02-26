@@ -30,7 +30,7 @@ namespace Calo4U_GUI
 
         private void uusReseptButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Page1());
+            MainFrame.Navigate(new Page1(MainFrame));
             MainFrame.Visibility = Visibility.Visible;
         }
         public void ShowMainWindow()
@@ -40,7 +40,7 @@ namespace Calo4U_GUI
 
         private void katsoReseptitButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Page2());
+            MainFrame.Navigate(new Page2(MainFrame));
             MainFrame.Visibility = Visibility.Visible;
         }
 

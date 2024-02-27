@@ -45,16 +45,14 @@ namespace Calo4U_Sisa
             var options = new JsonSerializerOptions();
             options.PropertyNameCaseInsensitive = true;
             List<Kayttaja> kaikkiKayttajat = LataaKaikkiKayttajat();
-            foreach (Kayttaja ladattuKayttaja in kaikkiKayttajat)
-            {
-                if (ladattuKayttaja.Nimi == kayttaja.Nimi) {  lisaa = false; }
-            }
-            if (lisaa)
-            {
-                kaikkiKayttajat.Add(kayttaja);
-                string json = JsonSerializer.Serialize<List<Kayttaja>>(kaikkiKayttajat, options);
-                File.WriteAllText(Tallentaja.KAYTTAJA_TIEDOSTO, json);
-            }
+            kaikkiKayttajat.Clear();
+            
+            
+            
+            kaikkiKayttajat.Add(kayttaja);
+            string json = JsonSerializer.Serialize<List<Kayttaja>>(kaikkiKayttajat, options);
+            File.WriteAllText(Tallentaja.KAYTTAJA_TIEDOSTO, json);
+            
         }
         public static List<RaakaAineKalorit> LataaKaikkiKalorit()
         {

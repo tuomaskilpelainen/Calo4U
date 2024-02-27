@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Calo4U_Sisa
 {
     public class Main
     {
         static RaakaAineLista raakaAineLista = new RaakaAineLista();
         static TagLista tagLista = new TagLista();
+        public static double tBmr
+        { 
+
+        }
         public static void Hello()
         {
             Console.WriteLine("Hello");
@@ -102,6 +107,28 @@ namespace Calo4U_Sisa
 
             }
             return list;
+        }
+
+
+        public string bmr(double paino, double pituus, int ikä, string sukupuoli, string aktiivisuus, string tavoite)
+        {
+            KaloriLaskuri kaloriLaskuri = new KaloriLaskuri();
+            double bmr = kaloriLaskuri.Bmr(paino, pituus, ikä, sukupuoli, aktiivisuus, tavoite);
+            string bmrText = $"Kaloritarve päivässä: {bmr} cal";
+            return bmrText;
+
+        }
+
+        public static void tallennaKayttaja()
+        {
+            List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat();
+            foreach (Kayttaja x in kaikki)
+            {
+                if (x.Nimi == "Käyttäjä")
+                { 
+                    x.PvaKalo
+                }
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,8 +12,17 @@ namespace Calo4U_Sisa
     {
         static RaakaAineLista raakaAineLista = new RaakaAineLista();
         static TagLista tagLista = new TagLista();
-        public static double tBmr
-        { 
+        static Bmr tBmr = new Bmr();
+        internal class Bmr
+        {
+            private double Numero;
+
+            public Bmr()
+            {
+                Numero = new double();
+            }
+            public void Lisaa(double numero) { Numero = numero; }
+            public double Hae() { return Numero; }
 
         }
         public static void Hello()
@@ -114,6 +124,7 @@ namespace Calo4U_Sisa
         {
             KaloriLaskuri kaloriLaskuri = new KaloriLaskuri();
             double bmr = kaloriLaskuri.Bmr(paino, pituus, ikä, sukupuoli, aktiivisuus, tavoite);
+            tBmr.Lisaa(bmr);
             string bmrText = $"Kaloritarve päivässä: {bmr} cal";
             return bmrText;
 
@@ -122,11 +133,22 @@ namespace Calo4U_Sisa
         public static void tallennaKayttaja()
         {
             List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat();
-            foreach (Kayttaja x in kaikki)
+            if (kaikki.Count >= 0)
             {
-                if (x.Nimi == "Käyttäjä")
-                { 
-                    x.PvaKalo
+                Kayttaja kayttaja = new Kayttaja();
+                kayttaja.Nimi = "Käyttäjä";
+                kayttaja.PvaKalorit = tBmr.Hae();
+                Tallentaja.TallennaKayttaja(kayttaja);
+            }
+            else
+            {
+                foreach (Kayttaja x in kaikki)
+                {
+                    if (x.Nimi == "Käyttäjä")
+                    {
+                        x.PvaKalorit = tBmr.Hae();
+                        Tallentaja.TallennaKayttaja(x);
+                    }
                 }
             }
         }

@@ -82,5 +82,21 @@
         "Maara": 500
       }
     ]
+  },
+  {
+    "Nimi": "JOku reseprti",
+    "Ohjeet": "sczxcz\u003Cxc\u003Cz",
+    "Annokset": 5,
+    "Tags": [],
+    "RaakaAineLista": [
+      {
+        "Nimi": "Peruna",
+        "Maara": 50
+      },
+      {
+        "Nimi": "Jokua",
+        "Maara": 50
+      }
+    ]
   }
 ]

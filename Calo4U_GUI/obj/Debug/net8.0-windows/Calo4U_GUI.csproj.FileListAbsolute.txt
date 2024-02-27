@@ -87,3 +87,5 @@ C:\Users\Tuomas\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Calo4U_G
 C:\Users\Tuomas\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\ref\Calo4U_GUI.dll
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Kalorilaskuri.g.cs
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Kalorilaskuri.baml
+C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Kalorilaskuri.g.cs
+C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Kalorilaskuri.baml

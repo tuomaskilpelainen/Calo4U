@@ -157,6 +157,7 @@ namespace Calo4U_GUI
 
         private void Laskekalorintarve_button_Copy1_Click(object sender, RoutedEventArgs e)
         {
+            Main.tallennaKayttaja();
 
         }
     }

@@ -223,7 +223,7 @@
             HorizontalAlignment="Left" Height="445" Margin="13,69,0,0" 
             VerticalAlignment="Top" Width="230" Background="White"
     >
-            <ListBox x:Name="Lista_Box" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,221,0,-1" MouseDoubleClick="Lista_Click"/>
+            <ListBox x:Name="Lista_Box" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,221,0,-1" MouseDoubleClick="Lista_Click" FontFamily="Poppins Medium"/>
         </Border>
         <TextBlock x:Name="HashtagHakuText" HorizontalAlignment="Left" Height="20" Margin="23,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Hashtag -haku"/></TextBlock>
         <TextBox Style="{DynamicResource roundedBox1}" x:Name="hakuBox1_Copy" HorizontalAlignment="Left"

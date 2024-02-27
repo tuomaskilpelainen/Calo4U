@@ -81,7 +81,7 @@ namespace Calo4U_Sisa
                 bmr += 500;
             }
             
-            public Kayttaja kayttaja = new Kayttaja();
+            Kayttaja kayttaja = new Kayttaja();
             kayttaja.Nimi = "Käyttäjä";
             kayttaja.PvaKalorit = bmr;
             

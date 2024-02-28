@@ -138,5 +138,14 @@ namespace Calo4U_GUI
         {
             mainFrame.Navigate(new KalorintarveValinta(mainFrame));
         }
+
+        private void MuokkaaButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            mainFrame.Navigate(new Page1(mainFrame));
+            Page1 page = new Page1(mainFrame);
+            page.LataaMuokattuResepti();
+
+        }
     }
 }

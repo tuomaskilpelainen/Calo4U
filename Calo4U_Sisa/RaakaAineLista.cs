@@ -32,5 +32,24 @@ namespace Calo4U_Sisa
             else { ok = false; }
             return ok;
         }
+        public void PoistaRaakaAine(string nimi)
+        {
+            bool liisaa = false;
+            string nimi1 = "";
+            int maara = 0;
+            Resepti.RaakaAine raakaAine = new Resepti.RaakaAine(nimi1, maara);
+            foreach (Resepti.RaakaAine x in raakaAineLista)
+            {
+                if (nimi == x.Nimi)
+                {
+                    raakaAine = x;
+                    liisaa = true;
+                }
+            }
+            if (liisaa)
+            {
+                raakaAineLista.Remove(raakaAine);
+            }
+        }
     }
 }

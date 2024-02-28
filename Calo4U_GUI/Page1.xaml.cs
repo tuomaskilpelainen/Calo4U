@@ -22,10 +22,15 @@ namespace Calo4U_GUI
     public partial class Page1 : Page
     {
         private Frame mainFrame;
+        private List<string> raakaAineTextLista = new List<string>();
+        private string valittuRaakaAine;
+        private string valittuTeksti;
         public Page1(Frame mainFrame)
         {
             InitializeComponent();
+            RaakaAineLista.ItemsSource = raakaAineTextLista;
             this.mainFrame = mainFrame;
+
         }
 
         private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
@@ -82,7 +87,12 @@ namespace Calo4U_GUI
                 if (lisaa)
                 {
                     string raakaAineText = main.LisaaRaakaAine(nimi, maara, kalorit);
-                    ainesTextBlock.Text += $"\n {raakaAineText}";
+                    raakaAineTextLista.Add(raakaAineText);
+
+                    RaakaAineLista.ItemsSource = null;
+                    RaakaAineLista.ItemsSource = raakaAineTextLista;
+                    RaakaAineLista.InvalidateVisual();
+
                     määräBox.Foreground = Brushes.Black;
                     kaloritBox.Foreground = Brushes.Black;
                     raaka_aineBox.Foreground = Brushes.Black;
@@ -154,7 +164,7 @@ namespace Calo4U_GUI
                     ohjeetBox.Text = string.Empty;
                     reseptiNimiBox.Text = string.Empty;
                     annoksetText.Text = string.Empty;
-                    ainesTextBlock.Text = string.Empty ;
+                    //ainesTextBlock.Text = string.Empty ;
                     // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
 
                     Page2 page2 = new Page2(mainFrame);
@@ -193,6 +203,43 @@ namespace Calo4U_GUI
         private void kaloritarveNavButton_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Navigate(new KalorintarveValinta(mainFrame));
+        }
+
+        private void ValitseRaakaAine(object sender, MouseButtonEventArgs e)
+        {
+            valittuTeksti = (string)RaakaAineLista.SelectedItem as string;
+            if (!string.IsNullOrEmpty (valittuTeksti) )
+            {
+                string[] moniTeksti = valittuTeksti.Split(' ');
+                valittuRaakaAine = moniTeksti[0];
+            }
+
+        }
+
+        private void RaakaineDeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(valittuRaakaAine))
+            {
+                Main.PoistaRaakaAine(valittuRaakaAine);
+                raakaAineTextLista.Remove(valittuTeksti);
+                RaakaAineLista.ItemsSource = null;
+                RaakaAineLista.ItemsSource = raakaAineTextLista;
+
+            }
+        }
+        public void LataaMuokattuResepti()
+        {
+            Main main = new Main();
+            string[] resepriText = main.MuokkaaReseptia(); //0 nimi, 1 ohjeet, 2 annokset
+            raakaAineTextLista = main.HaeRaakaAineLista();
+
+            RaakaAineLista.ItemsSource = null;
+            RaakaAineLista.ItemsSource = raakaAineTextLista;
+
+            reseptiNimiBox.Text = resepriText[0];
+            annoksetText.Text = resepriText[2];
+            ohjeetBox.Text = resepriText[1];
+
         }
     }
 }

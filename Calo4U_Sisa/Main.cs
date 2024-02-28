@@ -10,6 +10,7 @@ namespace Calo4U_Sisa
 {
     public class Main
     {
+        static Resepti talenettuResepti;
         static RaakaAineLista raakaAineLista = new RaakaAineLista();
         static TagLista tagLista = new TagLista();
         static Bmr tBmr = new Bmr();
@@ -65,6 +66,7 @@ namespace Calo4U_Sisa
             Resepti tResepti = lataaja.LataaResepti(nimi);
             if (!string.IsNullOrEmpty(tResepti.Nimi))
             {
+                talenettuResepti = tResepti;
                 List<RaakaAineKalorit> kaikkiKalorit = Tallentaja.LataaKaikkiKalorit();
                 reseptiText[0] = $"{tResepti.Nimi}";
                 reseptiText[1] = $"{tResepti.Ohjeet}";
@@ -152,5 +154,39 @@ namespace Calo4U_Sisa
                 }
             }
         }
+        public static void PoistaRaakaAine(string nimi)
+        {
+            raakaAineLista.PoistaRaakaAine(nimi);
+        }
+        public string[] MuokkaaReseptia()
+        {
+            string[] reseptiString = new string[3]; //0 nimi, 1 ohjeet, 2 annokset
+            Resepti resepti = talenettuResepti;
+            if (!String.IsNullOrEmpty(resepti.Nimi))
+            {
+                reseptiString[0] = resepti.Nimi;
+                reseptiString[1] = resepti.Ohjeet;
+                reseptiString[2] = resepti.Annokset.ToString();
+                return reseptiString;
+            }
+            else
+            {
+                reseptiString[0] = string.Empty;
+                reseptiString[1] = string.Empty;
+                reseptiString[2] = string.Empty;
+                return reseptiString;
+            }
+        }
+        public List<string> HaeRaakaAineLista()
+        {
+            List<Resepti.RaakaAine> lista = talenettuResepti.RaakaAineLista;
+            List<string> stringLista = new List<string>();
+            foreach(Resepti.RaakaAine r in lista)
+            {
+                stringLista.Add(r.Nimi);
+            }
+            return stringLista;
+        }
+
     }
 }

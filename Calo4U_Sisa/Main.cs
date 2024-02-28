@@ -179,8 +179,10 @@ namespace Calo4U_Sisa
             }
         }
         public List<string> HaeRaakaAineLista()
-        {   
-            List<Resepti.RaakaAine> lista = talenettuResepti.RaakaAineLista;
+        {
+            List<Resepti.RaakaAine> lista;
+            if (talenettuResepti != null) { lista = talenettuResepti.RaakaAineLista; }
+            else { lista = new List<Resepti.RaakaAine>();}
             List<string> stringLista = new List<string>();
           
             foreach(Resepti.RaakaAine r in lista)

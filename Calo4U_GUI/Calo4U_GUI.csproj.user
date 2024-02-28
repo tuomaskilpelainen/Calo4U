@@ -10,6 +10,12 @@
     <Compile Update="Kalorilaskuri.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="KalorintarveValinta.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Manuaalinen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Page1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,7 +27,13 @@
     <Page Update="Kalorilaskuri.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="KalorintarveValinta.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Manuaalinen.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Page1.xaml">

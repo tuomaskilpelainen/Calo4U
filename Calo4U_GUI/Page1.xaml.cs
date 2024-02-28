@@ -189,6 +189,11 @@ namespace Calo4U_GUI
         {
             mainFrame.Navigate(new Page2(mainFrame));
         }
+
+        private void kaloritarveNavButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new KalorintarveValinta(mainFrame));
+        }
     }
 }
 

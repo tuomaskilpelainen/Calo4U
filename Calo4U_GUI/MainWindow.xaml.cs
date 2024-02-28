@@ -48,8 +48,9 @@ namespace Calo4U_GUI
 
         private void kalorintarveButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Kalorilaskuri(MainFrame));
+            MainFrame.Navigate(new KalorintarveValinta(MainFrame));
             MainFrame.Visibility =Visibility.Visible;
+
         }
     }
 }

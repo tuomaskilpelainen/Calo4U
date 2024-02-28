@@ -5,92 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calo4U_GUI"
         Title="MainWindow" Height="570" Width="990" Background="#eeefea">
-    <Window.Resources>
-        <Style x:Key="FocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="RoundedKaloriButton" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="9" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
+
     <Grid HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Ellipse HorizontalAlignment="Center" Height="292" Margin="0,-148,0,0" VerticalAlignment="Top" 
-                 Width="983" Grid.Column="1" Fill="#FFD3F0D1"
-        />
         <Image Source="core/kuvat/logo_calo4u.PNG" Grid.ColumnSpan="2" 
-               Margin="402,-160,402,160"/>
+               Margin="335,37,336,359"/>
 
-        <Image Source="core/kuvat/pastapng.PNG" Grid.ColumnSpan="2" 
-            Margin="620,72,225,-75"/>
+        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-29,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E" Grid.ColumnSpan="2">
 
-        <Image Source="core/kuvat/piechart.png" Grid.ColumnSpan="2" Margin="240,70,625,-70" RenderTransformOrigin="0.375,0.54"/>
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="kalorintarveButton" Content="Kalorintarve päivässä" HorizontalAlignment="Center" Height="38" 
-                Margin="0,277,0,0" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Foreground="White" Background="#FFFE8A51" FontFamily="Poppins Medium" Grid.Column="1" Click="kalorintarveButton_Click"
-        />
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="uusReseptButton" Content="Lisää uusi resepti" HorizontalAlignment="Center" Height="38" 
-            Margin="0,326,0,0" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Foreground="White" Background="#FF8299DF" FontFamily="Poppins Medium" Grid.Column="1" Click="uusReseptButton_Click"
-        />
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="uusReseptButton_Copy" Content="Valmistetut ruoat&#xD;&#xA;&amp; annosmäärä" HorizontalAlignment="Center" Height="48" 
-            Margin="0,375,0,0" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" Grid.Column="1" Click="uusReseptButton_Copy_Click"
-        />
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="katsoReseptitButton" Content="  Katso reseptit" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="32" 
-            Margin="615,375,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" Grid.Column="1" Click="katsoReseptitButton_Click"
-        />
-        <Frame x:Name="MainFrame" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
+        </Border>
+
+        <Button x:Name="LisääReseptiNav_Button" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="40" Margin="144,-7,0,0" VerticalAlignment="Top" Width="154" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Grid.Column="1"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="40" Margin="308,-7,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click" Grid.Column="1"/>
+        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="454,-7,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Grid.Column="1" Click="kaloritarveNavButton_Click"/>
+        <Button x:Name="kalorinSeurantaNavButton" Content="Kalorinseuranta" HorizontalAlignment="Left" Height="40" Margin="580,-8,0,0" VerticalAlignment="Top" Width="138" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Grid.Column="1"/>
+        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="46" Margin="26,-7,0,0" VerticalAlignment="Top" Width="131" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14"  Grid.ColumnSpan="2"/>
+        <Image Source="core/kuvat/piechart.png" Grid.ColumnSpan="2" Margin="43,158,741,78" RenderTransformOrigin="0.375,0.54"/>
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="40,40,10,10" Grid.ColumnSpan="2" Margin="310,241,311,56" Background="#FFDDE2F4">
+            <Grid x:Name="gridi">
+
+
+                <TextBlock Text="Valmistetut Ruoat" Margin="0,5,0,0" TextAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <TextBlock TextAlignment="Center"   Margin="32,37,32,169" TextWrapping="Wrap" FontSize="18" Height="50"><Run Text="Tortillaburger eli smash burger "/><Run Text="s s s s"/><Run Language="fi-fi" Text="a  d d d d d d d d d"/><Run Text=" "/></TextBlock>
+                <TextBlock TextAlignment="Center" Margin="32,88,32,117" TextWrapping="Wrap" FontSize="18" Height="50"><Run Text="Tortillaburger eli smash burger "/><Run Language="fi-fi" Text="s s s s s s  s s s s s s s s s s s s ss s s ss  "/></TextBlock>
+                <TextBlock TextAlignment="Center" Margin="32,141,32,64" TextWrapping="Wrap" FontSize="18" Height="50"><Run Text="Tortillaburger eli smash burger "/><Run Language="fi-fi" Text="s s s s s s  s s s s s s s s s s s s ss s s ss  "/></TextBlock>
+            </Grid>
+        </Border>
+        <Rectangle HorizontalAlignment="Center" Height="2" Margin="0,278,0,0" Stroke="Black" VerticalAlignment="Top" Width="370" Grid.Column="1"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" Margin="342,279,343,225" Height="50" Width="305"/>
+        <RadioButton Content="" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="652,297,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="652,355,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="660,412,0,0" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fi-fi" Text="3"/></TextBlock>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="323,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fi-fi" Text="1"/></TextBlock>
+        <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,328,0,0" Stroke="Black" VerticalAlignment="Top" Width="370" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,381,0,0" Stroke="Black" VerticalAlignment="Top" Width="370" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,433,0,0" Stroke="Black" VerticalAlignment="Top" Width="370" Grid.Column="1"/>
+        <Button Content="Syö" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="359,444,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,-0.232" Height="35" Width="63"/>
+        <Button Content="Poista listalta" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="530,442,0,0" VerticalAlignment="Top" Height="39" Width="60"/>
+        <Button Content="Edellinen" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="702,351,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="59" Height="56"/>
+        <Button Content="Seuraava" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="909,348,0,0" VerticalAlignment="Top" Click="Button_Click_2" Width="60" Height="57"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="780,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="90" Width="140"><Run Language="fi-fi" Text="Viikko 2"/></TextBlock>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="757,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="180" Width="201"><Run Text="Tavoite: 20 000"/><Run Text="   &#x9;&#x9;"/><LineBreak/><Run Text="Saavutettu määrä: "/><Run Text="2"/><Run Text=" 000"/><Run Text="    10%    "/><LineBreak/><Run Text="Kaloreita jäljellä"/><Run Text=":"/><Run Text=" "/><Run Text="18"/><Run Text=" 000"/><Run Text="&#x9;90%"/></TextBlock>
+        <Button Content="Tämänhetkinen" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="780,348,0,0" VerticalAlignment="Top" Click="Button_Click_3" Width="97" Height="57"/>
+
+
+
+        <Frame x:Name="mainFrame" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
+
     </Grid>
 
 

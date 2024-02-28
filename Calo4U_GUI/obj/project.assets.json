@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tuomas\\.nuget\\packages\\": {}
+    "C:\\Users\\ilari\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
+      "projectUniqueName": "C:\\Users\\ilari\\Source\\Repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
       "projectName": "Calo4U_GUI",
-      "projectPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
-      "packagesPath": "C:\\Users\\Tuomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\obj\\",
+      "projectPath": "C:\\Users\\ilari\\Source\\Repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
+      "packagesPath": "C:\\Users\\ilari\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ilari\\Source\\Repos\\Calo4U\\Calo4U_GUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Tuomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ilari\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj": {
-              "projectPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj"
+            "C:\\Users\\ilari\\Source\\Repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj": {
+              "projectPath": "C:\\Users\\ilari\\Source\\Repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj"
             }
           }
         }
@@ -63,11 +63,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -92,7 +87,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

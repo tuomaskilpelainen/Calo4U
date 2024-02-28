@@ -160,5 +160,25 @@ namespace Calo4U_GUI
             Main.tallennaKayttaja();
 
         }
+
+        private void etusivuNavButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow is MainWindow mainWindow)
+            {
+                Main.TyhjennaListat();
+                mainWindow.ShowMainWindow();
+            }
+        }
+
+        private void LisääReseptiNavButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Page1(mainFrame));
+        }
+
+        private void katsoReseptitNavButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Page2(mainFrame));
+        }
     }
 }

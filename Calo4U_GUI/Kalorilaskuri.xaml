@@ -1,5 +1,4 @@
-﻿
-<Page x:Class="Calo4U_GUI.Kalorilaskuri"
+﻿<Page x:Class="Calo4U_GUI.Kalorilaskuri"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -93,7 +92,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Border x:Name="border" CornerRadius="7" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -317,61 +316,71 @@
         <Border x:Name="bigBox3" CornerRadius="10" BorderThickness="1" Height="430" Margin="665,80,24,0" 
             VerticalAlignment="Top" Background="White"
         />
-        <TextBlock x:Name="paino_textblock" HorizontalAlignment="Left" Margin="50,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontFamily="Poppins"><Run Text="Paino"/><Run Language="fi-fi" Text=" (kg)"/></TextBlock>
-        <TextBlock x:Name="ikä_textblock" HorizontalAlignment="Left" Margin="50,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" FontSize="14" FontFamily="Poppins Medium"><Run Language="fi-fi" Text="Ikä (vuotta)"/></TextBlock>
-        <TextBlock x:Name="pituus_textblock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50,105,0,0" Width="112" FontSize="14" FontFamily="Poppins Medium"><Run Text="Pituus"/><Run Text=" (cm"/><Run Text=")"/></TextBlock>
-        <TextBox Style="{DynamicResource TextBoxStyle2}" x:Name="Paino_textbox" HorizontalAlignment="Left" Margin="50,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#FFD15400" />
-        <TextBox Style="{DynamicResource TextBoxStyle1}" x:Name="Pituus_texbox" HorizontalAlignment="Left" Margin="50,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#FFD15400"/>
+        <TextBlock x:Name="paino_textblock" HorizontalAlignment="Left" Margin="50,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Paino"/><Run Language="fi-fi" Text=" (kg)"/></TextBlock>
+        <TextBlock x:Name="ikä_textblock" HorizontalAlignment="Left" Margin="50,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="fi-fi" Text="Ikä (vuotta)"/></TextBlock>
+        <TextBlock x:Name="pituus_textblock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50,105,0,0" Width="112" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Pituus"/><Run Text=" (cm"/><Run Text=")"/></TextBlock>
+        <TextBox Style="{DynamicResource TextBoxStyle2}" x:Name="Paino_textbox" HorizontalAlignment="Left" Margin="50,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#FFFE8A51" Height="24" FontFamily="Poppins" FontSize="14" Foreground="#FF3E3E3E"/>
+        <TextBox Style="{DynamicResource TextBoxStyle1}" x:Name="Pituus_texbox" HorizontalAlignment="Left" Margin="50,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#FFFE8A51" Height="24" FontFamily="Poppins" FontSize="14" Foreground="#FF3E3E3E"/>
+
 
         <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-20,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E">
 
         </Border>
 
-        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="173,-2,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" />
-        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="38" Margin="337,3,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14"/>
-        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="484,2,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" />
-        <Button x:Name="kalorinSeurantaNavButton" Content="Kalorinseuranta" HorizontalAlignment="Left" Height="40" Margin="611,0,0,530" VerticalAlignment="Bottom" Width="139" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" />
-        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,2,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" />
+        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="160,0,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click_1"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="42" Margin="325,2,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click_1"/>
+        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="42" Margin="484,2,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14"/>
+        <Button x:Name="kalorinSeurantaNavButton" Content="Kalorinseuranta" HorizontalAlignment="Left" Height="40" Margin="609,1,0,0" VerticalAlignment="Top" Width="139" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14"/>
+        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,2,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click_1"/>
 
 
-        <Border x:Name="Sukupuoli_border" BorderThickness="1" CornerRadius="15" Margin="45,352,762,97" Background="#FFDDE2F4"/>
-        <StackPanel Margin="45,394,705,63">
-            <RadioButton x:Name="Mies_radiobutton" Content="Mies" FontSize="14"/>
-            <RadioButton x:Name="Nainen_radiobutton" Content="Nainen" FontSize="14"/>
+
+        <Border x:Name="Sukupuoli_border" BorderThickness="1" CornerRadius="12" Margin="45,352,734,98">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE7EFFF"/>
+                    <GradientStop Color="#FFFFE9F2" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+        </Border>
+        <StackPanel Margin="61,396,769,125">
+            <RadioButton x:Name="Mies_radiobutton" Content="Mies" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
+            <RadioButton x:Name="Nainen_radiobutton" Content="Nainen" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
 
         </StackPanel>
-        <TextBlock HorizontalAlignment="Left" Margin="65,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Language="fi-fi" Text="Sukupuoli"/></TextBlock>
-        <TextBlock x:Name="Aktiivisuus_textblock" HorizontalAlignment="Left" Margin="362,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Language="fi-fi" Text="Aktiivisuus"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="61,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"><Run Language="fi-fi" Text="Sukupuoli"/></TextBlock>
+        <TextBlock x:Name="Aktiivisuus_textblock" HorizontalAlignment="Left" Margin="362,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"><Run Language="fi-fi" Text="Aktiivisuus"/></TextBlock>
         <StackPanel Margin="344,118,367,44">
-            <RadioButton x:Name="Lepo_radiobutton" Content="Lepo" Height="37" Margin="10, 25, 1,2" FontSize="14"/>
-            <RadioButton x:Name="Kevyt_radiobutton" Content="Kevyt, istuma työ" Height="37" Margin="10, 10, 0,0" FontSize="14"/>
-            <RadioButton x:Name="Tavallinen_radiobutton" Content="Tavallinen" Height="37" Margin="10, 10, 0,0" FontSize="14"/>
-            <RadioButton x:Name="Kohtuullinen_radiobutton" Content="Kohtuullinen" Height="37" Margin="10, 10, 0,0" FontSize="14"/>
-            <RadioButton x:Name="Raskas_radiobutton" Content="Raskas" Height="37" Margin="10, 10, 0,0" FontSize="14"/>
-            <RadioButton x:Name="Ammattiurheilija_radiobutton" Content="Erittäin raskas,ammattiurheilija" Height="37" Margin="10, 10, 0,0" FontSize="14"/>
+            <RadioButton x:Name="Lepo_radiobutton" Content="Lepo" Height="37" Margin="10, 25, 1,2" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
+            <RadioButton x:Name="Kevyt_radiobutton" Content="Kevyt, istuma työ" Height="37" Margin="10, 10, 0,0" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"/>
+            <RadioButton x:Name="Tavallinen_radiobutton" Content="Tavallinen" Height="37" Margin="10, 10, 0,0" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
+            <RadioButton x:Name="Kohtuullinen_radiobutton" Content="Kohtuullinen" Height="37" Margin="10, 10, 0,0" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
+            <RadioButton x:Name="Raskas_radiobutton" Content="Raskas" Height="37" Margin="10, 10, 0,0" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
+            <RadioButton x:Name="Ammattiurheilija_radiobutton" Content="Erittäin raskas,ammattiurheilija" Height="37" Margin="10, 10, 0,0" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins"/>
 
         </StackPanel>
 
         <TextBlock HorizontalAlignment="Left" Margin="374,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="374,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" FontSize="10"><Run Text="(vähän tai ei ollen"/><Run Text="k"/><Run Text="aan liikuntaa"/><Run Language="fi-fi" Text=")"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="374,256,0,0" TextWrapping="Wrap" Text="(Kevyt liikunta 1-2 päivää viikossa)" VerticalAlignment="Top" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="374,303,0,0" TextWrapping="Wrap" Text="(kohtuullinen liikunta 3-5 päivää viikossa)" VerticalAlignment="Top" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="374,350,0,0" TextWrapping="Wrap" Text="(Raskas liikunta 6-7 päivää viikossa)" VerticalAlignment="Top" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="374,397,0,0" TextWrapping="Wrap" Text="(Päivittäiset raskaat liikuntaharjoitukset)" VerticalAlignment="Top" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Margin="374,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Foreground="#FF2E334E" FontFamily="Poppins"><Run Text="(vähän tai ei ollen"/><Run Text="k"/><Run Text="aan liikuntaa"/><Run Language="fi-fi" Text=")"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="374,256,0,0" TextWrapping="Wrap" Text="(Kevyt liikunta 1-2 päivää viikossa)" VerticalAlignment="Top" Foreground="#FF2E334E" FontFamily="Poppins"/>
+        <TextBlock HorizontalAlignment="Left" Margin="374,303,0,0" TextWrapping="Wrap" Text="(kohtuullinen liikunta 3-5 päivää viikossa)" VerticalAlignment="Top" FontFamily="Poppins" Foreground="#FF2E334E"/>
+        <TextBlock HorizontalAlignment="Left" Margin="374,350,0,0" TextWrapping="Wrap" Text="(Raskas liikunta 6-7 päivää viikossa)" VerticalAlignment="Top" Foreground="#FF2E334E" FontFamily="Poppins"/>
+        <TextBlock HorizontalAlignment="Left" Margin="374,397,0,0" TextWrapping="Wrap" Text="(Päivittäiset raskaat liikuntaharjoitukset)" VerticalAlignment="Top" Foreground="#FF2E334E" FontFamily="Poppins"/>
 
 
 
-        <TextBlock x:Name="Tavoite_textblock" HorizontalAlignment="Left" Margin="699,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Language="fi-fi" Text="Tavoitteesi on"/></TextBlock>
+        <TextBlock x:Name="Tavoite_textblock" HorizontalAlignment="Left" Margin="699,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"><Run Language="fi-fi" Text="Tavoitteesi on"/></TextBlock>
         <StackPanel Margin="699,134,24,326">
-            <RadioButton x:Name="Ylläpitää_radiobutton" Content="Ylläpitää painoa" Margin="0,0,0,0" FontSize="14"/>
-            <RadioButton x:Name="Pudottaa_radiobutton" Content="Pudottaa painoa"  Margin="0,10,0,0" FontSize="14"/>
-            <RadioButton x:Name="Kasvattaa_radiobutton" Content="Kasvattaa painoa" Margin="0,10,0,0" FontSize="14"/>
+            <RadioButton x:Name="Ylläpitää_radiobutton" Content="Ylläpitää painoa" Margin="0,0,0,0" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
+            <RadioButton x:Name="Pudottaa_radiobutton" Content="Pudottaa painoa"  Margin="0,10,0,0" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
+            <RadioButton x:Name="Kasvattaa_radiobutton" Content="Kasvattaa painoa" Margin="0,10,0,0" FontSize="14" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
         </StackPanel>
-        <Button Style="{DynamicResource ButtonStyle2}" x:Name="Suositus_button" Content="Laske kalorintarve" Margin="746,237,105,0" VerticalAlignment="Top" Height="28" Background="#FFDDE2F4" Foreground="#FF3B5DC4" BorderBrush="{x:Null}" Width="134" FontSize="14" Click="laskeButton_Click"/>
-        <TextBlock x:Name="informaatio_textblock" HorizontalAlignment="Left" Margin="699,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="221" FontSize="10" Foreground="#FF6D6D6D"><Run Language="fi-fi" Text="*tämä on vain suuntaa antava suositus, sillä painoon vaikuttaa myös monet muut tekijät, kuten unenlaatu, elämäntapa, liikunta ja psyykkinen tila"/></TextBlock>
-        <TextBlock x:Name="Ylläpitäminen_textblock" HorizontalAlignment="Left" Margin="699,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="65" Background="#FFDDE2F4"><Run Language="fi-fi" Text="(suositellaan) lasketun kalorimäärä"/></TextBlock>
-        <Button Style="{DynamicResource ButtonStyle3}" x:Name="Laskekalorintarve_button_Copy1" Content="Tallenna tiedot" Margin="746,458,105,0" VerticalAlignment="Top" Height="28" Foreground="#FF3B5DC4" BorderBrush="{x:Null}" Background="#FFDDE2F4" Width="134" FontSize="14" Click="Laskekalorintarve_button_Copy1_Click"/>
-        <TextBox Style="{DynamicResource TextBoxStyle3}" x:Name="Ikä_texbox" HorizontalAlignment="Left" Margin="50,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#FFD15400"/>
+        <Button Style="{DynamicResource ButtonStyle2}" x:Name="Suositus_button" Content="Laske kalorintarve" Margin="728,234,87,0" VerticalAlignment="Top" Width="170" Height="34" Background="#FFFFDCCB" Foreground="#FFCA5319" BorderBrush="{x:Null}" FontSize="14" Click="laskeButton_Click" FontFamily="Poppins Medium"/>
+        <TextBlock x:Name="informaatio_textblock" HorizontalAlignment="Left" Margin="699,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="221" FontSize="10" Foreground="#FF6D6D6D" FontFamily="Poppins Light"><Run Language="fi-fi" Text="*tämä on vain suuntaa antava suositus, sillä painoon vaikuttaa myös monet muut tekijät, kuten unenlaatu, elämäntapa, liikunta ja psyykkinen tila"/></TextBlock>
+        <TextBlock x:Name="Ylläpitäminen_textblock" HorizontalAlignment="Left" Margin="704,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="75" Background="#FFFFECE2" Text="" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="16"/>
+        <Button Style="{DynamicResource ButtonStyle3}" x:Name="Laskekalorintarve_button_Copy1" Content="Tallenna tiedot" Margin="728,449,87,0" VerticalAlignment="Top" Height="34" Foreground="#FF566DB1" BorderBrush="{x:Null}" Background="#FFDDE2F4" Width="170" FontSize="14" Click="Laskekalorintarve_button_Copy1_Click" FontFamily="Poppins Medium"/>
+        <TextBox Style="{DynamicResource TextBoxStyle3}" x:Name="Ikä_texbox" HorizontalAlignment="Left" Margin="50,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  BorderBrush="#FFFE8A51" Height="24" FontFamily="Poppins" FontSize="14" Foreground="#FF3E3E3E"/>
 
 
 

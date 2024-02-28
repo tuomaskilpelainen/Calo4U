@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PvKalorit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aeb1ea675de5a3a01bb19fa552a86d6d9c7965ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+704c436af25585bdf2513121aab206ee670b8f48")]
 [assembly: System.Reflection.AssemblyProductAttribute("PvKalorit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PvKalorit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

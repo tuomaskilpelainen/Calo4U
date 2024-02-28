@@ -208,78 +208,82 @@
         </Style>
     </Page.Resources>
     <Grid Margin="0,10,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="191*"/>
+        </Grid.ColumnDefinitions>
         <Border x:Name="bigBox1" CornerRadius="10" BorderThickness="1"
                 HorizontalAlignment="Left" Height="430" Margin="24,80,0,0" 
-                VerticalAlignment="Top" Width="296" Background="White"
+                VerticalAlignment="Top" Width="296" Background="White" Grid.ColumnSpan="2"
         >
             <TextBlock x:Name="ainesTextBlock" HorizontalAlignment="Center" Height="128" Margin="0,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
         </Border>
         <Border x:Name="bigBox2" CornerRadius="10" BorderThickness="1"
-            HorizontalAlignment="Center" Height="430" Margin="0,80,0,0" 
-            VerticalAlignment="Top" Width="296" Background="White"
+            HorizontalAlignment="Left" Height="430" Margin="314,80,0,0" 
+            VerticalAlignment="Top" Width="296" Background="White" Grid.Column="1"
         />
         <Border x:Name="bigBox2_Copy" CornerRadius="10" BorderThickness="1"
-            HorizontalAlignment="Left" Height="430" Margin="650,80,0,0" 
-            VerticalAlignment="Top" Width="296" Background="White"
+            HorizontalAlignment="Left" Height="430" Margin="620,80,0,0" 
+            VerticalAlignment="Top" Width="296" Background="White" Grid.Column="1"
         >
             <TextBlock x:Name="NäytäAineksetTextBlock" HorizontalAlignment="Left" Height="106" Margin="19,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Foreground="#FF2E334E" FontFamily="Poppins Medium"/>
         </Border>
-        <TextBox x:Name="raaka_aineBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="25" Margin="32,122,0,0"
+        <TextBox x:Name="raaka_aineBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="25" Margin="2,122,0,0"
                  TextWrapping="Wrap" VerticalAlignment="Top" 
-                 Width="178" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A"
+                 Width="178" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" Grid.Column="1"
         />
-        <TextBox x:Name="määräBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="25" Margin="32,188,0,0"
+        <TextBox x:Name="määräBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="25" Margin="2,188,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="178" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A"
+            Width="178" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" Grid.Column="1"
         />
-        <TextBox x:Name="kaloritBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="25" Margin="34,252,0,0"
+        <TextBox x:Name="kaloritBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="25" Margin="4,252,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="178" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A"
+            Width="178" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" Grid.Column="1"
         />
-        <TextBox x:Name="reseptiNimiBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="352,134,0,0"
+        <TextBox x:Name="reseptiNimiBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="322,134,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575"
+            Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" Grid.Column="1"
         />
-        <TextBox x:Name="annoksetText" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="550,134,0,0"
+        <TextBox x:Name="annoksetText" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="520,134,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="59" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" TextAlignment="Center"
+            Width="59" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" TextAlignment="Center" Grid.Column="1"
         />
-        <TextBox x:Name="ohjeetBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="191" Margin="354,262,0,0"
+        <TextBox x:Name="ohjeetBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="191" Margin="324,262,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="261" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575"
+            Width="261" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" Grid.Column="1"
         />
         <Button Style="{DynamicResource RoundedRaaka}" x:Name="LisääRaakaButton" Content="Lisää raaka-aine" HorizontalAlignment="Left" 
-                Height="34" Margin="92,302,0,0" VerticalAlignment="Top" Width="160" BorderBrush="{x:Null}" Background="#FFFFDCCB" Foreground="#FFCA5319" FontFamily="Poppins Medium" Click="LisääRaakaButton_Click"
+                Height="34" Margin="62,302,0,0" VerticalAlignment="Top" Width="160" BorderBrush="{x:Null}" Background="#FFFFDCCB" Foreground="#FFCA5319" FontFamily="Poppins Medium" Click="LisääRaakaButton_Click" Grid.Column="1"
         />
-        <Button Style="{DynamicResource RoundedRaaka}" x:Name="ReseptButton" Content="Tallenna resepti" HorizontalAlignment="Center" 
-            Height="34" Margin="0,462,0,0" VerticalAlignment="Top" Width="160" BorderBrush="{x:Null}" Background="#FFDDE2F4" Foreground="#FF3B5DC4" FontFamily="Poppins Medium" Click="ReseptButton_Click"
+        <Button Style="{DynamicResource RoundedRaaka}" x:Name="ReseptButton" Content="Tallenna resepti" HorizontalAlignment="Left" 
+            Height="34" Margin="382,462,0,0" VerticalAlignment="Top" Width="160" BorderBrush="{x:Null}" Background="#FFDDE2F4" Foreground="#FF3B5DC4" FontFamily="Poppins Medium" Click="ReseptButton_Click" Grid.Column="1"
         />
-        <TextBlock x:Name="raakaAineText" HorizontalAlignment="Left" Height="24" Margin="34,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Raaka-aine"/></TextBlock>
-        <TextBlock x:Name="MääräText1" HorizontalAlignment="Left" Height="24" Margin="34,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Määrä (g)"/></TextBlock>
-        <TextBlock x:Name="KaloritText1" HorizontalAlignment="Left" Height="24" Margin="34,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Text="Kalorit (cal/100g)"/>
-        <TextBlock x:Name="reseptinNimiText" HorizontalAlignment="Left" Height="23" Margin="354,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Reseptin nimi:"/></TextBlock>
-        <TextBlock x:Name="AnnosMääräText" HorizontalAlignment="Left" Height="39" Margin="539,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" TextAlignment="Center"><Run Language="en-gb" Text="Annoksien"/><LineBreak/><Run Language="en-gb" Text="määrä"/></TextBlock>
-        <TextBlock x:Name="reseptinNimiText_Copy" HorizontalAlignment="Left" Height="22" Margin="360,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
-        <TextBlock x:Name="reseptinNimiText_Copy1" HorizontalAlignment="Left" Height="23" Margin="354,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Hashtag"/><Run Text=":"/></TextBlock>
-        <TextBox x:Name="tagBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="352,199,0,0"
+        <TextBlock x:Name="raakaAineText" HorizontalAlignment="Left" Height="24" Margin="4,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Grid.Column="1"><Run Language="en-gb" Text="Raaka-aine"/></TextBlock>
+        <TextBlock x:Name="MääräText1" HorizontalAlignment="Left" Height="24" Margin="4,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Grid.Column="1"><Run Language="en-gb" Text="Määrä (g)"/></TextBlock>
+        <TextBlock x:Name="KaloritText1" HorizontalAlignment="Left" Height="24" Margin="4,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Text="Kalorit (cal/100g)" Grid.Column="1"/>
+        <TextBlock x:Name="reseptinNimiText" HorizontalAlignment="Left" Height="23" Margin="324,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Grid.Column="1"><Run Language="en-gb" Text="Reseptin nimi:"/></TextBlock>
+        <TextBlock x:Name="AnnosMääräText" HorizontalAlignment="Left" Height="39" Margin="509,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" TextAlignment="Center" Grid.Column="1"><Run Language="en-gb" Text="Annoksien"/><LineBreak/><Run Language="en-gb" Text="määrä"/></TextBlock>
+        <TextBlock x:Name="reseptinNimiText_Copy" HorizontalAlignment="Left" Height="22" Margin="330,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Grid.Column="1"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
+        <TextBlock x:Name="reseptinNimiText_Copy1" HorizontalAlignment="Left" Height="23" Margin="324,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Grid.Column="1"><Run Language="en-gb" Text="Hashtag"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="tagBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="322,199,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575"
+            Width="178" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" Grid.Column="1"
         />
-        <TextBlock x:Name="reseptinNimiText_Copy2" HorizontalAlignment="Left" Height="22" Margin="676,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
-        <TextBlock x:Name="NäytäOhjeetTextBlock" HorizontalAlignment="Left" Height="237" Margin="676,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Text=""/>
+        <TextBlock x:Name="reseptinNimiText_Copy2" HorizontalAlignment="Left" Height="22" Margin="646,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Grid.Column="1"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
+        <TextBlock x:Name="NäytäOhjeetTextBlock" HorizontalAlignment="Left" Height="237" Margin="646,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" FontFamily="Poppins Medium" FontSize="14" Foreground="#FF2E334E" Text="" Grid.Column="1"/>
         <Button Style="{DynamicResource RoundedRaaka}" x:Name="tagButton" Content="Lisää tagi" HorizontalAlignment="Left" 
-            Height="34" Margin="539,195,0,0" VerticalAlignment="Top" Width="76" BorderBrush="{x:Null}" Background="#FFDDE2F4" Foreground="#FF3B5DC4" FontFamily="Poppins Medium"
+            Height="34" Margin="509,195,0,0" VerticalAlignment="Top" Width="76" BorderBrush="{x:Null}" Background="#FFDDE2F4" Foreground="#FF3B5DC4" FontFamily="Poppins Medium" Grid.Column="1"
         />
 
-        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-20,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E">
+        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-29,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E" Grid.ColumnSpan="2">
 
         </Border>
 
-        <Button x:Name="LisääReseptiNav_Button" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="173,-2,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513"/>
-        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="38" Margin="337,3,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
-        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="484,2,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14"/>
-        <Button x:Name="kalorinSeurantaNavButton" Content="Kalorinseuranta" HorizontalAlignment="Left" Height="40" Margin="609,1,0,0" VerticalAlignment="Top" Width="139" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14"/>
-        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,2,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
+        <Button x:Name="LisääReseptiNav_Button" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="144,-11,0,0" VerticalAlignment="Top" Width="154" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Grid.Column="1"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="38" Margin="308,-6,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click" Grid.Column="1"/>
+        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="454,-7,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Grid.Column="1"/>
+        <Button x:Name="kalorinSeurantaNavButton" Content="Kalorinseuranta" HorizontalAlignment="Left" Height="40" Margin="580,-8,0,0" VerticalAlignment="Top" Width="138" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Grid.Column="1"/>
+        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,-7,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click" Grid.ColumnSpan="2"/>
 
 
     </Grid>

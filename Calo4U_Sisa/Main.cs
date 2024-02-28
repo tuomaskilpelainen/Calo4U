@@ -10,6 +10,7 @@ namespace Calo4U_Sisa
 {
     public class Main
     {
+
         static Resepti talenettuResepti;
         static RaakaAineLista raakaAineLista = new RaakaAineLista();
         static TagLista tagLista = new TagLista();
@@ -162,7 +163,7 @@ namespace Calo4U_Sisa
         {
             string[] reseptiString = new string[3]; //0 nimi, 1 ohjeet, 2 annokset
             Resepti resepti = talenettuResepti;
-            if (!String.IsNullOrEmpty(resepti.Nimi))
+            if (resepti != null)
             {
                 reseptiString[0] = resepti.Nimi;
                 reseptiString[1] = resepti.Ohjeet;
@@ -178,9 +179,10 @@ namespace Calo4U_Sisa
             }
         }
         public List<string> HaeRaakaAineLista()
-        {
+        {   
             List<Resepti.RaakaAine> lista = talenettuResepti.RaakaAineLista;
             List<string> stringLista = new List<string>();
+          
             foreach(Resepti.RaakaAine r in lista)
             {
                 stringLista.Add(r.Nimi);

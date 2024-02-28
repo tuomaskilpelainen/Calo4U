@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Calo4U_Sisa;
 
+
 namespace Calo4U_GUI
 {
     /// <summary>
@@ -144,7 +145,7 @@ namespace Calo4U_GUI
 
             mainFrame.Navigate(new Page1(mainFrame));
             Page1 page = new Page1(mainFrame);
-            page.LataaMuokattuResepti();
+            //page.LataaMuokattuResepti();
 
         }
     }

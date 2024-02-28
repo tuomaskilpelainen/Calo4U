@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Calo4U_Sisa;
 
+
 namespace Calo4U_GUI
 {
     /// <summary>
@@ -30,6 +31,7 @@ namespace Calo4U_GUI
             InitializeComponent();
             RaakaAineLista.ItemsSource = raakaAineTextLista;
             this.mainFrame = mainFrame;
+            string dataFromMethod = LataaMuokattuResepti();
 
         }
 
@@ -227,7 +229,7 @@ namespace Calo4U_GUI
 
             }
         }
-        public void LataaMuokattuResepti()
+        /*public void LataaMuokattuResepti()
         {
             Main main = new Main();
             string[] resepriText = main.MuokkaaReseptia(); //0 nimi, 1 ohjeet, 2 annokset
@@ -240,6 +242,22 @@ namespace Calo4U_GUI
             annoksetText.Text = resepriText[2];
             ohjeetBox.Text = resepriText[1];
 
+        }*/
+
+        private string LataaMuokattuResepti()
+        {
+            Main main = new Main();
+            string[] resepriText = main.MuokkaaReseptia(); //0 nimi, 1 ohjeet, 2 annokset
+            raakaAineTextLista = main.HaeRaakaAineLista();
+
+            RaakaAineLista.ItemsSource = null;
+            RaakaAineLista.ItemsSource = raakaAineTextLista;
+
+            reseptiNimiBox.Text = resepriText[0];
+            annoksetText.Text = resepriText[2];
+            ohjeetBox.Text = resepriText[1];
+
+            return "Data from LataaMuokattuResepti() method";
         }
     }
 }

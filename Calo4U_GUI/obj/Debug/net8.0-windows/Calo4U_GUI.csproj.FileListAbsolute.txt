@@ -99,3 +99,7 @@ C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Kalorinta
 C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Manuaalinen.g.cs
 C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\KalorintarveValinta.baml
 C:\Users\elmer\source\repos\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Manuaalinen.baml
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\KalorintarveValinta.g.cs
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Manuaalinen.g.cs
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\KalorintarveValinta.baml
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\test for wpf\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Manuaalinen.baml

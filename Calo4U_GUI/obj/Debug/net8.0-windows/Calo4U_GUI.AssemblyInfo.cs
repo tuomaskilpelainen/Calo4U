@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Calo4U_GUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34fe17874252a8fd0b656dc520a0aa57e904ae14")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+030e26e19bce5b97507b59bc6e0e7ac5d337cbe3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Calo4U_GUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Calo4U_GUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

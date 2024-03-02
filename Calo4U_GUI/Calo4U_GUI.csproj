@@ -10,8 +10,11 @@
 
   <ItemGroup>
     <None Remove="core\fontit\Poppins-Medium.ttf" />
+    <None Remove="core\kuvat\ellipse1.png" />
+    <None Remove="core\kuvat\ellipse2.png" />
     <None Remove="core\kuvat\logo_calo4u.PNG" />
     <None Remove="core\kuvat\pastapng.png" />
+    <None Remove="core\kuvat\piechart 2.png" />
     <None Remove="core\kuvat\piechart.png" />
   </ItemGroup>
 
@@ -21,8 +24,11 @@
 
   <ItemGroup>
     <Resource Include="core\fontit\Poppins-Medium.ttf" />
+    <Resource Include="core\kuvat\ellipse1.png" />
+    <Resource Include="core\kuvat\ellipse2.png" />
     <Resource Include="core\kuvat\logo_calo4u.PNG" />
     <Resource Include="core\kuvat\pastapng.png" />
+    <Resource Include="core\kuvat\piechart 2.png" />
     <Resource Include="core\kuvat\piechart.png" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calo4U_Sisa;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,32 @@ namespace Calo4U_GUI
     /// <summary>
     /// Interaction logic for Manuaalinen.xaml
     /// </summary>
+    
     public partial class Manuaalinen : UserControl
     {
         public Manuaalinen()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string input = Kaloritextbox.Text;
+            double kalorit;
+            if (double.TryParse(input, out kalorit))
+            {
+                kalorit = Convert.ToDouble(input);
+                IlmoitusBox.Foreground = new SolidColorBrush(Colors.Green);
+                IlmoitusBox.Text = "Tallennettu";
+                IlmoitusBox.TextAlignment = TextAlignment.Center;
+                Main.ManuaaliTallennus(kalorit);
+                Main.tallennaKayttaja();
+            }
+            else
+            {
+                IlmoitusBox.Foreground = new SolidColorBrush(Colors.Red);
+                IlmoitusBox.Text = "Syötä numeerinen arvo";
+            }
         }
     }
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-
 
 namespace Calo4U_Sisa
 {
     public class Main
     {
-
         static Resepti talenettuResepti;
         static RaakaAineLista raakaAineLista = new RaakaAineLista();
         static TagLista tagLista = new TagLista();
@@ -131,6 +131,12 @@ namespace Calo4U_Sisa
             string bmrText = $"Kaloritarve päivässä: {bmr} cal";
             return bmrText;
 
+        }
+
+        public static void ManuaaliTallennus(double kalorit)
+        {
+            Main main = new Main();
+            tBmr.Lisaa(kalorit);
         }
 
         public static void tallennaKayttaja()

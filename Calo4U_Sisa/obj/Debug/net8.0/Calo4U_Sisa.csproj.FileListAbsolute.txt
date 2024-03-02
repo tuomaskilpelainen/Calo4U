@@ -46,3 +46,15 @@ C:\Users\ilari\Source\Repos\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.dll
 C:\Users\ilari\Source\Repos\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\refint\Calo4U_Sisa.dll
 C:\Users\ilari\Source\Repos\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.pdb
 C:\Users\ilari\Source\Repos\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\ref\Calo4U_Sisa.dll
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\bin\Debug\net8.0\Calo4U_Sisa.deps.json
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\bin\Debug\net8.0\Calo4U_Sisa.dll
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\bin\Debug\net8.0\Calo4U_Sisa.pdb
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.AssemblyInfoInputs.cache
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.AssemblyInfo.cs
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.csproj.CoreCompileInputs.cache
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.sourcelink.json
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.dll
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\refint\Calo4U_Sisa.dll
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\Calo4U_Sisa.pdb
+C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_Sisa\obj\Debug\net8.0\ref\Calo4U_Sisa.dll

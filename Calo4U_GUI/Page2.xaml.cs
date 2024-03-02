@@ -148,5 +148,10 @@ namespace Calo4U_GUI
             //page.LataaMuokattuResepti();
 
         }
+
+        private void hakuBox1_Copy2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

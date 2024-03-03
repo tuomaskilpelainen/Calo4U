@@ -173,3 +173,5 @@ C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Calo4U_GUI.pdb
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\Calo4U_GUI.genruntimeconfig.cache
 C:\Users\kuuli\OneDrive - Hämeen ammattikorkeakoulu\Module 3\Ohjelmistokehitys\Projekti(Bunyisa)\from github\Calo 4 U\Calo4U\Calo4U_GUI\obj\Debug\net8.0-windows\ref\Calo4U_GUI.dll
+C:\Users\Tuomas\source\repos\Calo4U\Calo4U_GUI\bin\Debug\net8.0-windows\LiveCharts.dll
+C:\Users\Tuomas\source\repos\Calo4U\Calo4U_GUI\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll

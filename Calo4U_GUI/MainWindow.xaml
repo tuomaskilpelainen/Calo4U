@@ -6,7 +6,7 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:Calo4U_GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="570" Width="900" Background="#eeefea">
+        Title="MainWindow" Height="570" Width="985" Background="#eeefea">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -109,39 +109,40 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Image Source="/Core/Kuvat/logo_calo4u.PNG" Margin="171,52,550,328"/>
-        <Image Source="/Core/Kuvat/ellipse1.png" Margin="0,152,813,16"/>
-        <Image Source="/Core/Kuvat/ellipse2.png" Margin="797,-18,0,425"/>
-        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-20,0,0" VerticalAlignment="Top" Width="857" Background="#FF2E334E">
+        <Image Source="/Core/Kuvat/logo_calo4u.PNG" Margin="166,52,555,328" RenderTransformOrigin="0.432,0.5"/>
+        <Image Source="/Core/Kuvat/ellipse1.png" Margin="-43,137,842,31"/>
+        <Image Source="/Core/Kuvat/ellipse2.png" Margin="830,-16,0,384"/>
 
-        </Border>
+        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="10,-20,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E"/>
 
-        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="165,1,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
-        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="38" Margin="320,5,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
-        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="475,4,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
-        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="27,4,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
-        <Border x:Name="tietoBox" CornerRadius="20" BorderThickness="1" HorizontalAlignment="Left" Height="186" Margin="520,337,0,0" VerticalAlignment="Top" Width="320" Background="White"/>
-        <TextBlock x:Name="vkoText" HorizontalAlignment="Left" Height="23" Margin="544,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="15" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Viikko"/></TextBlock>
-        <TextBlock x:Name="vkoNroTextBlock" HorizontalAlignment="Left" Height="23" Margin="592,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="15" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
-        <TextBlock x:Name="tavoiteText" HorizontalAlignment="Left" Height="17" Margin="544,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Tavoite"/><Run Language="en-gb" Text=":"/></TextBlock>
-        <TextBlock x:Name="tavoiteNroBlock" HorizontalAlignment="Left" Height="17" Margin="610,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
-        <TextBlock x:Name="saavMääräText" HorizontalAlignment="Left" Height="17" Margin="544,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Saavutettu"/><Run Text=" määrä"/><Run Language="en-gb" Text=":"/></TextBlock>
-        <TextBlock x:Name="saavMääräNroBlock" HorizontalAlignment="Left" Height="17" Margin="691,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
-        <TextBlock x:Name="calJälText" HorizontalAlignment="Left" Height="21" Margin="544,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Kaloreita jäljellä"/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="calJälBlock" HorizontalAlignment="Left" Height="17" Margin="670,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="edellinenButton" Content="&lt;" HorizontalAlignment="Left" Height="34" Margin="572,463,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="seuraavaButton" Content="&gt;" HorizontalAlignment="Left" Height="34" Margin="753,463,0,0" VerticalAlignment="Top" Width="39" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="tämänHetkiButton" Content="Tämä viikko" HorizontalAlignment="Left" Height="42" Margin="622,459,0,0"  VerticalAlignment="Top" Width="115" BorderBrush="{x:Null}" Foreground="#FFCA5319" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFDCCB"/>
+        <Button x:Name="LisääReseptiNav_Button" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="144,-3,0,0" VerticalAlignment="Top" Width="154" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="38" Margin="307,1,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
+        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="453,0,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
+        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="54,0,0,0" VerticalAlignment="Top" Width="90" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
+
+        <Border x:Name="tietoBox" CornerRadius="20" BorderThickness="1" HorizontalAlignment="Left" Height="191" Margin="547,331,0,0" VerticalAlignment="Top" Width="320" Background="White"/>
+
+        <TextBlock x:Name="vkoText" HorizontalAlignment="Left" Height="23" Margin="571,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="15" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Viikko"/></TextBlock>
+        <TextBlock x:Name="vkoNroTextBlock" HorizontalAlignment="Left" Height="23" Margin="619,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="15" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <TextBlock x:Name="tavoiteText" HorizontalAlignment="Left" Height="17" Margin="571,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Tavoite"/><Run Language="en-gb" Text=":"/></TextBlock>
+        <TextBlock x:Name="tavoiteNroBlock" HorizontalAlignment="Left" Height="17" Margin="637,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <TextBlock x:Name="saavMääräText" HorizontalAlignment="Left" Height="17" Margin="571,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Saavutettu"/><Run Text=" määrä"/><Run Language="en-gb" Text=":"/></TextBlock>
+        <TextBlock x:Name="saavMääräNroBlock" HorizontalAlignment="Left" Height="17" Margin="719,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <TextBlock x:Name="calJälText" HorizontalAlignment="Left" Height="21" Margin="571,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Kaloreita jäljellä"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="calJälBlock" HorizontalAlignment="Left" Height="17" Margin="697,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="edellinenButton" Content="&lt;" HorizontalAlignment="Left" Height="34" Margin="599,457,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="seuraavaButton" Content="&gt;" HorizontalAlignment="Left" Height="34" Margin="781,457,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="tämänHetkiButton" Content="Tämä viikko" HorizontalAlignment="Left" Height="42" Margin="649,453,0,0"  VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="#FFCA5319" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFDCCB"/>
         <Border x:Name="listBoxBorder" CornerRadius="20
-                " BorderThickness="1" HorizontalAlignment="Left" Height="276" Margin="119,247,0,0" VerticalAlignment="Top" Width="312" Background="White">
+                " BorderThickness="1" HorizontalAlignment="Left" Height="276" Margin="138,247,0,0" VerticalAlignment="Top" Width="312" Background="White">
             <Border CornerRadius="15" BorderThickness="1" HorizontalAlignment="Center" Height="61" Margin="0,-1,0,0" VerticalAlignment="Top" Width="312" Background="#FF8299DF"/>
         </Border>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="22" Margin="119,286,0,0" VerticalAlignment="Top" Width="312" Background="White"/>
-        <TextBlock x:Name="vkoText_Copy" HorizontalAlignment="Left" Height="22" Margin="134,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontSize="15" FontFamily="Poppins Medium" Foreground="White" RenderTransformOrigin="0.597,0.48"><Run Text="Valmistetut ruoat"/><Run Text=" &amp; "/><Run Text="annosten"/><Run Language="en-gb" Text=" "/><Run Text="määrä"/></TextBlock>
-        <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="167,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Manuaalinen syöttö"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="167,459,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="291,459,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3"/>
-        <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Right"  Margin="510,65,0,222"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="22" Margin="138,286,0,0" VerticalAlignment="Top" Width="312" Background="White"/>
+        <TextBlock x:Name="vkoText_Copy" HorizontalAlignment="Left" Height="22" Margin="153,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontSize="15" FontFamily="Poppins Medium" Foreground="White" RenderTransformOrigin="0.597,0.48"><Run Text="Valmistetut ruoat"/><Run Text=" &amp; "/><Run Text="annosten"/><Run Language="en-gb" Text=" "/><Run Text="määrä"/></TextBlock>
+        <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="184,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Manuaalinen syöttö"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3"/>
+        <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Right"  Margin="510,52,0,235"/>
         <Frame x:Name="MainFrame" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

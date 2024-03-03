@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj": {}
+    "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj": {
+    "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
+        "projectUniqueName": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
         "projectName": "Calo4U_GUI",
-        "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
-        "packagesPath": "C:\\Users\\kuuli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_GUI\\obj\\",
+        "projectPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
+        "packagesPath": "C:\\Users\\Tuomas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kuuli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tuomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj": {
-                "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj"
+              "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj": {
+                "projectPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj"
               }
             }
           }
@@ -71,17 +71,17 @@
         }
       }
     },
-    "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj": {
+    "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj",
+        "projectUniqueName": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj",
         "projectName": "Calo4U_Sisa",
-        "projectPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj",
-        "packagesPath": "C:\\Users\\kuuli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_Sisa\\obj\\",
+        "projectPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\Calo4U_Sisa.csproj",
+        "packagesPath": "C:\\Users\\Tuomas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_Sisa\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kuuli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tuomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

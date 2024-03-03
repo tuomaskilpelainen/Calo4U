@@ -301,7 +301,7 @@ namespace Calo4U_GUI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Calo4U_GUI;V1.0.0.0;component/page1.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Calo4U_GUI;component/page1.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Page1.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

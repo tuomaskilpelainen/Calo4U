@@ -23,34 +23,31 @@ namespace Calo4U_GUI
             InitializeComponent();
         }
 
-        
+        private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
+        {
 
-        private void uusReseptButton_Click(object sender, RoutedEventArgs e)
+        }
+
+        private void LisääReseptiNavButton_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Page1(MainFrame));
             MainFrame.Visibility = Visibility.Visible;
         }
-        public void ShowMainWindow()
-        {
-            MainFrame.Visibility = Visibility.Collapsed;
-        }
 
-        private void katsoReseptitButton_Click(object sender, RoutedEventArgs e)
+        private void katsoReseptitNavButton_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Page2(MainFrame));
             MainFrame.Visibility = Visibility.Visible;
         }
 
-        private void uusReseptButton_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void kalorintarveButton_Click(object sender, RoutedEventArgs e)
+        private void kaloritarveNavButton_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new KalorintarveValinta(MainFrame));
-            MainFrame.Visibility =Visibility.Visible;
-
+            MainFrame.Visibility = Visibility.Visible;
+        }
+        public void ShowMainWindow()
+        {
+            MainFrame.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calo4U_GUI"
-        Title="MainWindow" Height="570" Width="990" Background="#eeefea">
+        mc:Ignorable="d"
+        Title="MainWindow" Height="570" Width="900" Background="#eeefea">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -24,7 +25,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="RoundedKaloriButton" TargetType="{x:Type Button}">
+        <Style x:Key="roundedButton1" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -36,7 +37,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="9" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Border x:Name="border" CornerRadius="7" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -61,38 +62,93 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="roundedtBox1" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="7" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
-    <Grid HorizontalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
-        <Ellipse HorizontalAlignment="Center" Height="292" Margin="0,-148,0,0" VerticalAlignment="Top" 
-                 Width="983" Grid.Column="1" Fill="#FFD3F0D1"
-        />
-        <Image Source="core/kuvat/logo_calo4u.PNG" Grid.ColumnSpan="2" 
-               Margin="402,-160,402,160"/>
+    <Grid>
+        <Image Source="/Core/Kuvat/logo_calo4u.PNG" Margin="171,52,550,328"/>
+        <Image Source="/Core/Kuvat/piechart 2.PNG" Margin="532,79,169,268"/>
+        <Image Source="/Core/Kuvat/ellipse1.png" Margin="0,152,813,16"/>
+        <Image Source="/Core/Kuvat/ellipse2.png" Margin="797,-18,0,425"/>
 
-        <Image Source="core/kuvat/pastapng.PNG" Grid.ColumnSpan="2" 
-            Margin="620,72,225,-75"/>
 
-        <Image Source="core/kuvat/piechart.png" Grid.ColumnSpan="2" Margin="240,70,625,-70" RenderTransformOrigin="0.375,0.54"/>
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="kalorintarveButton" Content="Kalorintarve päivässä" HorizontalAlignment="Center" Height="38" 
-                Margin="0,277,0,0" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Foreground="White" Background="#FFFE8A51" FontFamily="Poppins Medium" Grid.Column="1" Click="kalorintarveButton_Click"
-        />
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="uusReseptButton" Content="Lisää uusi resepti" HorizontalAlignment="Center" Height="38" 
-            Margin="0,326,0,0" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Foreground="White" Background="#FF8299DF" FontFamily="Poppins Medium" Grid.Column="1" Click="uusReseptButton_Click"
-        />
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="uusReseptButton_Copy" Content="Valmistetut ruoat&#xD;&#xA;&amp; annosmäärä" HorizontalAlignment="Center" Height="48" 
-            Margin="0,375,0,0" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" Grid.Column="1" Click="uusReseptButton_Copy_Click"
-        />
-        <Button Style="{DynamicResource RoundedKaloriButton}" x:Name="katsoReseptitButton" Content="  Katso reseptit" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="32" 
-            Margin="615,375,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" Grid.Column="1" Click="katsoReseptitButton_Click"
-        />
+
+
+        <TextBlock x:Name="syödytCalText" HorizontalAlignment="Left" Height="18" Margin="743,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Viikon syödyt kalorit"/></TextBlock>
+        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-20,0,0" VerticalAlignment="Top" Width="857" Background="#FF2E334E">
+
+        </Border>
+
+        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="165,1,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="38" Margin="320,5,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
+        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="475,4,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
+        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="27,4,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="743,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Poppins Medium" Foreground="#FFD4652E"><Run Text="Viikon jäljellä"/><Run Language="en-gb" Text=" "/><Run Text="olevat kalorit"/><LineBreak/><Run/></TextBlock>
+        <Border x:Name="tietoBox" CornerRadius="20" BorderThickness="1" HorizontalAlignment="Left" Height="186" Margin="520,337,0,0" VerticalAlignment="Top" Width="320" Background="White"/>
+        <TextBlock x:Name="vkoText" HorizontalAlignment="Left" Height="23" Margin="544,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="15" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Viikko"/></TextBlock>
+        <TextBlock x:Name="vkoNroTextBlock" HorizontalAlignment="Left" Height="23" Margin="592,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="15" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <TextBlock x:Name="tavoiteText" HorizontalAlignment="Left" Height="17" Margin="544,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Tavoite"/><Run Language="en-gb" Text=":"/></TextBlock>
+        <TextBlock x:Name="tavoiteNroBlock" HorizontalAlignment="Left" Height="17" Margin="610,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <TextBlock x:Name="saavMääräText" HorizontalAlignment="Left" Height="17" Margin="544,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Text="Saavutettu"/><Run Text=" määrä"/><Run Language="en-gb" Text=":"/></TextBlock>
+        <TextBlock x:Name="saavMääräNroBlock" HorizontalAlignment="Left" Height="17" Margin="691,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <TextBlock x:Name="calJälText" HorizontalAlignment="Left" Height="21" Margin="544,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="Kaloreita jäljellä"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="calJälBlock" HorizontalAlignment="Left" Height="17" Margin="670,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontSize="14" FontFamily="Poppins Medium" Foreground="#FF2E334E"><Run Language="en-gb" Text="nro"/></TextBlock>
+        <Ellipse x:Name="oranssiYmpyrä" HorizontalAlignment="Left" Height="12" Margin="725,235,0,0" VerticalAlignment="Top" Width="12" Fill="#FFFE8A51" RenderTransformOrigin="0.49,0.536"/>
+        <Ellipse x:Name="oranssiYmpyrä_Copy" HorizontalAlignment="Left" Height="12" Margin="725,214,0,0" VerticalAlignment="Top" Width="14" Fill="#FF2E334E"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="edellinenButton" Content="&lt;" HorizontalAlignment="Left" Height="34" Margin="572,463,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="seuraavaButton" Content="&gt;" HorizontalAlignment="Left" Height="34" Margin="753,463,0,0" VerticalAlignment="Top" Width="39" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="tämänHetkiButton" Content="Tämä viiko" HorizontalAlignment="Left" Height="42" Margin="622,459,0,0"  VerticalAlignment="Top" Width="115" BorderBrush="{x:Null}" Foreground="#FFCA5319" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFDCCB"/>
+        <Border x:Name="listBoxBorder" CornerRadius="20
+                " BorderThickness="1" HorizontalAlignment="Left" Height="276" Margin="119,247,0,0" VerticalAlignment="Top" Width="312" Background="White">
+            <Border CornerRadius="15" BorderThickness="1" HorizontalAlignment="Center" Height="61" Margin="0,-1,0,0" VerticalAlignment="Top" Width="312" Background="#FF8299DF"/>
+        </Border>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="22" Margin="119,286,0,0" VerticalAlignment="Top" Width="312" Background="White"/>
+        <TextBlock x:Name="vkoText_Copy" HorizontalAlignment="Left" Height="22" Margin="134,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontSize="15" FontFamily="Poppins Medium" Foreground="White" RenderTransformOrigin="0.597,0.48"><Run Text="Valmistetut ruoat"/><Run Text=" &amp; "/><Run Text="annosten"/><Run Language="en-gb" Text=" "/><Run Text="määrä"/></TextBlock>
+        <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="167,425,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="167,459,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="291,459,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3"/>
         <Frame x:Name="MainFrame" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
     </Grid>
-
-
-
 </Window>

@@ -115,7 +115,7 @@
 
         <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="10,-20,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E"/>
 
-        <Button x:Name="LisääReseptiNav_Button" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="144,-3,0,0" VerticalAlignment="Top" Width="154" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513"/>
+        <Button x:Name="LisääReseptiNav_Button" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="46" Margin="144,-3,0,0" VerticalAlignment="Top" Width="154" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
         <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="38" Margin="307,1,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
         <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="453,0,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
         <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="54,0,0,0" VerticalAlignment="Top" Width="90" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>

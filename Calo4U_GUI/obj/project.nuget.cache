@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "WivumAmts/NwI/UnNUVeUKrY0ON0X66BybvS26pSIGiN/rSy9AArAgeGasdf1RjYO4wm29b1OclIC2jJ++RIWg==",
+  "dgSpecHash": "+EW4ndCLkMAzYOFufpaynzP1AdvZ8rCrli12mOGJzZwgA31WU2nU4uKmOi9HjDsza6pekig6YXwAVap3Z2T+gA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kuuli\\OneDrive - Hämeen ammattikorkeakoulu\\Module 3\\Ohjelmistokehitys\\Projekti(Bunyisa)\\from github\\Calo 4 U\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
+  "projectFilePath": "C:\\Users\\Tuomas\\source\\repos\\Calo4U\\Calo4U_GUI\\Calo4U_GUI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kuuli\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
-    "C:\\Users\\kuuli\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
+    "C:\\Users\\Tuomas\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\Tuomas\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
   ],
   "logs": [
     {

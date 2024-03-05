@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -134,14 +135,19 @@ namespace Calo4U_Sisa
             var option = new JsonSerializerOptions();
             option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa.
             List<Resepti> kaikkiReseptit = Tallentaja.LaataakaikkiReseptit(); // Lataa kaikki Reseptit Jsonista jos tätä ei ole palauttaa tyhjän listan
-            foreach (Resepti resepti in kaikkiReseptit)
+            Resepti mResepti = kaikkiReseptit.FirstOrDefault(obj => obj.Nimi == uusiResepti.Nimi);
+
+            if (mResepti != null)
             {
-                if (resepti.Nimi == uusiResepti.Nimi)
-                {
-                    return;
-                }
+                mResepti.Annokset = uusiResepti.Annokset;
+                mResepti.RaakaAineLista = uusiResepti.RaakaAineLista;
+                mResepti.Ohjeet = uusiResepti.Ohjeet;
+                mResepti.Tags = uusiResepti.Tags;
             }
-            kaikkiReseptit.Add(uusiResepti);
+            else
+            {
+                kaikkiReseptit.Add(uusiResepti);
+            }
             string json = JsonSerializer.Serialize<List<Resepti>>(kaikkiReseptit, option);
             File.WriteAllText(RESEPTI_TIEDOSTO, json);
         }

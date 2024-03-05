@@ -77,6 +77,12 @@ namespace Calo4U_Sisa
                             reseptiText[2] += $"\n{rAine.Nimi} {rAine.Maara / tResepti.Annokset * annokset}g {kalorit.Kalorit}kc/100g";
                             kokoKalorit += kalorit.Kalorit;
                             kokogrammat += rAine.Maara / tResepti.Annokset * annokset;
+                            raakaAineLista.Tyhjenna();
+                            foreach (Resepti.RaakaAine x in tResepti.RaakaAineLista)
+                            {
+                                
+                                raakaAineLista.Lisaa(x);
+                            }
                             break;
                         }
                     }

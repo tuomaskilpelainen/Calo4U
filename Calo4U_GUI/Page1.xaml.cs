@@ -169,6 +169,7 @@ namespace Calo4U_GUI
                     //ainesTextBlock.Text = string.Empty ;
                     // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
 
+                    Main.TyhjennaListat();
                     Page2 page2 = new Page2(mainFrame);
                     page2.LaataaLuotuResepti(nimi, annokset);
                     NavigationService.Navigate(page2);

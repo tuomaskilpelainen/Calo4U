@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calo4U_Sisa
+namespace Calo4U_Sisa // Ei tuskin tulla käyttämään tätä
 {
     internal class Tulostaja
     {

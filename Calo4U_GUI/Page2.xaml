@@ -300,9 +300,7 @@
         TextWrapping="Wrap" VerticalAlignment="Top" 
         Width="73" BorderBrush="#FF75CC74" FontFamily="Poppins Light" Foreground="#FF3A3A3A" RenderTransformOrigin="1.026,-1.08" FontSize="14"
         />
-        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-20,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E">
-
-        </Border>
+        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" Height="64" Margin="13,-20,30,0" VerticalAlignment="Top" Background="#FF2E334E"/>
 
         <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="160,0,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
         <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="44" Margin="337,0,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14"/>

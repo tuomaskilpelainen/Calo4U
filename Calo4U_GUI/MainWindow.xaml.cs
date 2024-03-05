@@ -31,6 +31,7 @@ namespace Calo4U_GUI
             InitializeComponent();
             PieChartCalories = CaloriesEaten;
             PieChart();
+            LataaKayttajanTiedot();
         }
 
         private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
@@ -58,6 +59,20 @@ namespace Calo4U_GUI
         public void ShowMainWindow()
         {
             MainFrame.Visibility = Visibility.Collapsed;
+        }
+
+        public void LataaKayttajanTiedot()
+        {
+            Main main = new Main();
+            string[] tiedot = main.LataaKayttajanTiedot(); //0 viikko, 1 Tavoite, 2 Saavutettu, kaloreita jäljellä. Hakee käyttän tiedot Tallentajasta ja muutta ne Mainissa oikeaan muotoon
+            if (tiedot[0] != null)
+            {
+                vkoNroTextBlock.Text = tiedot[0];
+                tavoiteNroBlock.Text = tiedot[1];
+                saavMääräNroBlock.Text= tiedot[2];
+                calJälBlock.Text = tiedot[3];
+
+            }
         }
 
         private void PieChart()
@@ -106,6 +121,48 @@ namespace Calo4U_GUI
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 textBox.Text = "Manuaalinen syöttö";
+            }
+        }
+
+
+
+
+
+        private void syöButton_Click(object sender, RoutedEventArgs e)
+        {
+            double kalorit = 0;
+            bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
+            try
+            {
+                kalorit += double.Parse(calSyöttöTextBox.Text);
+                Main main = new Main();
+                ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä palauttaa true tai false onnistui / ei
+                calSyöttöTextBox.Text = string.Empty;
+                LataaKayttajanTiedot();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void poistaButton_Click(object sender, RoutedEventArgs e)
+        {
+            double kalorit = 0;
+            bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
+            try
+            {
+                kalorit -= double.Parse(calSyöttöTextBox.Text);
+                Main main = new Main();
+                ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä paluttaa true tai false onnistui / ei
+                calSyöttöTextBox.Text = string.Empty;
+                LataaKayttajanTiedot();
+
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }

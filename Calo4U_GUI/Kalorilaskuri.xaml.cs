@@ -157,7 +157,18 @@ namespace Calo4U_GUI
 
         private void Laskekalorintarve_button_Copy1_Click(object sender, RoutedEventArgs e)
         {
+
             Main.tallennaKayttaja();
+            MainWindow mainWindow1 = new MainWindow();
+            mainWindow1.LataaKayttajanTiedot();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow is MainWindow mainWindow)
+            {
+                mainWindow.LataaKayttajanTiedot();
+                Main.TyhjennaListat();
+                mainWindow.ShowMainWindow();
+
+            }
 
         }
 
@@ -166,8 +177,10 @@ namespace Calo4U_GUI
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
+                mainWindow.LataaKayttajanTiedot();
                 Main.TyhjennaListat();
                 mainWindow.ShowMainWindow();
+
             }
         }
 

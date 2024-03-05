@@ -127,22 +127,26 @@ namespace Calo4U_GUI
             {
                 Main.TyhjennaListat();
                 mainWindow.ShowMainWindow();
+
             }
         }
 
         private void LisääReseptiNavButton_Click(object sender, RoutedEventArgs e)
         {
+            Main.TalenettuReseptiTyhjennys();
             mainFrame.Navigate(new Page1(mainFrame));
+            
         }
 
         private void kaloritarveNavButton_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Navigate(new KalorintarveValinta(mainFrame));
+            Main.TalenettuReseptiTyhjennys();
+
         }
 
         private void MuokkaaButton_Click(object sender, RoutedEventArgs e)
         {
-
             mainFrame.Navigate(new Page1(mainFrame));
             Page1 page = new Page1(mainFrame);
             //page.LataaMuokattuResepti();

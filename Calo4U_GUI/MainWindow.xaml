@@ -142,9 +142,9 @@
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="22" Margin="138,286,0,0" VerticalAlignment="Top" Width="312" Background="White"/>
         <TextBlock x:Name="vkoText_Copy" HorizontalAlignment="Left" Height="22" Margin="153,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontSize="15" FontFamily="Poppins Medium" Foreground="White" RenderTransformOrigin="0.597,0.48"><Run Text="Valmistetut ruoat"/><Run Text=" &amp; "/><Run Text="annosten"/><Run Language="en-gb" Text=" "/><Run Text="määrä"/></TextBlock>
         <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="184,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Manuaalinen syöttö"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF" Click="syöButton_Click"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3" Click="poistaButton_Click"/>
         <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Right"  Margin="510,52,0,235"/>
-        <Frame x:Name="MainFrame" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden" />
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

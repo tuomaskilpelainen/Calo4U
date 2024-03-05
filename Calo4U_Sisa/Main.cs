@@ -27,6 +27,10 @@ namespace Calo4U_Sisa
             public double Hae() { return Numero; }
 
         }
+        public static void TalenettuReseptiTyhjennys()
+        {
+            talenettuResepti = Resepti.LuoTyhja();
+        }
         public string LisaaRaakaAine(string nimi, int maara, double kalorit)
         {
 
@@ -176,6 +180,7 @@ namespace Calo4U_Sisa
                 reseptiString[0] = resepti.Nimi;
                 reseptiString[1] = resepti.Ohjeet;
                 reseptiString[2] = resepti.Annokset.ToString();
+                talenettuResepti = Resepti.LuoTyhja();//Luo tyhjän reseptin
                 return reseptiString;
             }
             else
@@ -198,6 +203,66 @@ namespace Calo4U_Sisa
                 stringLista.Add(r.Nimi);
             }
             return stringLista;
+        }
+
+        public bool SyoKalorit(double kalorit) // Lisää tai poistaa käyttäjältä kalorit syötteen mukaan paluttaa True jos onnistunut tallenus
+        {
+            bool loytyi;
+            Kayttaja kayttaja = new Kayttaja();
+            List<Kayttaja> x = Tallentaja.LataaKaikkiKayttajat(); // Hakee Tallentajasta kaikki käyttäjät (tällä hetkellä vain yksi)
+            if (x.Count <= 0)
+            {
+                loytyi = false;
+                return loytyi;
+            }
+            else
+            {
+                foreach (Kayttaja y in x)
+                {
+                    kayttaja = y;
+                }
+                if (kayttaja != null)
+                {
+                    loytyi=true;
+                    if (kayttaja.SyodytKalorit + kalorit < 0) // Tällä kalorit eivät voi mennä miinukselle jos menee niin kalorit ovat 0
+                    {
+                        kalorit = 0 - kayttaja.SyodytKalorit;
+                        kayttaja.SyoKalori(kalorit);
+                        Tallentaja.TallennaKayttaja(kayttaja); //Talentaa päivitetyn käyttäjän tiedot jsoniin
+                        return loytyi;
+                    }
+                    else
+                    {
+                        kayttaja.SyoKalori(kalorit);
+                        Tallentaja.TallennaKayttaja(kayttaja); //Talentaa päivitetyn käyttäjän tiedot jsoniin
+                        return loytyi;
+                    }
+
+                }
+                else
+                {
+                    loytyi = false;
+                    return loytyi;
+                }
+
+            }
+
+
+        }
+
+        public string[] LataaKayttajanTiedot()
+        {
+            string[] tiedot = new string[4]; //0 viikko, 1 Tavoite, 2 Saavutettu,3 kaloreita jäljellä
+
+            List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat();
+            foreach (Kayttaja x in kaikki)
+            {
+                tiedot[0] = x.Viikko.ToString();
+                tiedot[1] = (x.PvaKalorit).ToString();
+                tiedot[2] = x.SyodytKalorit.ToString();
+                tiedot[3] = (x.PvaKalorit - x.SyodytKalorit).ToString();
+            }
+            return tiedot;
         }
 
     }

@@ -33,14 +33,39 @@ namespace Calo4U_GUI
             this.mainFrame = mainFrame;
             string dataFromMethod = LataaMuokattuResepti();
 
+
+
+        }
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            // Clear text blocks when navigation occurs
+            ohjeetBox.Text = string.Empty;
+            reseptiNimiBox.Text = string.Empty;
+            annoksetText.Text = string.Empty;
+            raakaAineTextLista = new List<string>();
+
+
+            RaakaAineLista.ItemsSource = null;
+            RaakaAineLista.ItemsSource = raakaAineTextLista;
+            // Clear other text blocks as needed
         }
 
         private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
         {
+
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
+                ohjeetBox.Text = string.Empty;
+                reseptiNimiBox.Text = string.Empty;
+                annoksetText.Text = string.Empty;
+
+                raakaAineTextLista = new List<string>();
+                RaakaAineLista.ItemsSource =  null;
+                RaakaAineLista.ItemsSource = raakaAineTextLista;
+
                 Main.TyhjennaListat();
+
                 mainWindow.ShowMainWindow(); 
             }
         }
@@ -168,8 +193,9 @@ namespace Calo4U_GUI
                     annoksetText.Text = string.Empty;
                     //ainesTextBlock.Text = string.Empty ;
                     // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
-
+                    raakaAineTextLista = new List<string>();
                     Main.TyhjennaListat();
+
                     Page2 page2 = new Page2(mainFrame);
                     page2.LaataaLuotuResepti(nimi, annokset);
                     NavigationService.Navigate(page2);
@@ -187,12 +213,31 @@ namespace Calo4U_GUI
 
         private void katsoReseptitNavButton_Click(object sender, RoutedEventArgs e)
         {
+            ohjeetBox.Text = string.Empty;
+            reseptiNimiBox.Text = string.Empty;
+            annoksetText.Text = string.Empty;
+            raakaAineTextLista = new List<string>();
+            RaakaAineLista.ItemsSource = null;
+            RaakaAineLista.ItemsSource = raakaAineTextLista;
+
+            Main.TyhjennaListat();
             mainFrame.Navigate(new Page2(mainFrame));
+
         }
 
         private void kaloritarveNavButton_Click(object sender, RoutedEventArgs e)
         {
+            ohjeetBox.Text = string.Empty;
+            reseptiNimiBox.Text = string.Empty;
+            annoksetText.Text = string.Empty;
+            raakaAineTextLista = new List<string>();
+            RaakaAineLista.ItemsSource = null;
+            RaakaAineLista.ItemsSource = raakaAineTextLista;
+
+            Main.TyhjennaListat();
+
             mainFrame.Navigate(new KalorintarveValinta(mainFrame));
+
         }
 
         private void ValitseRaakaAine(object sender, MouseButtonEventArgs e)
@@ -235,14 +280,17 @@ namespace Calo4U_GUI
         private string LataaMuokattuResepti()
         {
             Main main = new Main();
-            string[] resepriText = main.MuokkaaReseptia(); //0 nimi, 1 ohjeet, 2 annokset
             raakaAineTextLista = main.HaeRaakaAineLista();
 
             RaakaAineLista.ItemsSource = null;
             RaakaAineLista.ItemsSource = raakaAineTextLista;
-
+            string[] resepriText = main.MuokkaaReseptia(); //0 nimi, 1 ohjeet, 2 annokset
             reseptiNimiBox.Text = resepriText[0];
-            annoksetText.Text = resepriText[2];
+            if (resepriText[2] == "0")
+            {
+                annoksetText.Text = string.Empty;
+            }
+            else { annoksetText.Text = resepriText[2]; }
             ohjeetBox.Text = resepriText[1];
 
             return "Data from LataaMuokattuResepti() method";

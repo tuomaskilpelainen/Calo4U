@@ -83,6 +83,7 @@ namespace Calo4U_Sisa
             
             Kayttaja kayttaja = new Kayttaja();
             kayttaja.Nimi = "Käyttäjä";
+            kayttaja.Viikko = 1;
             kayttaja.PvaKalorit = bmr;
             
             return bmr;

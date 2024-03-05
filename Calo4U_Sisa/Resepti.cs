@@ -19,6 +19,10 @@ namespace Calo4U_Sisa
             this.Ohjeet = ohjeet;
             this.Annokset = annokset;
         }
+        public static Resepti LuoTyhja()
+        {
+            return new Resepti(null, null, 0);
+        }
         internal class RaakaAine
         {
             public string Nimi { get; set; } //Raaka-aineen nimi

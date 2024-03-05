@@ -38,6 +38,7 @@ namespace Calo4U_GUI
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
+                mainWindow.LataaKayttajanTiedot();
                 Main.TyhjennaListat();
                 mainWindow.ShowMainWindow();
             }

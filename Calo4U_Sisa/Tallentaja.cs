@@ -88,21 +88,21 @@ namespace Calo4U_Sisa
             {
                 kaikkiainekset = new List<RaakaAineKalorit>();
             }
-            foreach (RaakaAineKalorit vertailtavaAine in kaikkiainekset)
-                if (vertailtavaAine.Nimi == uusiAine.Nimi)
-                {
-                    lisaa = false;
-                    break;
-                }
-            if (lisaa)
+            RaakaAineKalorit mAine = kaikkiainekset.FirstOrDefault(obj => obj.Nimi == uusiAine.Nimi);
+            if (mAine != null)
+            {
+                mAine.Kalorit = uusiAine.Kalorit;
+            }
+            else
             {
                 kaikkiainekset.Add(uusiAine);
-                var option = new JsonSerializerOptions();
-                option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa. Poistettava ennen julkaisua, vie ennemän tilaa
-
-                string json = JsonSerializer.Serialize<List<RaakaAineKalorit>>(kaikkiainekset, option);
-                File.WriteAllText(Tallentaja.KALORI_TIEDOSTO, json);
             }
+            var option = new JsonSerializerOptions();
+            option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa. Poistettava ennen julkaisua, vie ennemän tilaa
+
+            string json = JsonSerializer.Serialize<List<RaakaAineKalorit>>(kaikkiainekset, option);
+            File.WriteAllText(Tallentaja.KALORI_TIEDOSTO, json);
+
 
 
 

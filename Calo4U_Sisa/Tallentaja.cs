@@ -41,14 +41,10 @@ namespace Calo4U_Sisa
         }
         public static void TallennaKayttaja(Kayttaja kayttaja)
         {
-            bool lisaa = true;
             var options = new JsonSerializerOptions();
             options.PropertyNameCaseInsensitive = true;
-            List<Kayttaja> kaikkiKayttajat = LataaKaikkiKayttajat();
-            kaikkiKayttajat.Clear();
-            
-            
-            
+            List<Kayttaja> kaikkiKayttajat = LataaKaikkiKayttajat(); // Lataa Jsonfilesta kaikki käyttäjät jos tätä ei ole palauttaa tyhjän lsitan
+            kaikkiKayttajat.Clear();           
             kaikkiKayttajat.Add(kayttaja);
             string json = JsonSerializer.Serialize<List<Kayttaja>>(kaikkiKayttajat, options);
             File.WriteAllText(Tallentaja.KAYTTAJA_TIEDOSTO, json);
@@ -86,7 +82,7 @@ namespace Calo4U_Sisa
         public static void TalennaKalorit(RaakaAineKalorit uusiAine)
         {
             bool lisaa = true;
-            List<RaakaAineKalorit> kaikkiainekset = LataaKaikkiKalorit();
+            List<RaakaAineKalorit> kaikkiainekset = LataaKaikkiKalorit(); // Lataa kaikki kalorit Jsonista jos tätä ei ole palauttaa tyhjän listan
             if (!kaikkiainekset.Any())
             {
                 kaikkiainekset = new List<RaakaAineKalorit>();
@@ -101,7 +97,7 @@ namespace Calo4U_Sisa
             {
                 kaikkiainekset.Add(uusiAine);
                 var option = new JsonSerializerOptions();
-                option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa.
+                option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa. Poistettava ennen julkaisua, vie ennemän tilaa
 
                 string json = JsonSerializer.Serialize<List<RaakaAineKalorit>>(kaikkiainekset, option);
                 File.WriteAllText(Tallentaja.KALORI_TIEDOSTO, json);
@@ -137,7 +133,7 @@ namespace Calo4U_Sisa
         {
             var option = new JsonSerializerOptions();
             option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa.
-            List<Resepti> kaikkiReseptit = Tallentaja.LaataakaikkiReseptit();
+            List<Resepti> kaikkiReseptit = Tallentaja.LaataakaikkiReseptit(); // Lataa kaikki Reseptit Jsonista jos tätä ei ole palauttaa tyhjän listan
             foreach (Resepti resepti in kaikkiReseptit)
             {
                 if (resepti.Nimi == uusiResepti.Nimi)
@@ -151,7 +147,7 @@ namespace Calo4U_Sisa
         }
         public Resepti LataaResepti(string nimi)
         {
-            List<Resepti> kaikkiReseptit = Tallentaja.LaataakaikkiReseptit();
+            List<Resepti> kaikkiReseptit = Tallentaja.LaataakaikkiReseptit();// Lataa kaikki reseptit Jsonista jos tätä ei ole palauttaa tyhjän listan
             foreach (Resepti haettuResepti in kaikkiReseptit)
             {
                 if (haettuResepti.Nimi == nimi) { return haettuResepti; }

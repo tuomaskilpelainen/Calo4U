@@ -11,10 +11,10 @@ namespace Calo4U_Sisa
 {
     public class Main
     {
-        static Resepti talenettuResepti;
-        static RaakaAineLista raakaAineLista = new RaakaAineLista();
-        static TagLista tagLista = new TagLista();
-        static Bmr tBmr = new Bmr();
+        static Resepti talenettuResepti; // Resepti muutoksessa talenettava resepti
+        static RaakaAineLista raakaAineLista = new RaakaAineLista(); // Tallenettavat raaka-aineet reseptin luonissa
+        static TagLista tagLista = new TagLista(); // Tallenettavat tagit reseptin luonissa
+        static Bmr tBmr = new Bmr(); // Bmr kalorin muuttujan tallenus
         internal class Bmr
         {
             private double Numero;
@@ -27,17 +27,13 @@ namespace Calo4U_Sisa
             public double Hae() { return Numero; }
 
         }
-        public static void Hello()
-        {
-            Console.WriteLine("Hello");
-        }
         public string LisaaRaakaAine(string nimi, int maara, double kalorit)
         {
 
             Resepti.RaakaAine uusiRaakaAine = new Resepti.RaakaAine(nimi, maara);
             RaakaAineKalorit uusiKalori = new RaakaAineKalorit(nimi, kalorit);
             raakaAineLista.Lisaa(uusiRaakaAine);
-            Tallentaja.TalennaKalorit(uusiKalori);
+            Tallentaja.TalennaKalorit(uusiKalori); // Vie Tallentajaan joka tallentaa kalorit Json fileen
             string raakaAineText = $"{uusiRaakaAine.Nimi} määrä: {uusiRaakaAine.Maara}g kalorit: {uusiKalori.Kalorit}kc/100g";
             return raakaAineText;
         }
@@ -53,7 +49,7 @@ namespace Calo4U_Sisa
             Resepti uusiResepti = new Resepti(nimi, ohjeet, annokset);
             uusiResepti.RaakaAineLista = raakaAineLista.Hae();
             uusiResepti.Tags = tagLista.Hae();
-            Tallentaja.TallennaResepti(uusiResepti);
+            Tallentaja.TallennaResepti(uusiResepti); // Vie Talentajaan joka talentaa reseptin Json fileen
 
         }
         public string[] LataaResepti(string nimi, int annokset)
@@ -64,11 +60,11 @@ namespace Calo4U_Sisa
             string[] reseptiText = new string[5];//0 Nimi, 1, Ohjeet, 2 RaakaAineet, 3 Kalorit, 4 Annokset
 
             Tallentaja lataaja = new Tallentaja();
-            Resepti tResepti = lataaja.LataaResepti(nimi);
+            Resepti tResepti = lataaja.LataaResepti(nimi); // lataa reseptin "nimi" muuttajan perusteella Json filesta
             if (!string.IsNullOrEmpty(tResepti.Nimi))
             {
                 talenettuResepti = tResepti;
-                List<RaakaAineKalorit> kaikkiKalorit = Tallentaja.LataaKaikkiKalorit();
+                List<RaakaAineKalorit> kaikkiKalorit = Tallentaja.LataaKaikkiKalorit(); // Hakee kaikki jo tallenetut kalorit Tallentajasta
                 reseptiText[0] = $"{tResepti.Nimi}";
                 reseptiText[1] = $"{tResepti.Ohjeet}";
                 foreach (Resepti.RaakaAine rAine in tResepti.RaakaAineLista)
@@ -100,19 +96,19 @@ namespace Calo4U_Sisa
         public bool TarkistaRaakaAineetLista()
         {
             bool ok;
-            ok = raakaAineLista.Tarkista();
+            ok = raakaAineLista.Tarkista(); // Tarkisttaa onko raaka ainelista tyhjä vai ei
             return ok;
         }
-        public static void TyhjennaListat()
+        public static void TyhjennaListat() // Tyhjentää kaikki listat reseptin tekoon liittyen
         {
             raakaAineLista.Tyhjenna();
             tagLista .Tyhjenna();
         }
-        public List<string> ReseptitS()
+        public List<string> ReseptitS() // Luo string listan kaikkista jo tallennetuista resepteistä
         {
             List<string> list = new List<string>();
             List<Resepti> kaikkiReseptit = new List<Resepti>();
-            kaikkiReseptit = Tallentaja.LaataakaikkiReseptit();
+            kaikkiReseptit = Tallentaja.LaataakaikkiReseptit(); // Hakee Tallentajasta kaikki reseptit jotka ovat jsonissa
             foreach (Resepti resepti in kaikkiReseptit)
             {
                 string s_resepti = resepti.Nimi;
@@ -126,7 +122,7 @@ namespace Calo4U_Sisa
         public string bmr(double paino, double pituus, int ikä, string sukupuoli, string aktiivisuus, string tavoite)
         {
             KaloriLaskuri kaloriLaskuri = new KaloriLaskuri();
-            double bmr = kaloriLaskuri.Bmr(paino, pituus, ikä, sukupuoli, aktiivisuus, tavoite);
+            double bmr = kaloriLaskuri.Bmr(paino, pituus, ikä, sukupuoli, aktiivisuus, tavoite); // Käy Bmr clasissa ja laskee kalorintarpeen muuttujien perusteella
             tBmr.Lisaa(bmr);
             string bmrText = $"Kaloritarve päivässä: \n{bmr} cal";
             return bmrText;
@@ -136,22 +132,22 @@ namespace Calo4U_Sisa
         public static void ManuaaliTallennus(double kalorit)
         {
             Main main = new Main();
-            tBmr.Lisaa(kalorit);
+            tBmr.Lisaa(kalorit); // Muuttaa tBmr muuttujan arvon
         }
 
         public static void tallennaKayttaja()
         {
-            List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat();
+            List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat(); // Lataa kaikki käyttäjät (tällä hetkellä vain yksi käyttäjä mahdollinen)
             if (kaikki.Count >= 0)
             {
                 Kayttaja kayttaja = new Kayttaja();
-                kayttaja.Nimi = "Käyttäjä";
-                kayttaja.PvaKalorit = tBmr.Hae();
-                Tallentaja.TallennaKayttaja(kayttaja);
+                kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
+                kayttaja.PvaKalorit = tBmr.Hae(); // Hakee tBmr arvon 
+                Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
             }
             else
             {
-                foreach (Kayttaja x in kaikki)
+                foreach (Kayttaja x in kaikki) // Jos tulevaisuudessa lisätään monien käyttäjien luonti tallenus ominaisuus jo tässä mahdollinen
                 {
                     if (x.Nimi == "Käyttäjä")
                     {
@@ -168,7 +164,7 @@ namespace Calo4U_Sisa
         public string[] MuokkaaReseptia()
         {
             string[] reseptiString = new string[3]; //0 nimi, 1 ohjeet, 2 annokset
-            Resepti resepti = talenettuResepti;
+            Resepti resepti = talenettuResepti; // Hakee valitun reseptin jota muokataan muuttujasta
             if (resepti != null)
             {
                 reseptiString[0] = resepti.Nimi;
@@ -184,10 +180,10 @@ namespace Calo4U_Sisa
                 return reseptiString;
             }
         }
-        public List<string> HaeRaakaAineLista()
+        public List<string> HaeRaakaAineLista() // Luo string listan kaikista reseptin raaka-aineista reseptin luonissa
         {
             List<Resepti.RaakaAine> lista;
-            if (talenettuResepti != null) { lista = talenettuResepti.RaakaAineLista; }
+            if (talenettuResepti != null) { lista = talenettuResepti.RaakaAineLista; } // jos resepti on tyhjä palauttaa se tyhjän listan
             else { lista = new List<Resepti.RaakaAine>();}
             List<string> stringLista = new List<string>();
           

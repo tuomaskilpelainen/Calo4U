@@ -128,7 +128,7 @@ namespace Calo4U_Sisa
             KaloriLaskuri kaloriLaskuri = new KaloriLaskuri();
             double bmr = kaloriLaskuri.Bmr(paino, pituus, ikä, sukupuoli, aktiivisuus, tavoite);
             tBmr.Lisaa(bmr);
-            string bmrText = $"Kaloritarve päivässä: {bmr} cal";
+            string bmrText = $"Kaloritarve päivässä: \n{bmr} cal";
             return bmrText;
 
         }

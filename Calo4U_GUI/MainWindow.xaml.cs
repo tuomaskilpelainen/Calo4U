@@ -26,12 +26,16 @@ namespace Calo4U_GUI
         int LastCaloriesEaten = 17000;
         int RemainingCalories = 0;
         int PieChartCalories = 0;
+        private List<string> KayttajanReseptit = new List<string>(); // Kaikki käyttäjän valmiit reseptit
+        private string resepti = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
             PieChartCalories = CaloriesEaten;
             PieChart();
             LataaKayttajanTiedot();
+            LataaKayttajanReseptit();
+
         }
 
         private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
@@ -130,40 +134,80 @@ namespace Calo4U_GUI
 
         private void syöButton_Click(object sender, RoutedEventArgs e)
         {
+            bool miinus = false;
             double kalorit = 0;
             bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
-            try
+            if (!string.IsNullOrWhiteSpace(calSyöttöTextBox.Text))
             {
-                kalorit += double.Parse(calSyöttöTextBox.Text);
-                Main main = new Main();
-                ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä palauttaa true tai false onnistui / ei
-                calSyöttöTextBox.Text = string.Empty;
+                try
+                {
+                    kalorit += double.Parse(calSyöttöTextBox.Text);
+                    Main main = new Main();
+                    ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä palauttaa true tai false onnistui / ei
+                    calSyöttöTextBox.Text = string.Empty;
+                    LataaKayttajanTiedot();
+
+                }
+                catch (Exception ex)
+                {
+                    if (!string.IsNullOrEmpty(resepti))
+                    {
+                        Main.SyoResepti(resepti, miinus);
+                        LataaKayttajanTiedot();
+                        LataaKayttajanReseptit();
+                    }
+                }
+            }
+            else if (!string.IsNullOrEmpty(resepti))
+            {
+                Main.SyoResepti(resepti, miinus);
                 LataaKayttajanTiedot();
-
             }
-            catch (Exception ex)
-            {
 
-            }
         }
 
         private void poistaButton_Click(object sender, RoutedEventArgs e)
         {
+            bool miinus = true;
             double kalorit = 0;
             bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
-            try
+            if (!string.IsNullOrEmpty(calSyöttöTextBox.Text))
             {
-                kalorit -= double.Parse(calSyöttöTextBox.Text);
-                Main main = new Main();
-                ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä paluttaa true tai false onnistui / ei
-                calSyöttöTextBox.Text = string.Empty;
-                LataaKayttajanTiedot();
+                try
+                {
+                    kalorit -= double.Parse(calSyöttöTextBox.Text);
+                    Main main = new Main();
+                    ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä paluttaa true tai false onnistui / ei
+                    calSyöttöTextBox.Text = string.Empty;
+                    LataaKayttajanTiedot();
+                    LataaKayttajanReseptit();
 
+                }
+                catch (Exception ex)
+                {
+                    if (!string.IsNullOrEmpty(resepti))
+                    {
+                        Main.SyoResepti(resepti, miinus);
+                        LataaKayttajanTiedot();
+                        LataaKayttajanReseptit();
+                    }
+                }
             }
-            catch (Exception ex)
-            {
+        }
 
-            }
+        public void LataaKayttajanReseptit()
+        {
+            KayttajanReseptit = Main.KayttajanReseptitS(); // Hakee mainista käyttäjän kaikki valmiit reseptit
+            KayttajanReseptitBox.ItemsSource = null;
+            KayttajanReseptitBox.ItemsSource = KayttajanReseptit;
+
+        }
+
+        private void Lista_Click(object sender, MouseButtonEventArgs e)
+        {
+            string resepti1 = (string)KayttajanReseptitBox.SelectedItem as string;
+            resepti = resepti1.Split(',')[0];
+
         }
     }
 }

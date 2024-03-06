@@ -65,6 +65,7 @@ namespace Calo4U_GUI
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
+
                 mainWindow.ShowMainWindow();
             }
         }
@@ -125,6 +126,7 @@ namespace Calo4U_GUI
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
+                mainWindow.LataaKayttajanReseptit();
                 Main.TyhjennaListat();
                 mainWindow.ShowMainWindow();
 
@@ -155,6 +157,29 @@ namespace Calo4U_GUI
 
         private void hakuBox1_Copy2_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+        private void ValmistaRuoanButton_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            string resepti = (string)Lista_Box.SelectedItem as string;
+            if (string.IsNullOrEmpty(resepti)) { return; }
+            int annokset;
+            if (string.IsNullOrEmpty(hakuBox1_Copy2.Text))
+            {
+                annokset = 5;
+                Main.LisaaReseptiKayttajalle(resepti, annokset);
+            }
+            else
+            {
+                try
+                {
+                    annokset = int.Parse(hakuBox1_Copy2.Text);
+                    Main.LisaaReseptiKayttajalle(resepti, annokset);
+                }
+                catch (Exception ex) { }
+            }
+
 
         }
     }

@@ -135,16 +135,14 @@
         <Button Style="{DynamicResource roundedButton1}" x:Name="edellinenButton" Content="&lt;" HorizontalAlignment="Left" Height="34" Margin="599,457,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="seuraavaButton" Content="&gt;" HorizontalAlignment="Left" Height="34" Margin="781,457,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="tämänHetkiButton" Content="Tämä viikko" HorizontalAlignment="Left" Height="42" Margin="649,453,0,0"  VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="#FFCA5319" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFDCCB"/>
-        <Border x:Name="listBoxBorder" CornerRadius="20
+        <Border x:Name="RseptitBox" CornerRadius="20
                 " BorderThickness="1" HorizontalAlignment="Left" Height="276" Margin="138,247,0,0" VerticalAlignment="Top" Width="312" Background="White">
-            <Border CornerRadius="15" BorderThickness="1" HorizontalAlignment="Center" Height="61" Margin="0,-1,0,0" VerticalAlignment="Top" Width="312" Background="#FF8299DF"/>
+            <ListBox x:Name="KayttajanReseptitBox" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,-1,-1,124" MouseDoubleClick="Lista_Click" FontFamily="Poppins"/>
         </Border>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="22" Margin="138,286,0,0" VerticalAlignment="Top" Width="312" Background="White"/>
-        <TextBlock x:Name="vkoText_Copy" HorizontalAlignment="Left" Height="22" Margin="153,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontSize="15" FontFamily="Poppins Medium" Foreground="White" RenderTransformOrigin="0.597,0.48"><Run Text="Valmistetut ruoat"/><Run Text=" &amp; "/><Run Text="annosten"/><Run Language="en-gb" Text=" "/><Run Text="määrä"/></TextBlock>
         <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="184,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Manuaalinen syöttö"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF" Click="syöButton_Click"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3" Click="poistaButton_Click"/>
-        <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Right"  Margin="510,52,0,235"/>
+        <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Right"  Margin="480,52,30,235"/>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

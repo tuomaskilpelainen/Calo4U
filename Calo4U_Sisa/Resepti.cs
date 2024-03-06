@@ -11,6 +11,8 @@ namespace Calo4U_Sisa
         public string Nimi { get; set; } // Reseptin nimi
         public string Ohjeet { get; set; } // Reseptin Ohjeet
         public int Annokset { get; set; } // Kuinka monta annosta reseptistä tulee
+        public double kokoKalorit { get; set; }
+        public double annoksenKalorit { get; set; }
         public List<string> Tags { get; set; }
         public List<RaakaAine> RaakaAineLista { get; set; } = new List<RaakaAine>(); //Sisältää kaikki reseptin raaka-aineet ja niiden tiedot.
         public Resepti(string nimi, string ohjeet, int annokset)

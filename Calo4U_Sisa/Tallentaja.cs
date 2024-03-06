@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
@@ -17,7 +18,7 @@ namespace Calo4U_Sisa
         public static List<Kayttaja> LataaKaikkiKayttajat()
         {
             var options = new JsonSerializerOptions();
-            options.PropertyNameCaseInsensitive = true;
+            options.WriteIndented = true;
             List<Kayttaja> kaikkiKayttajat = new List<Kayttaja>();
             string json;
             try
@@ -43,7 +44,7 @@ namespace Calo4U_Sisa
         public static void TallennaKayttaja(Kayttaja kayttaja)
         {
             var options = new JsonSerializerOptions();
-            options.PropertyNameCaseInsensitive = true;
+            options.WriteIndented = true;
             List<Kayttaja> kaikkiKayttajat = LataaKaikkiKayttajat(); // Lataa Jsonfilesta kaikki käyttäjät jos tätä ei ole palauttaa tyhjän lsitan
             kaikkiKayttajat.Clear();           
             kaikkiKayttajat.Add(kayttaja);

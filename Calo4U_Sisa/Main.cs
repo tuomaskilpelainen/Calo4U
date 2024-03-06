@@ -50,8 +50,26 @@ namespace Calo4U_Sisa
         }
         public static void LisaaResepti(string nimi, string ohjeet, int annokset)
         {
+            double kokoKalorit = 0;
+
             Resepti uusiResepti = new Resepti(nimi, ohjeet, annokset);
             uusiResepti.RaakaAineLista = raakaAineLista.Hae();
+            List<RaakaAineKalorit> kalorit = Tallentaja.LataaKaikkiKalorit();
+
+            foreach (Resepti.RaakaAine x in uusiResepti.RaakaAineLista)
+            {
+                foreach (RaakaAineKalorit y in kalorit)
+                {
+                    if (x.Nimi == y.Nimi)
+                    {
+                        kokoKalorit += y.Kalorit;
+                    }
+                }
+            }
+            uusiResepti.kokoKalorit = kokoKalorit;
+            uusiResepti.annoksenKalorit = kokoKalorit / annokset;
+
+
             uusiResepti.Tags = tagLista.Hae();
             Tallentaja.TallennaResepti(uusiResepti); // Vie Talentajaan joka talentaa reseptin Json fileen
 
@@ -150,10 +168,18 @@ namespace Calo4U_Sisa
             List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat(); // Lataa kaikki käyttäjät (tällä hetkellä vain yksi käyttäjä mahdollinen)
             if (kaikki.Count >= 0)
             {
+                List<Kayttaja> kaikk = Tallentaja.LataaKaikkiKayttajat();//Hakee talentajasta kaikki käyttäjät.
                 Kayttaja kayttaja = new Kayttaja();
+                foreach (Kayttaja k in kaikk)
+                {
+                    kayttaja.ValmiitRuuat = k.ValmiitRuuat;
+                }
                 kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
+                kayttaja.Viikko = 1;
                 kayttaja.PvaKalorit = tBmr.Hae(); // Hakee tBmr arvon 
                 Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
+
+
             }
             else
             {
@@ -264,6 +290,99 @@ namespace Calo4U_Sisa
             }
             return tiedot;
         }
+        public static void LisaaReseptiKayttajalle(string nimi, int annokset)
+        {
+            List<Resepti> kaikki = Tallentaja.LaataakaikkiReseptit();
+            if (kaikki.Count > 0)
+            {
+                foreach (Resepti x in kaikki)
+                {
+                    if (x.Nimi == nimi)
+                    {
+                        List<Kayttaja> kaikkiK = Tallentaja.LataaKaikkiKayttajat();
+                        if (kaikkiK.Count > 0)
+                        {
+                            foreach (Kayttaja k in kaikkiK)
+                            {
+                                Resepti uusiResepti = x;
+                                uusiResepti.Annokset = annokset;
+                                uusiResepti.kokoKalorit = uusiResepti.annoksenKalorit * annokset;
+
+                                k.lisaaRuoka(uusiResepti);
+                                Tallentaja.TallennaKayttaja(k);
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+                    }
+                }
+            }
+            else { return; }
+        }
+
+        public static List<string> KayttajanReseptitS() //Lataa ja muuttaa käyttän reseptit string muootoon nimen perusteella
+        {
+            List<string> reseptit = new List<string>();
+            List<Kayttaja> kaikk = Tallentaja.LataaKaikkiKayttajat();
+            foreach (Kayttaja x in kaikk)
+            {
+                foreach (Resepti r in x.ValmiitRuuat)
+                {
+                    reseptit.Add($"{r.Nimi}, Annokset: {r.Annokset}");
+                }
+            }
+            return reseptit;
+        }
+        public static void SyoResepti(string nimi, bool miinus)
+        {
+            Resepti haettuResepti = Resepti.LuoTyhja();
+            List<Kayttaja> kaikkiK = Tallentaja.LataaKaikkiKayttajat();
+            foreach (Kayttaja k in kaikkiK)
+            {
+                foreach (Resepti r in k.ValmiitRuuat)
+                {
+                    if (r.Nimi == nimi)
+                    {
+                        if (miinus)
+                        {
+
+                            if (k.SyodytKalorit - r.annoksenKalorit < 0 && k.SyodytKalorit > 0)
+                            {
+                                r.Annokset += 1;
+                                k.SyoKalori(0 - r.annoksenKalorit);
+
+
+                            }
+                            else if (k.SyodytKalorit - r.annoksenKalorit < 0 && k.SyodytKalorit <= 0)
+                            {  r.Annokset += r.Annokset;}
+                            else
+                            {
+                                r.Annokset += 1;
+                                k.SyoKalori(0 - r.annoksenKalorit);
+                            }
+
+                        }
+                        else
+                        {
+                            r.Annokset -= 1;
+                            k.SyoKalori(r.annoksenKalorit);
+                        }
+                        haettuResepti = r;
+
+
+                    }
+                }
+                if (haettuResepti.Annokset <= 0)
+                {
+                    k.ValmiitRuuat.Remove(haettuResepti);
+                }
+                Tallentaja.TallennaKayttaja(k);
+            }
+        }
 
     }
+
 }

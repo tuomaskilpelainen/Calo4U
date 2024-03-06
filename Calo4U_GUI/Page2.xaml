@@ -347,7 +347,7 @@
             </TextBlock.RenderTransform>
         </TextBlock>
         <TextBlock x:Name="LisääRuoanListalleText" HorizontalAlignment="Left" Height="20" Margin="754,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14" Text="Lisää ruoanlistalle"/>
-        <Button Style="{DynamicResource roundedButton2}" x:Name="ValmistaRuoanButton_Copy" Content="+" HorizontalAlignment="Left" Height="34" Margin="890,395,0,0" VerticalAlignment="Top" Width="34" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDEFADD" Foreground="#FF467640" RenderTransformOrigin="0.571,0.413" FontSize="14"/>
+        <Button Style="{DynamicResource roundedButton2}" x:Name="ValmistaRuoanButton_Copy" Content="+" HorizontalAlignment="Left" Height="34" Margin="890,395,0,0" VerticalAlignment="Top" Width="34" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDEFADD" Foreground="#FF467640" RenderTransformOrigin="0.571,0.413" FontSize="14" Click="ValmistaRuoanButton_Copy_Click"/>
         <TextBox Style="{DynamicResource roundedBox1}" x:Name="hakuBox1_Copy2" HorizontalAlignment="Left"
         Height="24" Margin="870,292,0,0" 
         TextWrapping="Wrap" VerticalAlignment="Top" 

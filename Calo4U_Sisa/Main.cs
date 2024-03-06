@@ -284,9 +284,9 @@ namespace Calo4U_Sisa
             foreach (Kayttaja x in kaikki)
             {
                 tiedot[0] = x.Viikko.ToString();
-                tiedot[1] = (x.PvaKalorit).ToString();
+                tiedot[1] = (x.PvaKalorit * 7).ToString();
                 tiedot[2] = x.SyodytKalorit.ToString();
-                tiedot[3] = (x.PvaKalorit - x.SyodytKalorit).ToString();
+                tiedot[3] = (x.PvaKalorit * 7 - x.SyodytKalorit).ToString();
             }
             return tiedot;
         }

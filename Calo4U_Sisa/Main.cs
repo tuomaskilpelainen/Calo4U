@@ -170,12 +170,13 @@ namespace Calo4U_Sisa
             {
                 List<Kayttaja> kaikk = Tallentaja.LataaKaikkiKayttajat();//Hakee talentajasta kaikki käyttäjät.
                 Kayttaja kayttaja = new Kayttaja();
+                Viikkohakija.GetCurrentWeekAndYear(out int weekNumber, out int year);
                 foreach (Kayttaja k in kaikk)
                 {
                     kayttaja.ValmiitRuuat = k.ValmiitRuuat;
                 }
                 kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
-                kayttaja.Viikko = 1;
+                kayttaja.Viikko = weekNumber;
                 kayttaja.PvaKalorit = tBmr.Hae(); // Hakee tBmr arvon 
                 Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
 

@@ -293,7 +293,7 @@
         />
         <TextBox x:Name="annoksetText" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="26" Margin="10,175,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 
-            Width="148" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" TextAlignment="Center" Grid.Column="2" FontSize="13"
+            Width="148" BorderBrush="#FF8299DF" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" RenderTransformOrigin="0.48,1.575" Grid.Column="2" FontSize="13"
         />
         <TextBox x:Name="ohjeetBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="198" Margin="6,237,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 

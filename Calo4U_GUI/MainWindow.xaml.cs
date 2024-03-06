@@ -87,15 +87,21 @@ namespace Calo4U_GUI
 
         private void PieChart()
         {
-            RemainingCalories = GoalCalories - PieChartCalories;
-            saavMääräNroBlock.Text = PieChartCalories.ToString();
-            calJälBlock.Text = RemainingCalories.ToString();
-            tavoiteNroBlock.Text = GoalCalories.ToString();
-            int RemainingCalories1 = 0;
-            RemainingCalories1 = RemainingCalories;
-            if (RemainingCalories1 < 0)
+            int RemainingCalories = 0;
+            int PieChartCalories = 0;
+            Main main = new Main();
+            string[] tiedot = main.LataaKayttajanTiedot();
+
+            if (tiedot[0] != null)
             {
-                RemainingCalories1 = 0;
+                PieChartCalories = Convert.ToInt32(tiedot[2]);
+                RemainingCalories = Convert.ToInt32(tiedot[1]) - PieChartCalories;
+
+            }
+
+            if (RemainingCalories < 0)
+            {
+                RemainingCalories = 0;
             }
             pieChart.Series = new LiveCharts.SeriesCollection
             {
@@ -109,7 +115,7 @@ namespace Calo4U_GUI
                 new LiveCharts.Wpf.PieSeries
                 {
                     Title = "Viikon Jäljellä olevat kalorit",
-                    Values = new LiveCharts.ChartValues<int> { RemainingCalories1 },
+                    Values = new LiveCharts.ChartValues<int> { RemainingCalories },
                     DataLabels = true,
                     Fill = new SolidColorBrush(Color.FromRgb(255, 138, 81))
                 }
@@ -169,6 +175,7 @@ namespace Calo4U_GUI
                 Main.SyoResepti(resepti, miinus);
                 LataaKayttajanTiedot();
             }
+            PieChart();
 
         }
 
@@ -199,6 +206,7 @@ namespace Calo4U_GUI
                     }
                 }
             }
+            PieChart();
         }
 
         public void LataaKayttajanReseptit()

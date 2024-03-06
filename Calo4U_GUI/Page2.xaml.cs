@@ -25,6 +25,7 @@ namespace Calo4U_GUI
     {
         private List<string> Resepetit;
         private Frame mainFrame;
+        private string resepti;
         public Page2(Frame mainFrame)
         {
 
@@ -72,9 +73,10 @@ namespace Calo4U_GUI
 
         private void Lista_Click(object sender, MouseButtonEventArgs e)
         {
-            int annokset = 5;
+            int annokset = 0;
             string resepti = (string)Lista_Box.SelectedItem as string;
             NaytaResepti(resepti, annokset);
+            ValitseResepti();
 
 
 
@@ -162,12 +164,12 @@ namespace Calo4U_GUI
 
         private void ValmistaRuoanButton_Copy_Click(object sender, RoutedEventArgs e)
         {
-            string resepti = (string)Lista_Box.SelectedItem as string;
+            Main main = new Main(); 
             if (string.IsNullOrEmpty(resepti)) { return; }
             int annokset;
             if (string.IsNullOrEmpty(hakuBox1_Copy2.Text))
             {
-                annokset = 5;
+                annokset = main.HaeAnnokset(resepti);
                 Main.LisaaReseptiKayttajalle(resepti, annokset);
             }
             else
@@ -180,7 +182,17 @@ namespace Calo4U_GUI
                 catch (Exception ex) { }
             }
 
+            
 
+
+        }
+        private void ValitseResepti()
+        {
+            resepti = (string)Lista_Box.SelectedItem as string;
+        }
+        public void LahetaResepti(string nimi)
+        {
+            resepti = nimi;
         }
     }
 }

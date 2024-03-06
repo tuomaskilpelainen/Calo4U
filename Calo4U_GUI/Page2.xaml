@@ -311,7 +311,7 @@
             HorizontalAlignment="Left" Height="445" Margin="13,69,0,0" 
             VerticalAlignment="Top" Width="230" Background="White"
         >
-            <ListBox x:Name="Lista_Box" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="9,131,9,0" MouseDoubleClick="Lista_Click" FontFamily="Poppins Medium" Height="303" VerticalAlignment="Top" FontSize="14"/>
+            <ListBox x:Name="Lista_Box" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="9,131,9,0" FontFamily="Poppins Medium" Height="303" VerticalAlignment="Top" FontSize="14" MouseLeftButtonUp="Lista_Click"/>
         </Border>
         <Button Style="{DynamicResource roundedButton2}" x:Name="HaeButton1" Content="Hae" HorizontalAlignment="Left" Height="28" Margin="96,159,0,0" VerticalAlignment="Top" Width="64" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDDE2F4" FontSize="13"/>
         <Border x:Name="bigBox2" BorderThickness="1" CornerRadius="10                 " 

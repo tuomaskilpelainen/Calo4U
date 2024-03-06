@@ -197,6 +197,7 @@ namespace Calo4U_GUI
 
                     Page2 page2 = new Page2(mainFrame);
                     page2.LaataaLuotuResepti(nimi, annokset);
+                    page2.LahetaResepti(nimi);
                     NavigationService.Navigate(page2);
                 }
                 else
@@ -295,11 +296,16 @@ namespace Calo4U_GUI
             return "Data from LataaMuokattuResepti() method";
         }
 
-       
-
-       
-
-        
+        private void HaeKalorit(object sender, TextChangedEventArgs e) //Hakee Käyttäjän raakaAine nimeen kirjoitetun perusteella löytyykö raakaAine jo kirjastosta ja jos löytyy kirjoittaa automaattisesti kalorit 
+        {
+            string nimi = raaka_aineBox.Text;
+            Main main = new Main();
+            string kalorit = main.HaeKalorit(nimi);//Hakee löytyykö tietoja jos ei string.Empty
+            if (!string.IsNullOrEmpty(kalorit))
+            {
+                kaloritBox.Text = kalorit;
+            }
+        }
     }
 }
 

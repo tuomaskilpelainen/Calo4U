@@ -277,7 +277,7 @@
         />
         <TextBox x:Name="raaka_aineBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="24" Margin="17,113,0,0"
                  TextWrapping="Wrap" VerticalAlignment="Top" 
-                 Width="190" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" Grid.Column="1" FontSize="13"
+                 Width="190" BorderBrush="#fe8a51" BorderThickness="0.5" Background="{x:Null}" FontFamily="Poppins" Foreground="#FF4A4A4A" Grid.Column="1" FontSize="13" TextChanged="HaeKalorit"
         />
         <TextBox x:Name="määräBox" Style="{DynamicResource RoundedAines}" HorizontalAlignment="Left" Height="24" Margin="17,182,0,0"
             TextWrapping="Wrap" VerticalAlignment="Top" 

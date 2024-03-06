@@ -105,6 +105,7 @@ namespace Calo4U_Sisa
                                 
                                 raakaAineLista.Lisaa(x);
                             }
+                            
                             break;
                         }
                     }
@@ -114,7 +115,14 @@ namespace Calo4U_Sisa
                 kokoKalorit = kokoKalorit / 100 * kokogrammat;
                 double annosKalorit = kokoKalorit / annokset;
                 reseptiText[3] += $"Koko ruuan kalorit: {kokoKalorit}\nAnnoksen kalorit: {annosKalorit}";
-                reseptiText[4] = annokset.ToString();
+                if (annokset == 0)
+                {
+                    reseptiText[4] = tResepti.Annokset.ToString();
+                }
+                else
+                {
+                    reseptiText[4] = annokset.ToString();
+                }
                 return reseptiText;
             }
             reseptiText[0] = "Reseptiä Ei löytynyt";
@@ -177,6 +185,17 @@ namespace Calo4U_Sisa
                 kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
                 kayttaja.Viikko = 1;
                 kayttaja.PvaKalorit = tBmr.Hae(); // Hakee tBmr arvon 
+                DateTime tänään = DateTime.Today;
+                int poistettavatPaivat = (int)tänään.DayOfWeek - (int)DayOfWeek.Monday;
+                if (poistettavatPaivat < 0)
+                {
+                    kayttaja.AloitusPaiva = tänään;
+                }
+                else
+                {
+                    DateTime maanantai = tänään.AddDays(-poistettavatPaivat);
+                    kayttaja.AloitusPaiva = maanantai;
+                }
                 Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
 
 
@@ -349,7 +368,7 @@ namespace Calo4U_Sisa
                         if (miinus)
                         {
 
-                            if (k.SyodytKalorit - r.annoksenKalorit < 0 && k.SyodytKalorit > 0)
+                            if ((k.SyodytKalorit - r.annoksenKalorit) <= 0 && k.SyodytKalorit > 0)
                             {
                                 r.Annokset += 1;
                                 k.SyoKalori(0 - r.annoksenKalorit);
@@ -357,7 +376,9 @@ namespace Calo4U_Sisa
 
                             }
                             else if (k.SyodytKalorit - r.annoksenKalorit < 0 && k.SyodytKalorit <= 0)
-                            {  r.Annokset += r.Annokset;}
+                            { 
+                                r.Annokset = r.Annokset;
+                            }
                             else
                             {
                                 r.Annokset += 1;
@@ -381,6 +402,56 @@ namespace Calo4U_Sisa
                 }
                 Tallentaja.TallennaKayttaja(k);
             }
+        }
+
+        public string HaeKalorit(string nimi)
+        {
+            string kalorit = string.Empty;
+            List<RaakaAineKalorit> kaikki = Tallentaja.LataaKaikkiKalorit();
+            foreach(RaakaAineKalorit k in kaikki) 
+            {
+                if (k.Nimi == nimi)
+                {
+                    kalorit = k.Kalorit.ToString();
+                    return kalorit;
+                }
+            }
+            return kalorit;
+        }
+
+        public int HaeAnnokset(string nimi) // Palauttaa reseptin alkuperäisen annosmäärän
+        {
+            int annokset = 5;
+            List<Resepti> kaikki = Tallentaja.LaataakaikkiReseptit();
+            foreach(Resepti k in kaikki)
+            {
+                if (k.Nimi == nimi)
+                {
+                    annokset = k.Annokset;
+                    return annokset;
+                }
+            }
+            return annokset;
+
+        }
+        public void TarkistaViikko()
+        {
+            bool tallenna = false;
+            Kayttaja kayttaja = new Kayttaja();
+            List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat();
+            if (kaikki.Count > 0)
+            {
+                foreach (Kayttaja k in kaikki)
+                {
+                    tallenna = k.TarkistaViikko();
+                    kayttaja = k;
+                }
+            }
+            if (tallenna)
+            {
+                Tallentaja.TallennaKayttaja(kayttaja);
+            }
+
         }
 
     }

@@ -31,11 +31,17 @@ namespace Calo4U_GUI
         public MainWindow()
         {
             InitializeComponent();
+            MainWindow_Loaded();
             PieChartCalories = CaloriesEaten;
             PieChart();
             LataaKayttajanTiedot();
             LataaKayttajanReseptit();
 
+        }
+        private void MainWindow_Loaded()
+        {
+            Main main = new Main();
+            main.TarkistaViikko();
         }
 
         private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
@@ -206,6 +212,7 @@ namespace Calo4U_GUI
         private void Lista_Click(object sender, MouseButtonEventArgs e)
         {
             string resepti1 = (string)KayttajanReseptitBox.SelectedItem as string;
+            if (string.IsNullOrEmpty(resepti1) ) { return; }
             resepti = resepti1.Split(',')[0];
 
         }

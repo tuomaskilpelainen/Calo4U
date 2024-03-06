@@ -85,7 +85,7 @@ namespace Calo4U_GUI
             Main main = new Main();
             string[] Sresepti = main.LataaResepti(resepti, annokset); //0 Nimi, 1, Ohjeet, 2 RaakaAineet, 3 Kalorit, 4 Annokset
             ReseptinNimiTextBlock.Text = Sresepti[0];
-            AineksetTextBlock.Text = Sresepti[2];
+            aineksetTextBox.Text = Sresepti[2];
             OhjeetText_Copy.Text = Sresepti[1];
             ReseptinNimiTextBlock2.Text = Sresepti[0];
             AnnosMääräTextBlock.Text = Sresepti[4];

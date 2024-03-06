@@ -261,12 +261,56 @@
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Border3" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border3" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border3" Color="#FF569DE5"/>
+        <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border3}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" Margin="0" Padding="0" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border3}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border3}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
     </Page.Resources>
     <Grid>
         <Border x:Name="bigBox1" BorderThickness="1" CornerRadius="10" 
             HorizontalAlignment="Left" Height="445" Margin="13,69,0,0" 
             VerticalAlignment="Top" Width="230" Background="White"
-    >
+        >
             <ListBox x:Name="Lista_Box" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="9,131,9,0" MouseDoubleClick="Lista_Click" FontFamily="Poppins Medium" Height="303" VerticalAlignment="Top" FontSize="14"/>
         </Border>
         <Button Style="{DynamicResource roundedButton2}" x:Name="HaeButton1" Content="Hae" HorizontalAlignment="Left" Height="28" Margin="96,159,0,0" VerticalAlignment="Top" Width="64" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDDE2F4" FontSize="13"/>
@@ -275,7 +319,7 @@
         VerticalAlignment="Top" Width="450" Background="White"
     />
         <TextBlock x:Name="ReseptinNimiTextBlock" HorizontalAlignment="Left" Height="20" Margin="273,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="14"/>
-        <TextBlock x:Name="AineksetTextBlock" HorizontalAlignment="Left" Height="90" Margin="273,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="405" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="13"/>
+
         <TextBlock x:Name="OhjeetText" HorizontalAlignment="Left" Height="20" Margin="273,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
         <TextBlock x:Name="OhjeetText_Copy" HorizontalAlignment="Left" Height="221" Margin="273,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="13"/>
 
@@ -289,14 +333,23 @@
         <TextBlock x:Name="AnnosMääräTextBlock" HorizontalAlignment="Left" Height="20" Margin="880,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" FontFamily="Poppins Medium" Foreground="#FF2E334E" RenderTransformOrigin="0,0.252" Text="" FontSize="14"/>
         <TextBlock x:Name="KaloritText" HorizontalAlignment="Left" Height="20" Margin="740,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Kalorit (cal):"/></TextBlock>
         <TextBlock x:Name="KaloritTextBlock" HorizontalAlignment="Left" 
-               Height="70" Margin="745,165,0,0" TextWrapping="Wrap" 
-               VerticalAlignment="Top" Width="198" FontFamily="Poppins Medium"
+               Height="92" Margin="745,165,0,0" TextWrapping="Wrap" 
+               VerticalAlignment="Top" Width="187" FontFamily="Poppins Medium"
                Foreground="#FF2E334E" TextAlignment="Center"
-               Background="#FFEEFFED" Text="" FontSize="14"/>
+               Background="#FFEEFFED" Text="" FontSize="14" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.211"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.33"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
         <TextBlock x:Name="LisääRuoanListalleText" HorizontalAlignment="Left" Height="20" Margin="754,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14" Text="Lisää ruoanlistalle"/>
         <Button Style="{DynamicResource roundedButton2}" x:Name="ValmistaRuoanButton_Copy" Content="+" HorizontalAlignment="Left" Height="34" Margin="890,395,0,0" VerticalAlignment="Top" Width="34" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDEFADD" Foreground="#FF467640" RenderTransformOrigin="0.571,0.413" FontSize="14"/>
         <TextBox Style="{DynamicResource roundedBox1}" x:Name="hakuBox1_Copy2" HorizontalAlignment="Left"
-        Height="24" Margin="870,268,0,0" 
+        Height="24" Margin="870,292,0,0" 
         TextWrapping="Wrap" VerticalAlignment="Top" 
         Width="73" BorderBrush="#FF75CC74" FontFamily="Poppins Light" Foreground="#FF3A3A3A" RenderTransformOrigin="1.026,-1.08" FontSize="14"
         />
@@ -307,9 +360,24 @@
         <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="484,2,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
         <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,2,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
         <TextBox Style="{DynamicResource roundedTex}" x:Name="Haku_Box" HorizontalAlignment="Left" Margin="30,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="24" TextChanged="Lista_Box_TextChance" BorderBrush="#FF8299DF"/>
-        <Button Style="{DynamicResource roundedButton2}" x:Name="ValmistaRuoanButton" Content="Valmista ruoan" HorizontalAlignment="Left" Height="34" Margin="775,314,0,0" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDEFADD" Foreground="#FF467640" Click="ValmistaRuoanButton_Click" FontSize="13"/>
+        <Button Style="{DynamicResource roundedButton2}" x:Name="ValmistaRuoanButton" Content="Valmista ruoan" HorizontalAlignment="Left" Height="34" Margin="775,336,0,0" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDEFADD" Foreground="#FF467640" Click="ValmistaRuoanButton_Click" FontSize="13"/>
         <TextBox x:Name="reseptinNimiText" HorizontalAlignment="Left" Height="20" Margin="30,99,0,0" TextWrapping="Wrap" Text="Reseptin nimi:" VerticalAlignment="Top" Width="134" FontFamily="Poppins Medium" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E334E"/>
-        <TextBlock x:Name="AnnosMääräText" HorizontalAlignment="Left" Height="20" Margin="735,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Annoksien määrä:"/><LineBreak/><Run Language="en-gb"/><LineBreak/><Run Language="en-gb"/></TextBlock>
+        <TextBlock x:Name="AnnosMääräText" HorizontalAlignment="Left" Height="20" Margin="735,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Annoksien määrä:"/><LineBreak/><Run Language="en-gb"/><LineBreak/><Run Language="en-gb"/></TextBlock>
+        <TextBox x:Name="aineksetTextBox" HorizontalAlignment="Left" Height="88" Margin="273,121,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="417"
+            VerticalScrollBarVisibility="Auto" TextAlignment="Left"
+                 
+                
+                 IsReadOnly="True" RenderTransformOrigin="0.5,0.5" FontFamily="Poppins Medium" FontSize="13" Foreground="#FF2E334E" BorderBrush="{x:Null}"
+        >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
 
     </Grid>
 

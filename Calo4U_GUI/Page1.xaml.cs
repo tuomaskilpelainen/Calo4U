@@ -187,7 +187,7 @@ namespace Calo4U_GUI
                     ohjeetBox.Foreground = Brushes.Black;
                     reseptiNimiBox.Foreground = Brushes.Black;
                     annoksetText.Foreground = Brushes.Black;
-                    NäytäOhjeetTextBlock.Foreground = Brushes.Black;
+                    //NäytäOhjeetTextBlock.Foreground = Brushes.Black;
                     ohjeetBox.Text = string.Empty;
                     reseptiNimiBox.Text = string.Empty;
                     annoksetText.Text = string.Empty;
@@ -202,8 +202,8 @@ namespace Calo4U_GUI
                 }
                 else
                 {
-                    NäytäOhjeetTextBlock.Foreground = Brushes.Red;
-                    NäytäOhjeetTextBlock.Text = "Lisää ensin raaka-aineet.";
+                    //NäytäOhjeetTextBlock.Foreground = Brushes.Red;
+                    //NäytäOhjeetTextBlock.Text = "Lisää ensin raaka-aineet.";
                 }
             }
 
@@ -295,6 +295,12 @@ namespace Calo4U_GUI
 
             return "Data from LataaMuokattuResepti() method";
         }
+
+       
+
+       
+
+        
     }
 }
 

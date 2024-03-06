@@ -26,12 +26,16 @@ namespace Calo4U_GUI
         int LastCaloriesEaten = 17000;
         int RemainingCalories = 0;
         int PieChartCalories = 0;
+        private List<string> KayttajanReseptit = new List<string>(); // Kaikki käyttäjän valmiit reseptit
+        private string resepti = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
             PieChartCalories = CaloriesEaten;
             PieChart();
             LataaKayttajanTiedot();
+            LataaKayttajanReseptit();
+
         }
 
         private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
@@ -132,23 +136,37 @@ namespace Calo4U_GUI
         {
             double kalorit = 0;
             bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
-            try
+            if (!string.IsNullOrWhiteSpace(calSyöttöTextBox.Text))
             {
-                kalorit += double.Parse(calSyöttöTextBox.Text);
-                Main main = new Main();
-                ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä palauttaa true tai false onnistui / ei
-                calSyöttöTextBox.Text = string.Empty;
+                try
+                {
+                    kalorit += double.Parse(calSyöttöTextBox.Text);
+                    Main main = new Main();
+                    ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä palauttaa true tai false onnistui / ei
+                    calSyöttöTextBox.Text = string.Empty;
+                    LataaKayttajanTiedot();
+
+                }
+                catch (Exception ex)
+                {
+                    if (!string.IsNullOrEmpty(resepti))
+                    {
+                        Main.SyoResepti(resepti);
+                        LataaKayttajanTiedot();
+                    }
+                }
+            }
+            else if (!string.IsNullOrEmpty(resepti))
+            {
+                Main.SyoResepti(resepti);
                 LataaKayttajanTiedot();
-
             }
-            catch (Exception ex)
-            {
 
-            }
         }
 
         private void poistaButton_Click(object sender, RoutedEventArgs e)
         {
+
             double kalorit = 0;
             bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
             try
@@ -164,6 +182,19 @@ namespace Calo4U_GUI
             {
 
             }
+        }
+
+        public void LataaKayttajanReseptit()
+        {
+            KayttajanReseptit = Main.KayttajanReseptitS(); // Hakee mainista käyttäjän kaikki valmiit reseptit
+            KayttajanReseptitBox.ItemsSource = null;
+            KayttajanReseptitBox.ItemsSource = KayttajanReseptit;
+
+        }
+
+        private void Lista_Click(object sender, MouseButtonEventArgs e)
+        {
+            resepti = (string)KayttajanReseptitBox.SelectedItem as string;
         }
     }
 }

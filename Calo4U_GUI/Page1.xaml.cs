@@ -38,16 +38,14 @@ namespace Calo4U_GUI
         }
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
-            // Clear text blocks when navigation occurs
             ohjeetBox.Text = string.Empty;
             reseptiNimiBox.Text = string.Empty;
             annoksetText.Text = string.Empty;
             raakaAineTextLista = new List<string>();
 
-
             RaakaAineLista.ItemsSource = null;
             RaakaAineLista.ItemsSource = raakaAineTextLista;
-            // Clear other text blocks as needed
+
         }
 
         private void etusivuNavButton_Click(object sender, RoutedEventArgs e)
@@ -56,6 +54,7 @@ namespace Calo4U_GUI
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
+                mainWindow.LataaKayttajanReseptit();
                 ohjeetBox.Text = string.Empty;
                 reseptiNimiBox.Text = string.Empty;
                 annoksetText.Text = string.Empty;

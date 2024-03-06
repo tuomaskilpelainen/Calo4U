@@ -134,6 +134,7 @@ namespace Calo4U_GUI
 
         private void syöButton_Click(object sender, RoutedEventArgs e)
         {
+            bool miinus = false;
             double kalorit = 0;
             bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
             if (!string.IsNullOrWhiteSpace(calSyöttöTextBox.Text))
@@ -151,14 +152,15 @@ namespace Calo4U_GUI
                 {
                     if (!string.IsNullOrEmpty(resepti))
                     {
-                        Main.SyoResepti(resepti);
+                        Main.SyoResepti(resepti, miinus);
                         LataaKayttajanTiedot();
+                        LataaKayttajanReseptit();
                     }
                 }
             }
             else if (!string.IsNullOrEmpty(resepti))
             {
-                Main.SyoResepti(resepti);
+                Main.SyoResepti(resepti, miinus);
                 LataaKayttajanTiedot();
             }
 
@@ -166,21 +168,30 @@ namespace Calo4U_GUI
 
         private void poistaButton_Click(object sender, RoutedEventArgs e)
         {
-
+            bool miinus = true;
             double kalorit = 0;
             bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
-            try
+            if (!string.IsNullOrEmpty(calSyöttöTextBox.Text))
             {
-                kalorit -= double.Parse(calSyöttöTextBox.Text);
-                Main main = new Main();
-                ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä paluttaa true tai false onnistui / ei
-                calSyöttöTextBox.Text = string.Empty;
-                LataaKayttajanTiedot();
+                try
+                {
+                    kalorit -= double.Parse(calSyöttöTextBox.Text);
+                    Main main = new Main();
+                    ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä paluttaa true tai false onnistui / ei
+                    calSyöttöTextBox.Text = string.Empty;
+                    LataaKayttajanTiedot();
+                    LataaKayttajanReseptit();
 
-            }
-            catch (Exception ex)
-            {
-
+                }
+                catch (Exception ex)
+                {
+                    if (!string.IsNullOrEmpty(resepti))
+                    {
+                        Main.SyoResepti(resepti, miinus);
+                        LataaKayttajanTiedot();
+                        LataaKayttajanReseptit();
+                    }
+                }
             }
         }
 
@@ -194,7 +205,9 @@ namespace Calo4U_GUI
 
         private void Lista_Click(object sender, MouseButtonEventArgs e)
         {
-            resepti = (string)KayttajanReseptitBox.SelectedItem as string;
+            string resepti1 = (string)KayttajanReseptitBox.SelectedItem as string;
+            resepti = resepti1.Split(',')[0];
+
         }
     }
 }

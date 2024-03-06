@@ -168,10 +168,18 @@ namespace Calo4U_Sisa
             List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat(); // Lataa kaikki käyttäjät (tällä hetkellä vain yksi käyttäjä mahdollinen)
             if (kaikki.Count >= 0)
             {
+                List<Kayttaja> kaikk = Tallentaja.LataaKaikkiKayttajat();//Hakee talentajasta kaikki käyttäjät.
                 Kayttaja kayttaja = new Kayttaja();
+                foreach (Kayttaja k in kaikk)
+                {
+                    kayttaja.ValmiitRuuat = k.ValmiitRuuat;
+                }
                 kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
+                kayttaja.Viikko = 1;
                 kayttaja.PvaKalorit = tBmr.Hae(); // Hakee tBmr arvon 
                 Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
+
+
             }
             else
             {
@@ -323,12 +331,12 @@ namespace Calo4U_Sisa
             {
                 foreach (Resepti r in x.ValmiitRuuat)
                 {
-                    reseptit.Add(r.Nimi);
+                    reseptit.Add($"{r.Nimi}, Annokset: {r.Annokset}");
                 }
             }
             return reseptit;
         }
-        public static void SyoResepti(string nimi)
+        public static void SyoResepti(string nimi, bool miinus)
         {
             Resepti haettuResepti = Resepti.LuoTyhja();
             List<Kayttaja> kaikkiK = Tallentaja.LataaKaikkiKayttajat();
@@ -338,9 +346,30 @@ namespace Calo4U_Sisa
                 {
                     if (r.Nimi == nimi)
                     {
+                        if (miinus)
+                        {
 
-                        r.Annokset -= 1;
-                        k.SyoKalori(r.annoksenKalorit);
+                            if (k.SyodytKalorit - r.annoksenKalorit < 0 && k.SyodytKalorit > 0)
+                            {
+                                r.Annokset += 1;
+                                k.SyoKalori(0 - r.annoksenKalorit);
+
+
+                            }
+                            else if (k.SyodytKalorit - r.annoksenKalorit < 0 && k.SyodytKalorit <= 0)
+                            {  r.Annokset += r.Annokset;}
+                            else
+                            {
+                                r.Annokset += 1;
+                                k.SyoKalori(0 - r.annoksenKalorit);
+                            }
+
+                        }
+                        else
+                        {
+                            r.Annokset -= 1;
+                            k.SyoKalori(r.annoksenKalorit);
+                        }
                         haettuResepti = r;
 
 

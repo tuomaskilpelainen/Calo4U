@@ -31,7 +31,15 @@ namespace Calo4U_Sisa
         }
         public void SyoKalori(double kalorit)
         {
-            SyodytKalorit += kalorit;
+            if (SyodytKalorit + kalorit < 0)
+            {
+                SyodytKalorit = 0;
+            }
+            else
+            {
+                SyodytKalorit += kalorit;
+            }
+            
         }
 
     }

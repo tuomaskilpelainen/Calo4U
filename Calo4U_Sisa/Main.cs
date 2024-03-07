@@ -332,7 +332,17 @@ namespace Calo4U_Sisa
                                 Resepti uusiResepti = x;
                                 uusiResepti.Annokset = annokset;
                                 uusiResepti.kokoKalorit = uusiResepti.annoksenKalorit * annokset;
-
+                                bool on = k.ValmiitRuuat.Any(x => x.Nimi == nimi);
+                                if (on)
+                                    foreach(Resepti r in k.ValmiitRuuat)
+                                    {
+                                        if (r.Nimi == nimi)
+                                        {
+                                            r.Annokset += annokset;
+                                            Tallentaja.TallennaKayttaja(k);
+                                            return;
+                                        }
+                                    }
                                 k.lisaaRuoka(uusiResepti);
                                 Tallentaja.TallennaKayttaja(k);
                             }

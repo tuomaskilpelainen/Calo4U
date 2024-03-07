@@ -69,6 +69,7 @@ namespace Calo4U_GUI
         public void ShowMainWindow()
         {
             MainFrame.Visibility = Visibility.Collapsed;
+            PieChart();
         }
 
         public void LataaKayttajanTiedot()
@@ -85,7 +86,8 @@ namespace Calo4U_GUI
             }
         }
 
-        private void PieChart()
+
+        public void PieChart()
         {
             int RemainingCalories = 0;
             int PieChartCalories = 0;

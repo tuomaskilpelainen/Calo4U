@@ -224,5 +224,10 @@ namespace Calo4U_GUI
             resepti = resepti1.Split(',')[0];
 
         }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

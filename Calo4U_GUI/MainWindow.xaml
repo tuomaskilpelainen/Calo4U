@@ -113,14 +113,14 @@
         <Image Source="/Core/Kuvat/ellipse1.png" Margin="-43,137,842,31"/>
         <Image Source="/Core/Kuvat/ellipse2.png" Margin="830,-16,0,384"/>
 
-        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="13,-20,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E">
+        <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" HorizontalAlignment="Left" Height="64" Margin="12,-20,0,0" VerticalAlignment="Top" Width="942" Background="#FF2E334E">
 
         </Border>
 
-        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="160,0,0,0" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
-        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="44" Margin="337,0,0,0" VerticalAlignment="Top" Width="142" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
-        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="40" Margin="484,2,0,0" VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
-        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="40" Margin="26,2,0,0" VerticalAlignment="Top" Width="148" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
+        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="178,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="44" Margin="327,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
+        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="44" Margin="476,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
+        <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="44" Margin="29,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
 
         <Border x:Name="tietoBox" CornerRadius="20" BorderThickness="1" HorizontalAlignment="Left" Height="191" Margin="547,331,0,0" VerticalAlignment="Top" Width="320" Background="White"/>
 
@@ -143,6 +143,6 @@
         <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF" Click="syöButton_Click"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3" Click="poistaButton_Click"/>
         <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Right"  Margin="480,52,30,235"/>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="-1,0,1,0" Navigated="MainFrame_Navigated" />
     </Grid>
 </Window>

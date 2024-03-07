@@ -111,7 +111,7 @@ namespace Calo4U_Sisa
                             double maara = (double)rAine.Maara / tResepti.Annokset;
                             maara = maara * oAnnokset;
                             reseptiText[2] += $"{rAine.Nimi} {Math.Round(maara,2)}g {Math.Round(kalorit.Kalorit,2)}kc/100g\n";
-                            kokoKalorit += rAine.Maara * kalorit.Kalorit / 100;
+                            kokoKalorit += maara * kalorit.Kalorit / 100;
                             raakaAineLista.Tyhjenna();
                             foreach (Resepti.RaakaAine x in tResepti.RaakaAineLista)
                             {

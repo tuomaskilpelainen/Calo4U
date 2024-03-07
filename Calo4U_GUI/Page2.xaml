@@ -327,7 +327,9 @@
         <Border x:Name="bigBox1_Copy" BorderThickness="1" CornerRadius="10" 
         HorizontalAlignment="Left" Height="445" Margin="725,69,0,0" 
         VerticalAlignment="Top" Width="230" Background="White"
-    />
+    >
+            <TextBlock Name="OnnistunutTextBlock" Visibility="Hidden" TextWrapping="Wrap" Margin="53,368,53,55" Foreground="#FF166D37" FontSize="14"><Run Language="fi-fi" Text="Lisätty ruokalistalle"/></TextBlock>
+        </Border>
         <TextBlock x:Name="ReseptinNimiTextBlock2" HorizontalAlignment="Left" Height="20" Margin="740,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Resepti"/></TextBlock>
         <TextBlock x:Name="AnnosMääräText1" HorizontalAlignment="Left" Height="20" Margin="740,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Text="Annoksien määrä"/><Run Language="en-gb" Text=":"/></TextBlock>
         <TextBlock x:Name="AnnosMääräTextBlock" HorizontalAlignment="Left" Height="20" Margin="880,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" FontFamily="Poppins Medium" Foreground="#FF2E334E" RenderTransformOrigin="0,0.252" Text="" FontSize="14"/>
@@ -346,7 +348,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="LisääRuoanListalleText" HorizontalAlignment="Left" Height="20" Margin="754,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14" Text="Lisää ruoanlistalle"/>
+        <TextBlock x:Name="LisääRuoanListalleText" HorizontalAlignment="Left" Height="20" Margin="754,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Text="Lisää "/><Run Language="fi-fi" Text="ruokalistalle"/><LineBreak/><Run Language="fi-fi"/></TextBlock>
         <Button Style="{DynamicResource roundedButton2}" x:Name="ValmistaRuoanButton_Copy" Content="+" HorizontalAlignment="Left" Height="34" Margin="890,395,0,0" VerticalAlignment="Top" Width="34" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDEFADD" Foreground="#FF467640" RenderTransformOrigin="0.571,0.413" FontSize="14" Click="ValmistaRuoanButton_Copy_Click"/>
         <TextBox Style="{DynamicResource roundedBox1}" x:Name="hakuBox1_Copy2" HorizontalAlignment="Left"
         Height="24" Margin="870,292,0,0" 
@@ -365,7 +367,6 @@
         <TextBlock x:Name="AnnosMääräText" HorizontalAlignment="Left" Height="20" Margin="735,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Annoksien määrä:"/><LineBreak/><Run Language="en-gb"/><LineBreak/><Run Language="en-gb"/></TextBlock>
         <TextBox x:Name="aineksetTextBox" HorizontalAlignment="Left" Height="88" Margin="273,121,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="417"
             VerticalScrollBarVisibility="Auto" TextAlignment="Left"
-                 
                 
                  IsReadOnly="True" RenderTransformOrigin="0.5,0.5" FontFamily="Poppins Medium" FontSize="13" Foreground="#FF2E334E" BorderBrush="{x:Null}"
         >

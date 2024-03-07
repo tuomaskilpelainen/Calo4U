@@ -26,6 +26,7 @@ namespace Calo4U_GUI
         private List<string> Resepetit;
         private Frame mainFrame;
         private string resepti;
+        private System.Timers.Timer timer;
         public Page2(Frame mainFrame)
         {
 
@@ -35,7 +36,22 @@ namespace Calo4U_GUI
             Lista_Box.ItemsSource = Resepetit;
             this.mainFrame = mainFrame;
 
+            timer = new System.Timers.Timer();
+            timer.Interval = 3000;
+            timer.AutoReset = false;
+            timer.Elapsed += Timer_Elapsed;
+
         }
+
+        //Piilottaa tekstikentän 3000ms ajaksi
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                OnnistunutTextBlock.Visibility = Visibility.Collapsed;
+            });
+        }
+
         public void LaataaLuotuResepti(string resepti, int annokset)
         {
             NaytaResepti(resepti, annokset);
@@ -157,10 +173,7 @@ namespace Calo4U_GUI
 
         }
 
-        private void hakuBox1_Copy2_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
 
         private void ValmistaRuoanButton_Copy_Click(object sender, RoutedEventArgs e)
         {
@@ -171,6 +184,8 @@ namespace Calo4U_GUI
             {
                 annokset = main.HaeAnnokset(resepti);
                 Main.LisaaReseptiKayttajalle(resepti, annokset);
+                OnnistunutTextBlock.Visibility = Visibility.Visible;
+                timer.Start();
             }
             else
             {

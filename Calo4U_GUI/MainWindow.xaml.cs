@@ -94,8 +94,8 @@ namespace Calo4U_GUI
 
             if (tiedot[0] != null)
             {
-                PieChartCalories = Convert.ToInt32(tiedot[2]);
-                RemainingCalories = Convert.ToInt32(tiedot[1]) - PieChartCalories;
+                PieChartCalories = Convert.ToInt32(tiedot[2].Replace(",", ".").Split(".")[0]);
+                RemainingCalories = Convert.ToInt32(tiedot[1].Replace(",", ".").Split(".")[0]) - PieChartCalories;
 
             }
 

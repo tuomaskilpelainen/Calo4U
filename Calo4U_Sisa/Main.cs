@@ -78,14 +78,26 @@ namespace Calo4U_Sisa
         {
             bool loytyi = false;
             double kokoKalorit = 0;
-            double kokogrammat = 0;
+            int oAnnokset;// On Reseptin annokset jos annoksia ei ole erikseen vaihdettu
             string[] reseptiText = new string[5];//0 Nimi, 1, Ohjeet, 2 RaakaAineet, 3 Kalorit, 4 Annokset
 
             Tallentaja lataaja = new Tallentaja();
             Resepti tResepti = lataaja.LataaResepti(nimi); // lataa reseptin "nimi" muuttajan perusteella Json filesta
+
             if (!string.IsNullOrEmpty(tResepti.Nimi))
             {
                 talenettuResepti = tResepti;
+                if (annokset == 0)
+                {
+                    reseptiText[4] = tResepti.Annokset.ToString();
+                    oAnnokset = tResepti.Annokset;
+                }
+                else
+                {
+                    reseptiText[4] = annokset.ToString();
+                    oAnnokset = annokset;
+                }
+
                 List<RaakaAineKalorit> kaikkiKalorit = Tallentaja.LataaKaikkiKalorit(); // Hakee kaikki jo tallenetut kalorit Tallentajasta
                 reseptiText[0] = $"{tResepti.Nimi}";
                 reseptiText[1] = $"{tResepti.Ohjeet}";
@@ -96,9 +108,10 @@ namespace Calo4U_Sisa
                         if (rAine.Nimi == kalorit.Nimi)
                         {
                             loytyi = true;
-                            reseptiText[2] += $"{rAine.Nimi} {rAine.Maara / tResepti.Annokset * annokset}g {kalorit.Kalorit}kc/100g\n";
-                            kokoKalorit += kalorit.Kalorit;
-                            kokogrammat += rAine.Maara / tResepti.Annokset * annokset;
+                            double maara = (double)rAine.Maara / tResepti.Annokset;
+                            maara = maara * oAnnokset;
+                            reseptiText[2] += $"{rAine.Nimi} {Math.Round(maara,2)}g {Math.Round(kalorit.Kalorit,2)}kc/100g\n";
+                            kokoKalorit += rAine.Maara * kalorit.Kalorit / 100;
                             raakaAineLista.Tyhjenna();
                             foreach (Resepti.RaakaAine x in tResepti.RaakaAineLista)
                             {
@@ -109,20 +122,12 @@ namespace Calo4U_Sisa
                             break;
                         }
                     }
-                    if (!loytyi) { reseptiText[3] += $"\n{rAine.Nimi} {rAine.Maara / tResepti.Annokset * annokset}g (Kalori tietoja ei löytynyt!)"; }
+                    if (!loytyi) { reseptiText[3] += $"\n{rAine.Nimi} {rAine.Maara / tResepti.Annokset * oAnnokset}g (Kalori tietoja ei löytynyt!)"; }
                     
                 }
-                kokoKalorit = kokoKalorit / 100 * kokogrammat;
-                double annosKalorit = kokoKalorit / annokset;
-                reseptiText[3] += $"Koko ruuan kalorit: {kokoKalorit}\nAnnoksen kalorit: {annosKalorit}";
-                if (annokset == 0)
-                {
-                    reseptiText[4] = tResepti.Annokset.ToString();
-                }
-                else
-                {
-                    reseptiText[4] = annokset.ToString();
-                }
+                double annosKalorit = kokoKalorit / oAnnokset;
+                reseptiText[3] += $"Koko kalorit: {Math.Round(kokoKalorit,2)}\nAnnoksen kalorit: {Math.Round(annosKalorit,2)}";
+
                 return reseptiText;
             }
             reseptiText[0] = "Reseptiä Ei löytynyt";
@@ -160,7 +165,7 @@ namespace Calo4U_Sisa
             KaloriLaskuri kaloriLaskuri = new KaloriLaskuri();
             double bmr = kaloriLaskuri.Bmr(paino, pituus, ikä, sukupuoli, aktiivisuus, tavoite); // Käy Bmr clasissa ja laskee kalorintarpeen muuttujien perusteella
             tBmr.Lisaa(bmr);
-            string bmrText = $"Kaloritarve päivässä: \n{bmr} cal";
+            string bmrText = $"Kaloritarve päivässä: \n{Math.Round(bmr,2)} cal";
             return bmrText;
 
         }
@@ -304,9 +309,9 @@ namespace Calo4U_Sisa
             foreach (Kayttaja x in kaikki)
             {
                 tiedot[0] = x.Viikko.ToString();
-                tiedot[1] = (x.PvaKalorit * 7).ToString();
-                tiedot[2] = x.SyodytKalorit.ToString();
-                tiedot[3] = (x.PvaKalorit * 7 - x.SyodytKalorit).ToString();
+                tiedot[1] = Math.Round(x.PvaKalorit * 7).ToString();
+                tiedot[2] = Math.Round(x.SyodytKalorit).ToString();
+                tiedot[3] = Math.Round(x.PvaKalorit * 7 - x.SyodytKalorit).ToString();
             }
             return tiedot;
         }

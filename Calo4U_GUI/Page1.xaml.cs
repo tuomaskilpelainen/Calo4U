@@ -112,7 +112,7 @@ namespace Calo4U_GUI
                 raaka_aineBox.Foreground = Brushes.Black;
                 if (lisaa)
                 {
-                    string raakaAineText = main.LisaaRaakaAine(nimi, maara, kalorit);
+                    string raakaAineText = main.LisaaRaakaAine(nimi.ToLower(), maara, kalorit);
                     raakaAineTextLista.Add(raakaAineText);
 
                     RaakaAineLista.ItemsSource = null;
@@ -180,7 +180,7 @@ namespace Calo4U_GUI
                 {
                     nimi = reseptiNimiBox.Text;
                     ohjeet = ohjeetBox.Text;
-                    Main.LisaaResepti(nimi, ohjeet, annokset);
+                    Main.LisaaResepti(nimi.ToLower(), ohjeet, annokset);
 
                     // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
                     ohjeetBox.Foreground = Brushes.Black;
@@ -196,8 +196,8 @@ namespace Calo4U_GUI
                     Main.TyhjennaListat();
 
                     Page2 page2 = new Page2(mainFrame);
-                    page2.LaataaLuotuResepti(nimi, annokset);
-                    page2.LahetaResepti(nimi);
+                    page2.LaataaLuotuResepti(nimi.ToLower(), annokset);
+                    page2.LahetaResepti(nimi.ToLower());
                     NavigationService.Navigate(page2);
                 }
                 else
@@ -246,7 +246,7 @@ namespace Calo4U_GUI
             if (!string.IsNullOrEmpty (valittuTeksti) )
             {
                 string[] moniTeksti = valittuTeksti.Split(' ');
-                valittuRaakaAine = moniTeksti[0];
+                valittuRaakaAine = moniTeksti[0].ToLower();
             }
 
         }
@@ -255,8 +255,8 @@ namespace Calo4U_GUI
         {
             if (!String.IsNullOrEmpty(valittuRaakaAine))
             {
-                Main.PoistaRaakaAine(valittuRaakaAine);
-                raakaAineTextLista.Remove(valittuTeksti);
+                Main.PoistaRaakaAine(valittuRaakaAine.ToLower());
+                raakaAineTextLista.Remove(valittuTeksti.ToLower());
                 RaakaAineLista.ItemsSource = null;
                 RaakaAineLista.ItemsSource = raakaAineTextLista;
 
@@ -300,7 +300,7 @@ namespace Calo4U_GUI
         {
             string nimi = raaka_aineBox.Text;
             Main main = new Main();
-            string kalorit = main.HaeKalorit(nimi);//Hakee löytyykö tietoja jos ei string.Empty
+            string kalorit = main.HaeKalorit(nimi.ToLower());//Hakee löytyykö tietoja jos ei string.Empty
             if (!string.IsNullOrEmpty(kalorit))
             {
                 kaloritBox.Text = kalorit;

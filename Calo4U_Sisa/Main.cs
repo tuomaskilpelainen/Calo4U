@@ -34,8 +34,8 @@ namespace Calo4U_Sisa
         public string LisaaRaakaAine(string nimi, int maara, double kalorit)
         {
 
-            Resepti.RaakaAine uusiRaakaAine = new Resepti.RaakaAine(nimi, maara);
-            RaakaAineKalorit uusiKalori = new RaakaAineKalorit(nimi, kalorit);
+            Resepti.RaakaAine uusiRaakaAine = new Resepti.RaakaAine(nimi.ToLower(), maara);
+            RaakaAineKalorit uusiKalori = new RaakaAineKalorit(nimi.ToLower(), kalorit);
             raakaAineLista.Lisaa(uusiRaakaAine);
             Tallentaja.TalennaKalorit(uusiKalori); // Vie Tallentajaan joka tallentaa kalorit Json fileen
             string raakaAineText = $"{uusiRaakaAine.Nimi} määrä: {uusiRaakaAine.Maara}g kalorit: {uusiKalori.Kalorit}kc/100g";
@@ -52,7 +52,7 @@ namespace Calo4U_Sisa
         {
             double kokoKalorit = 0;
 
-            Resepti uusiResepti = new Resepti(nimi, ohjeet, annokset);
+            Resepti uusiResepti = new Resepti(nimi.ToLower(), ohjeet, annokset);
             uusiResepti.RaakaAineLista = raakaAineLista.Hae();
             List<RaakaAineKalorit> kalorit = Tallentaja.LataaKaikkiKalorit();
 
@@ -62,7 +62,7 @@ namespace Calo4U_Sisa
                 {
                     if (x.Nimi == y.Nimi)
                     {
-                        kokoKalorit += y.Kalorit;
+                        kokoKalorit += y.Kalorit * x.Maara / 100;
                     }
                 }
             }
@@ -82,7 +82,7 @@ namespace Calo4U_Sisa
             string[] reseptiText = new string[5];//0 Nimi, 1, Ohjeet, 2 RaakaAineet, 3 Kalorit, 4 Annokset
 
             Tallentaja lataaja = new Tallentaja();
-            Resepti tResepti = lataaja.LataaResepti(nimi); // lataa reseptin "nimi" muuttajan perusteella Json filesta
+            Resepti tResepti = lataaja.LataaResepti(nimi.ToLower()); // lataa reseptin "nimi" muuttajan perusteella Json filesta
 
             if (!string.IsNullOrEmpty(tResepti.Nimi))
             {

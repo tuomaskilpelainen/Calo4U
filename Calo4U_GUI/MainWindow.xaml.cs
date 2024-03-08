@@ -165,7 +165,7 @@ namespace Calo4U_GUI
                 {
                     if (!string.IsNullOrEmpty(resepti))
                     {
-                        Main.SyoResepti(resepti, miinus);
+                        Main.SyoResepti(resepti.ToLower(), miinus);
                         LataaKayttajanTiedot();
                         LataaKayttajanReseptit();
                     }
@@ -173,7 +173,7 @@ namespace Calo4U_GUI
             }
             else if (!string.IsNullOrEmpty(resepti))
             {
-                Main.SyoResepti(resepti, miinus);
+                Main.SyoResepti(resepti.ToLower(), miinus);
                 LataaKayttajanTiedot();
             }
             PieChart();
@@ -201,7 +201,7 @@ namespace Calo4U_GUI
                 {
                     if (!string.IsNullOrEmpty(resepti))
                     {
-                        Main.SyoResepti(resepti, miinus);
+                        Main.SyoResepti(resepti.ToLower(), miinus);
                         LataaKayttajanTiedot();
                         LataaKayttajanReseptit();
                     }

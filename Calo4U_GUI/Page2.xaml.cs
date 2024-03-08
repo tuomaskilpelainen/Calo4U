@@ -54,7 +54,7 @@ namespace Calo4U_GUI
 
         public void LaataaLuotuResepti(string resepti, int annokset)
         {
-            NaytaResepti(resepti, annokset);
+            NaytaResepti(resepti.ToLower(), annokset);
         }
         private void Lista_Box_TextChance_2()
         {
@@ -91,7 +91,7 @@ namespace Calo4U_GUI
         {
             int annokset = 0;
             string resepti = (string)Lista_Box.SelectedItem as string;
-            NaytaResepti(resepti, annokset);
+            NaytaResepti(resepti.ToLower(), annokset);
             ValitseResepti();
 
 
@@ -102,7 +102,7 @@ namespace Calo4U_GUI
         private void NaytaResepti(string resepti, int annokset)
         {
             Main main = new Main();
-            string[] Sresepti = main.LataaResepti(resepti, annokset); //0 Nimi, 1, Ohjeet, 2 RaakaAineet, 3 Kalorit, 4 Annokset
+            string[] Sresepti = main.LataaResepti(resepti.ToLower(), annokset); //0 Nimi, 1, Ohjeet, 2 RaakaAineet, 3 Kalorit, 4 Annokset
             ReseptinNimiTextBlock.Text = Sresepti[0];
             aineksetTextBox.Text = Sresepti[2];
             OhjeetText_Copy.Text = Sresepti[1];
@@ -130,7 +130,7 @@ namespace Calo4U_GUI
                 if (annokset > 0) 
                 {
                     hakuBox1_Copy2.Foreground = Brushes.Black;
-                    NaytaResepti(nimi, annokset);
+                    NaytaResepti(nimi.ToLower(), annokset);
                 }
             }
             else
@@ -182,8 +182,8 @@ namespace Calo4U_GUI
             int annokset;
             if (string.IsNullOrEmpty(hakuBox1_Copy2.Text))
             {
-                annokset = main.HaeAnnokset(resepti);
-                Main.LisaaReseptiKayttajalle(resepti, annokset);
+                annokset = main.HaeAnnokset(resepti.ToLower());
+                Main.LisaaReseptiKayttajalle(resepti.ToLower(), annokset);
                 OnnistunutTextBlock.Visibility = Visibility.Visible;
                 timer.Start();
             }
@@ -192,7 +192,7 @@ namespace Calo4U_GUI
                 try
                 {
                     annokset = int.Parse(hakuBox1_Copy2.Text);
-                    Main.LisaaReseptiKayttajalle(resepti, annokset);
+                    Main.LisaaReseptiKayttajalle(resepti.ToLower(), annokset);
                     OnnistunutTextBlock.Visibility = Visibility.Visible;
                     timer.Start();
                 }
@@ -209,7 +209,7 @@ namespace Calo4U_GUI
         }
         public void LahetaResepti(string nimi)
         {
-            resepti = nimi;
+            resepti = nimi.ToLower();
         }
     }
 }

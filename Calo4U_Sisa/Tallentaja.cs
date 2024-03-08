@@ -14,6 +14,7 @@ namespace Calo4U_Sisa
         private const string KALORI_TIEDOSTO = "kaloriKirjasti.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/ainesosaKirjasto.json.
         private const string RESEPTI_TIEDOSTO = "resptiKirjasto.json"; //Tallenus kansion on Cal4U/WpfApp2/bin/Debug/net.8.0-windows/reseptiKirjasto.json.
         private const string KAYTTAJA_TIEDOSTO = "kayttajaKirjasto.json";
+        private const string VIIKKO_TIEDOSTO = "viikkoKalorit.json";
 
         public static List<Kayttaja> LataaKaikkiKayttajat()
         {
@@ -165,7 +166,30 @@ namespace Calo4U_Sisa
             Resepti resepti = new Resepti(Nimi, ohjeet, annokset);
             return resepti;
         }
+        public List<Entry> entries()
+        {
+            List<Entry> entriesList = new List<Entry>();
+            string kayttajaJsonData = File.ReadAllText(KAYTTAJA_TIEDOSTO);
+            entriesList = JsonSerializer.Deserialize<List<Entry>>(kayttajaJsonData);
+            return entriesList;
+        }
+        public List<Week> LataaVikkoTeodot()
+        {
+            List<Week> weeks = new List<Week>();
+            if (File.Exists(VIIKKO_TIEDOSTO))
+            {
+                string viikkoJsonData = File.ReadAllText(VIIKKO_TIEDOSTO);
+                weeks = JsonSerializer.Deserialize<List<Week>>(viikkoJsonData);
 
+            }
+            return weeks;
+        }
+
+        public static void TalennaViikot(List<Week> viikkoTiedot)
+        {
+            string updatedViikkoJsonData = JsonSerializer.Serialize(viikkoTiedot, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(VIIKKO_TIEDOSTO, updatedViikkoJsonData);
+        }
     }
 }
 

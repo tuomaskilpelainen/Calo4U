@@ -189,7 +189,6 @@ namespace Calo4U_Sisa
                     kayttaja.ValmiitRuuat = k.ValmiitRuuat;
                 }
                 kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
-                kayttaja.Viikko = weekNumber;
                 kayttaja.PvaKalorit = Math.Round(tBmr.Hae()); // Hakee tBmr arvon 
                 DateTime tänään = DateTime.Today;
                 int poistettavatPaivat = (int)tänään.DayOfWeek - (int)DayOfWeek.Monday;
@@ -202,6 +201,7 @@ namespace Calo4U_Sisa
                     DateTime maanantai = tänään.AddDays(-poistettavatPaivat);
                     kayttaja.AloitusPaiva = maanantai;
                 }
+                kayttaja.TarkistaViikko();
                 Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
 
 

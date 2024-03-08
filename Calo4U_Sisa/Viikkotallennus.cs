@@ -10,22 +10,13 @@ namespace Calo4U_Sisa
     {
         public void CheckJson()
         {
-            string kayttajaJsonFilePath = "kayttajaKirjasto.json";
-            string viikkoJsonFilePath = "viikkoKalorit.json";
+            Tallentaja tallentaja = new Tallentaja();
 
             List<Entry> entries = new List<Entry>();
-            if (File.Exists(kayttajaJsonFilePath))
-            {
-                string kayttajaJsonData = File.ReadAllText(kayttajaJsonFilePath);
-                entries = JsonSerializer.Deserialize<List<Entry>>(kayttajaJsonData);
-            }
-
             List<Week> weeks = new List<Week>();
-            if (File.Exists(viikkoJsonFilePath))
-            {
-                string viikkoJsonData = File.ReadAllText(viikkoJsonFilePath);
-                weeks = JsonSerializer.Deserialize<List<Week>>(viikkoJsonData);
-            }
+
+            entries = tallentaja.entries();
+            weeks = tallentaja.LataaVikkoTeodot();
 
             // Päivitä syodytKalorit arvo viikkoKalorit.json tiedostossa kayttajaKirjasto.json tietojen mukaan
             foreach (var entry in entries)
@@ -47,8 +38,7 @@ namespace Calo4U_Sisa
                 }
             }
 
-            string updatedViikkoJsonData = JsonSerializer.Serialize(weeks, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(viikkoJsonFilePath, updatedViikkoJsonData);
+            Tallentaja.TalennaViikot(weeks);
         }
     }
 

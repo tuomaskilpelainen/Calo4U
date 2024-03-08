@@ -30,6 +30,8 @@ namespace Calo4U_Sisa
         public static void TalenettuReseptiTyhjennys()
         {
             talenettuResepti = Resepti.LuoTyhja();
+            raakaAineLista.Tyhjenna();
+            tagLista.Tyhjenna();
         }
         public string LisaaRaakaAine(string nimi, int maara, double kalorit)
         {
@@ -143,7 +145,7 @@ namespace Calo4U_Sisa
         public static void TyhjennaListat() // Tyhjentää kaikki listat reseptin tekoon liittyen
         {
             raakaAineLista.Tyhjenna();
-            tagLista .Tyhjenna();
+            tagLista.Tyhjenna();
         }
         public List<string> ReseptitS() // Luo string listan kaikkista jo tallennetuista resepteistä
         {
@@ -476,6 +478,18 @@ namespace Calo4U_Sisa
                 Tallentaja.TallennaKayttaja(kayttaja);
             }
 
+        }
+        public bool TarkistaResepti(string nimi) // Tarkistaa onko reseptiä jo resepti kirjastossa
+        {
+            List<Resepti> kaikki = Tallentaja.LaataakaikkiReseptit();
+            foreach (Resepti k in kaikki)
+            {
+                if (k.Nimi == nimi)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

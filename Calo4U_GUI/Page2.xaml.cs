@@ -153,6 +153,7 @@ namespace Calo4U_GUI
 
         private void LisääReseptiNavButton_Click(object sender, RoutedEventArgs e)
         {
+
             Main.TalenettuReseptiTyhjennys();
             mainFrame.Navigate(new Page1(mainFrame));
             
@@ -169,7 +170,7 @@ namespace Calo4U_GUI
         {
             mainFrame.Navigate(new Page1(mainFrame));
             Page1 page = new Page1(mainFrame);
-            //page.LataaMuokattuResepti();
+            page.MuokkausPaalle();
 
         }
 

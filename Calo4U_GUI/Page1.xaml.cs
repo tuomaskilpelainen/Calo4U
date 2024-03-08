@@ -26,12 +26,17 @@ namespace Calo4U_GUI
         private List<string> raakaAineTextLista = new List<string>();
         private string valittuRaakaAine;
         private string valittuTeksti;
+        private static bool Muokkaus = false;
+
         public Page1(Frame mainFrame)
         {
             InitializeComponent();
+            
             RaakaAineLista.ItemsSource = raakaAineTextLista;
             this.mainFrame = mainFrame;
-            string dataFromMethod = LataaMuokattuResepti();
+            LataaMuokattuResepti();
+            ErrorMessageBlock.Visibility = Visibility.Collapsed;
+            ErrorMessageBlock_Copy.Visibility = Visibility.Collapsed;
 
 
 
@@ -71,6 +76,7 @@ namespace Calo4U_GUI
 
         private void LisääRaakaButton_Click(object sender, RoutedEventArgs e)
         {
+            ErrorMessageBlock_Copy.Visibility = Visibility.Collapsed;
             bool lisaa = true;
             Main main = new Main();
             string nimi;
@@ -125,6 +131,7 @@ namespace Calo4U_GUI
                     määräBox.Text = string.Empty;
                     kaloritBox.Text = string.Empty;
                     raaka_aineBox.Text = string.Empty;
+                    
                 }
 
             }
@@ -135,6 +142,7 @@ namespace Calo4U_GUI
 
         private void ReseptButton_Click(object sender, RoutedEventArgs e)
         {
+            bool ok = false;
             bool lisaa = true;
             string nimi;
             string ohjeet;
@@ -180,30 +188,50 @@ namespace Calo4U_GUI
                 {
                     nimi = reseptiNimiBox.Text;
                     ohjeet = ohjeetBox.Text;
-                    Main.LisaaResepti(nimi.ToLower(), ohjeet, annokset);
+                    if (Muokkaus)
+                    {
+                        ok = true;
+                    }
+                    else
+                    {
+                        bool loytyi = main.TarkistaResepti(nimi.ToLower());
+                        if (loytyi) { ok = false; }
+                        if (!loytyi) { ok = true; }
+                    }
 
-                    // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
-                    ohjeetBox.Foreground = Brushes.Black;
-                    reseptiNimiBox.Foreground = Brushes.Black;
-                    annoksetText.Foreground = Brushes.Black;
-                    //NäytäOhjeetTextBlock.Foreground = Brushes.Black;
-                    ohjeetBox.Text = string.Empty;
-                    reseptiNimiBox.Text = string.Empty;
-                    annoksetText.Text = string.Empty;
-                    //ainesTextBlock.Text = string.Empty ;
-                    // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
-                    raakaAineTextLista = new List<string>();
-                    Main.TyhjennaListat();
+                    if (ok)
+                    {
+                        // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
+                        ohjeetBox.Foreground = Brushes.Black;
+                        reseptiNimiBox.Foreground = Brushes.Black;
+                        annoksetText.Foreground = Brushes.Black;
+                        //NäytäOhjeetTextBlock.Foreground = Brushes.Black;
+                        ohjeetBox.Text = string.Empty;
+                        reseptiNimiBox.Text = string.Empty;
+                        annoksetText.Text = string.Empty;
+                        Main.LisaaResepti(nimi, ohjeet, annokset);
+                        //ainesTextBlock.Text = string.Empty ;
+                        // Näitä ei välttis tarvii koska avaa suoraan page 2 :)
+                        raakaAineTextLista = new List<string>();
+                        Main.TyhjennaListat();
+                        Muokkaus = false;
 
-                    Page2 page2 = new Page2(mainFrame);
-                    page2.LaataaLuotuResepti(nimi.ToLower(), annokset);
-                    page2.LahetaResepti(nimi.ToLower());
-                    NavigationService.Navigate(page2);
+                        Page2 page2 = new Page2(mainFrame);
+                        page2.LaataaLuotuResepti(nimi.ToLower(), annokset);
+                        page2.LahetaResepti(nimi.ToLower());
+                        NavigationService.Navigate(page2);
+                        ErrorMessageBlock.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        ErrorMessageBlock.Visibility = Visibility.Visible;
+                        reseptiNimiBox.Foreground = Brushes.Red;
+                    }
+
                 }
                 else
                 {
-                    //NäytäOhjeetTextBlock.Foreground = Brushes.Red;
-                    //NäytäOhjeetTextBlock.Text = "Lisää ensin raaka-aineet.";
+                    ErrorMessageBlock_Copy.Visibility = Visibility.Visible;
                 }
             }
 
@@ -277,7 +305,7 @@ namespace Calo4U_GUI
 
         }*/
 
-        private string LataaMuokattuResepti()
+        public void LataaMuokattuResepti()
         {
             Main main = new Main();
             raakaAineTextLista = main.HaeRaakaAineLista();
@@ -293,7 +321,6 @@ namespace Calo4U_GUI
             else { annoksetText.Text = resepriText[2]; }
             ohjeetBox.Text = resepriText[1];
 
-            return "Data from LataaMuokattuResepti() method";
         }
 
         private void HaeKalorit(object sender, TextChangedEventArgs e) //Hakee Käyttäjän raakaAine nimeen kirjoitetun perusteella löytyykö raakaAine jo kirjastosta ja jos löytyy kirjoittaa automaattisesti kalorit 
@@ -305,6 +332,21 @@ namespace Calo4U_GUI
             {
                 kaloritBox.Text = kalorit;
             }
+            ErrorMessageBlock_Copy.Visibility = Visibility.Collapsed;
+        }
+
+        private void reseptiNimiBoxTextChance(object sender, TextChangedEventArgs e)
+        {
+            ErrorMessageBlock.Visibility = Visibility.Collapsed;
+            reseptiNimiBox.Foreground = Brushes.Black;
+        }
+        private void RaakaAineidenTextChance(object sender, TextChangedEventArgs e)
+        {
+            ErrorMessageBlock_Copy.Visibility = Visibility.Collapsed;
+        }
+        public void MuokkausPaalle()
+        {
+            Muokkaus = true;
         }
     }
 }

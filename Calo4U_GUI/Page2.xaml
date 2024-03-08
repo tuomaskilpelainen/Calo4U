@@ -318,7 +318,7 @@
         HorizontalAlignment="Left" Height="445" Margin="258,69,0,0" 
         VerticalAlignment="Top" Width="450" Background="White"
     />
-        <TextBlock x:Name="ReseptinNimiTextBlock" HorizontalAlignment="Left" Height="20" Margin="273,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="14"/>
+        <TextBlock x:Name="ReseptinNimiTextBlock" HorizontalAlignment="Left" Height="20" Margin="273,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="417" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="14"/>
 
         <TextBlock x:Name="OhjeetText" HorizontalAlignment="Left" Height="20" Margin="273,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
         <TextBlock x:Name="OhjeetText_Copy" HorizontalAlignment="Left" Height="221" Margin="273,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="13"/>

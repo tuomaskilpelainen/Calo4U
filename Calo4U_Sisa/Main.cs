@@ -179,6 +179,7 @@ namespace Calo4U_Sisa
         public static void tallennaKayttaja()
         {
             List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat(); // Lataa kaikki käyttäjät (tällä hetkellä vain yksi käyttäjä mahdollinen)
+            bool aloituspaiva = false;
             if (kaikki.Count >= 0)
             {
                 List<Kayttaja> kaikk = Tallentaja.LataaKaikkiKayttajat();//Hakee talentajasta kaikki käyttäjät.
@@ -187,21 +188,28 @@ namespace Calo4U_Sisa
                 foreach (Kayttaja k in kaikk)
                 {
                     kayttaja.ValmiitRuuat = k.ValmiitRuuat;
+                    kayttaja.AloitusPaiva = k.AloitusPaiva;
                 }
+                if (kaikki.Count <= 0) { aloituspaiva = true; }
                 kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
                 kayttaja.PvaKalorit = Math.Round(tBmr.Hae()); // Hakee tBmr arvon 
-                DateTime tänään = DateTime.Today;
-                int poistettavatPaivat = (int)tänään.DayOfWeek - (int)DayOfWeek.Monday;
-                if (poistettavatPaivat < 0)
+
+                if (aloituspaiva)
                 {
-                    kayttaja.AloitusPaiva = tänään;
+                    DateTime tänään = DateTime.Today;
+                    int poistettavatPaivat = (int)tänään.DayOfWeek - (int)DayOfWeek.Monday;
+                    if (poistettavatPaivat < 0)
+                    {
+                        kayttaja.AloitusPaiva = tänään;
+                    }
+                    else
+                    {
+                        DateTime maanantai = tänään.AddDays(-poistettavatPaivat);
+                        kayttaja.AloitusPaiva = maanantai;
+                    }
+                    kayttaja.TarkistaViikko();
                 }
-                else
-                {
-                    DateTime maanantai = tänään.AddDays(-poistettavatPaivat);
-                    kayttaja.AloitusPaiva = maanantai;
-                }
-                kayttaja.TarkistaViikko();
+
                 Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
 
 

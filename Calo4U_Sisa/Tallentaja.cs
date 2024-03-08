@@ -169,8 +169,16 @@ namespace Calo4U_Sisa
         public List<Entry> entries()
         {
             List<Entry> entriesList = new List<Entry>();
-            string kayttajaJsonData = File.ReadAllText(KAYTTAJA_TIEDOSTO);
-            entriesList = JsonSerializer.Deserialize<List<Entry>>(kayttajaJsonData);
+            if (File.Exists(KAYTTAJA_TIEDOSTO))
+            {
+                string kayttajaJsonData = File.ReadAllText(KAYTTAJA_TIEDOSTO);
+                try
+                {
+                    entriesList = JsonSerializer.Deserialize<List<Entry>>(kayttajaJsonData);
+                }
+                catch { entriesList = new List<Entry>(); }
+                
+            }
             return entriesList;
         }
         public List<Week> LataaVikkoTeodot()

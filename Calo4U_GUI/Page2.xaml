@@ -318,7 +318,7 @@
         HorizontalAlignment="Left" Height="445" Margin="258,69,0,0" 
         VerticalAlignment="Top" Width="450" Background="White"
     />
-        <TextBlock x:Name="ReseptinNimiTextBlock" HorizontalAlignment="Left" Height="20" Margin="273,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="417" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="14"/>
+        <TextBlock x:Name="ReseptinNimiTextBlock" HorizontalAlignment="Left" Height="36" Margin="273,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="417" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="15" FontWeight="Bold" Text=""/>
 
         <TextBlock x:Name="OhjeetText" HorizontalAlignment="Left" Height="20" Margin="273,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Ohjeet:"/></TextBlock>
         <TextBlock x:Name="OhjeetText_Copy" HorizontalAlignment="Left" Height="221" Margin="273,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" FontFamily="Poppins Medium" Foreground="#FF2E334E" Text="" FontSize="13"/>
@@ -330,10 +330,18 @@
     >
             <TextBlock Name="OnnistunutTextBlock" Visibility="Hidden" TextWrapping="Wrap" Margin="53,368,53,55" Foreground="#FF166D37" FontSize="14"><Run Language="fi-fi" Text="Lisätty ruokalistalle"/></TextBlock>
         </Border>
-        <TextBlock x:Name="ReseptinNimiTextBlock2" HorizontalAlignment="Left" Height="20" Margin="740,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Resepti"/></TextBlock>
-        <TextBlock x:Name="AnnosMääräText1" HorizontalAlignment="Left" Height="20" Margin="740,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Text="Annoksien määrä"/><Run Language="en-gb" Text=":"/></TextBlock>
+        <TextBlock x:Name="ReseptinNimiTextBlock2" HorizontalAlignment="Left" Height="20" Margin="740,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.145"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.164"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Language="en-gb" Text="Resepti"/></TextBlock>
+        <TextBlock x:Name="AnnosMääräText1" HorizontalAlignment="Left" Height="20" Margin="740,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Text="Annoksien määrä"/><Run Language="en-gb" Text=":"/></TextBlock>
         <TextBlock x:Name="AnnosMääräTextBlock" HorizontalAlignment="Left" Height="20" Margin="880,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" FontFamily="Poppins Medium" Foreground="#FF2E334E" RenderTransformOrigin="0,0.252" Text="" FontSize="14"/>
-        <TextBlock x:Name="KaloritText" HorizontalAlignment="Left" Height="20" Margin="740,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Kalorit (cal):"/></TextBlock>
+        <TextBlock x:Name="KaloritText" HorizontalAlignment="Left" Height="20" Margin="740,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Kalorit (cal):"/></TextBlock>
         <TextBlock x:Name="KaloritTextBlock" HorizontalAlignment="Left" 
                Height="92" Margin="745,165,0,0" TextWrapping="Wrap" 
                VerticalAlignment="Top" Width="187" FontFamily="Poppins Medium"
@@ -358,7 +366,7 @@
         <Border x:Name="navBar" CornerRadius="15" BorderThickness="2" Height="64" Margin="13,-20,30,0" VerticalAlignment="Top" Background="#FF2E334E"/>
 
         <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="178,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
-        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="44" Margin="327,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" Height="44" Margin="327,-1,508,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14"/>
         <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="44" Margin="476,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
         <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="44" Margin="29,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
         <TextBox Style="{DynamicResource roundedTex}" x:Name="Haku_Box" HorizontalAlignment="Left" Margin="30,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="24" TextChanged="Lista_Box_TextChance" BorderBrush="#FF8299DF"/>

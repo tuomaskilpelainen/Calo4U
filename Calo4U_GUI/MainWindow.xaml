@@ -117,9 +117,9 @@
 
         </Border>
 
-        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="178,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
-        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="44" Margin="327,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
-        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="44" Margin="476,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
+        <Button x:Name="LisääReseptiNavButton" Content="Lisää uusi resepti" HorizontalAlignment="Left" Height="44" Margin="177,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" RenderTransformOrigin="0.387,0.513" Click="LisääReseptiNavButton_Click"/>
+        <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" HorizontalAlignment="Left" Height="44" Margin="326,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="katsoReseptitNavButton_Click"/>
+        <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="44" Margin="475,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
         <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="44" Margin="29,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
 
         <Border x:Name="tietoBox" CornerRadius="20" BorderThickness="1" HorizontalAlignment="Left" Height="191" Margin="547,331,0,0" VerticalAlignment="Top" Width="320" Background="White"/>

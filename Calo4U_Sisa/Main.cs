@@ -190,7 +190,7 @@ namespace Calo4U_Sisa
                 }
                 kayttaja.Nimi = "Käyttäjä"; // ainut käyttäjä nimi on Käyttäjä
                 kayttaja.Viikko = weekNumber;
-                kayttaja.PvaKalorit = tBmr.Hae(); // Hakee tBmr arvon 
+                kayttaja.PvaKalorit = Math.Round(tBmr.Hae()); // Hakee tBmr arvon 
                 DateTime tänään = DateTime.Today;
                 int poistettavatPaivat = (int)tänään.DayOfWeek - (int)DayOfWeek.Monday;
                 if (poistettavatPaivat < 0)

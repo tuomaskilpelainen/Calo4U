@@ -38,18 +38,17 @@ namespace Calo4U_Sisa
             }
             else
             {
-                SyodytKalorit += kalorit;
+                SyodytKalorit += Math.Round(kalorit);
             }
             
         }
-        public bool TarkistaViikko() // Tarkistaa onko Viikko kulunut ja jos on muutta käyttäjän viikon +1
+        public bool TarkistaViikko() // Tarkistaa onko Viikko kulunut ja jos on muuttaa käyttäjän viikon +1
         {
             bool talenna = false;
             TimeSpan kulunutAika = DateTime.Today - AloitusPaiva;
             int kuluneetViikot = kulunutAika.Days / 7;
 
-
-            Viikko = 1 + kulunutAika.Days / 7;
+            Viikko = kuluneetViikot + 1;
             talenna = true;
             return talenna;
 

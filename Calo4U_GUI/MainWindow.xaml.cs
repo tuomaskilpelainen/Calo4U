@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,8 +10,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Calo4U_Sisa;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System;
+using System.IO;
+using System.Text.Json;
 
 
 namespace Calo4U_GUI
@@ -33,9 +35,10 @@ namespace Calo4U_GUI
             InitializeComponent();
             MainWindow_Loaded();
             PieChartCalories = CaloriesEaten;
-            PieChart();
             LataaKayttajanTiedot();
             LataaKayttajanReseptit();
+            JsonTarkistaja();
+            PieChart();
 
         }
         private void MainWindow_Loaded()
@@ -80,9 +83,15 @@ namespace Calo4U_GUI
             {
                 vkoNroTextBlock.Text = tiedot[0];
                 tavoiteNroBlock.Text = tiedot[1];
-                saavMääräNroBlock.Text= tiedot[2];
+                saavMääräNroBlock.Text = tiedot[2];
                 calJälBlock.Text = tiedot[3];
-
+            }
+            else
+            {
+                calJälBlock.Text = "0";
+                saavMääräNroBlock.Text = "0";
+                vkoNroTextBlock.Text = "0";
+                tavoiteNroBlock.Text = "0";
             }
         }
 
@@ -91,20 +100,10 @@ namespace Calo4U_GUI
         {
             int RemainingCalories = 0;
             int PieChartCalories = 0;
-            Main main = new Main();
-            string[] tiedot = main.LataaKayttajanTiedot();
-
-            if (tiedot[0] != null)
-            {
-                PieChartCalories = Convert.ToInt32(tiedot[2].Replace(",", ".").Split(".")[0]);
-                RemainingCalories = Convert.ToInt32(tiedot[1].Replace(",", ".").Split(".")[0]) - PieChartCalories;
-
-            }
-
-            if (RemainingCalories < 0)
-            {
-                RemainingCalories = 0;
-            }
+            Viikkotallennus viikkohakija = new Viikkotallennus();
+            viikkohakija.CheckJson();
+            RemainingCalories = Convert.ToInt32(calJälBlock.Text);
+            PieChartCalories = Convert.ToInt32(saavMääräNroBlock.Text);
             pieChart.Series = new LiveCharts.SeriesCollection
             {
                 new LiveCharts.Wpf.PieSeries
@@ -222,14 +221,164 @@ namespace Calo4U_GUI
         private void Lista_Click(object sender, MouseButtonEventArgs e)
         {
             string resepti1 = (string)KayttajanReseptitBox.SelectedItem as string;
-            if (string.IsNullOrEmpty(resepti1) ) { return; }
+            if (string.IsNullOrEmpty(resepti1)) { return; }
             resepti = resepti1.Split(',')[0];
 
         }
 
-        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
-        {
 
+        private int viikkoKalorit;
+        private int syodytKalorit;
+
+        private void edellinenButton_Click(object sender, RoutedEventArgs e)
+        {
+            JsonTarkistaja();
+            int viikkonumero = Convert.ToInt32(vkoNroTextBlock.Text);
+            string jsonFilePath = "viikkoKalorit.json";
+
+            bool found = false;
+
+            if (viikkonumero > 1)
+            {
+                viikkonumero -= 1;
+
+                try
+                {
+                    string jsonString = File.ReadAllText(jsonFilePath);
+                    JsonDocument jsonDoc = JsonDocument.Parse(jsonString);
+
+                    foreach (JsonElement element in jsonDoc.RootElement.EnumerateArray())
+                    {
+                        int viikko = element.GetProperty("Viikko").GetInt32();
+
+                        if (viikko == viikkonumero)
+                        {
+                            found = true;
+                            viikkoKalorit = element.GetProperty("PvaKalorit").GetInt32() * 7;
+                            syodytKalorit = element.GetProperty("SyodytKalorit").GetInt32();
+                            break;
+                        }
+                    }
+
+                    if (!found)
+                    {
+                        vkoNroTextBlock.Text = viikkonumero.ToString();
+                        tavoiteNroBlock.Text = "0";
+                        saavMääräNroBlock.Text = "0";
+                        calJälBlock.Text = "0";
+                    }
+                    else
+                    {
+                        vkoNroTextBlock.Text = viikkonumero.ToString();
+                        tavoiteNroBlock.Text = viikkoKalorit.ToString();
+                        saavMääräNroBlock.Text = syodytKalorit.ToString();
+                        calJälBlock.Text = (viikkoKalorit - syodytKalorit).ToString();
+                    }
+                    PieChart();
+                }
+                catch (FileNotFoundException)
+                {
+
+                }
+
+            }
+        }
+
+        private void seuraavaButton_Click(object sender, RoutedEventArgs e)
+        {
+            JsonTarkistaja();
+            int viikkonumero = Convert.ToInt32(vkoNroTextBlock.Text);
+            string jsonFilePath = "viikkoKalorit.json";
+
+
+            bool found = false;
+
+            if (viikkonumero < viikkoraja)
+            {
+                viikkonumero += 1;
+
+                try
+                {
+                    string jsonString = File.ReadAllText(jsonFilePath);
+                    JsonDocument jsonDoc = JsonDocument.Parse(jsonString);
+
+                    foreach (JsonElement element in jsonDoc.RootElement.EnumerateArray())
+                    {
+                        int viikko = element.GetProperty("Viikko").GetInt32();
+
+                        if (viikko == viikkonumero)
+                        {
+                            found = true;
+                            viikkoKalorit = element.GetProperty("PvaKalorit").GetInt32() * 7;
+                            syodytKalorit = element.GetProperty("SyodytKalorit").GetInt32();
+                            break;
+                        }
+                    }
+
+                    if (!found)
+                    {
+                        vkoNroTextBlock.Text = viikkonumero.ToString();
+                        tavoiteNroBlock.Text = "0" ;
+                        saavMääräNroBlock.Text = "0";
+                        calJälBlock.Text = "0";
+                    }
+                    else
+                    {
+                        vkoNroTextBlock.Text = viikkonumero.ToString();
+                        tavoiteNroBlock.Text = viikkoKalorit.ToString();
+                        saavMääräNroBlock.Text = syodytKalorit.ToString();
+                        calJälBlock.Text = (viikkoKalorit - syodytKalorit).ToString();
+                    }
+                    PieChart();
+                }
+                catch (FileNotFoundException)
+                {
+
+                }
+
+            }
+
+        }
+
+        private void tämänHetkiButton_Click(object sender, RoutedEventArgs e)
+        {
+            LataaKayttajanTiedot();
+            PieChart();
+        }
+
+        int viikkoraja;
+
+        // Tarkistaa suurimman viikkoarvon ja syöttää sen viikkoraja arvoksi
+        private void JsonTarkistaja()
+        {
+            try
+            {
+                string json = File.ReadAllText("viikkoKalorit.json");
+                using (JsonDocument document = JsonDocument.Parse(json))
+                {
+                    JsonElement root = document.RootElement;
+                    JsonElement.ArrayEnumerator arrayEnumerator = root.EnumerateArray();
+
+                    int suurinViikko = int.MinValue;
+
+                    while (arrayEnumerator.MoveNext())
+                    {
+                        JsonElement viikkoElement = arrayEnumerator.Current.GetProperty("Viikko");
+
+                        int viikkoValue = viikkoElement.GetInt32();
+
+                        if (viikkoValue > suurinViikko)
+                        {
+                            suurinViikko = viikkoValue;
+                        }
+                    }
+                    viikkoraja = suurinViikko;
+                }
+            }
+            catch (FileNotFoundException)
+            {
+
+            }
         }
     }
 }

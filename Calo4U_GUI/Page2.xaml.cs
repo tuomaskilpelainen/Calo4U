@@ -193,6 +193,8 @@ namespace Calo4U_GUI
                 {
                     annokset = int.Parse(hakuBox1_Copy2.Text);
                     Main.LisaaReseptiKayttajalle(resepti, annokset);
+                    OnnistunutTextBlock.Visibility = Visibility.Visible;
+                    timer.Start();
                 }
                 catch (Exception ex) { }
             }

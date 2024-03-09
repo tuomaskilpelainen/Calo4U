@@ -39,6 +39,7 @@ namespace Calo4U_GUI
                 IlmoitusBox.TextAlignment = TextAlignment.Center;
                 Main.ManuaaliTallennus(kalorit);
                 Main.tallennaKayttaja();
+                
             }
             else
             {

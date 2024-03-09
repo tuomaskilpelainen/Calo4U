@@ -211,7 +211,7 @@ namespace Calo4U_Sisa
                 string json = JsonSerializer.Serialize<List<Resepti>>(kaikki, option);
                 File.WriteAllText(RESEPTI_TIEDOSTO, json);
             }
-;
+
         }
     }
 }

@@ -209,9 +209,9 @@ namespace Calo4U_Sisa
                         DateTime maanantai = tänään.AddDays(-poistettavatPaivat);
                         kayttaja.AloitusPaiva = maanantai;
                     }
-                    kayttaja.TarkistaViikko();
+                    
                 }
-
+                kayttaja.TarkistaViikko();
                 Tallentaja.TallennaKayttaja(kayttaja); // Muokkaa ja talentaa käyttäjän Jsoniin
 
 

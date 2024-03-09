@@ -88,10 +88,14 @@ namespace Calo4U_GUI
 
                 maara = int.Parse(määräBox.Text);
                 määräBox.Foreground = Brushes.Black;
-                if (maara <= 0) 
+                if (maara <= 0 || maara > 200000) 
                 {
                     lisaa = false;
                     määräBox.Foreground = Brushes.Red;
+                }
+                else
+                {
+                    määräBox.Foreground = Brushes.Black;
                 }
             }
             catch
@@ -104,7 +108,16 @@ namespace Calo4U_GUI
             try
             {
                 kalorit = double.Parse(kaloritBox.Text);
-                kaloritBox.Foreground = Brushes.Black;
+                if (kalorit > 5000) 
+                { 
+                    kaloritBox.Foreground = Brushes.Red; 
+                    lisaa = false; 
+                }
+                else
+                {
+                    kaloritBox.Foreground = Brushes.Black;
+                }
+                
             }
             catch 
             { 
@@ -150,7 +163,7 @@ namespace Calo4U_GUI
             try
             {
                 annokset = int.Parse(annoksetText.Text);
-                if (annokset <= 0) 
+                if (annokset <= 0 || annokset > 200) 
                 {
                     lisaa = false;
                     annoksetText.Foreground = Brushes.Red;
@@ -166,6 +179,7 @@ namespace Calo4U_GUI
                 lisaa = false;  
 
             }
+
             if (string.IsNullOrEmpty(reseptiNimiBox.Text))
             {
                 lisaa = false;

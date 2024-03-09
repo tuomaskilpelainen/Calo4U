@@ -181,16 +181,29 @@
         <Button Style="{DynamicResource roundedButton1}" x:Name="tämänHetkiButton" Content="Tämä viikko" HorizontalAlignment="Left" Height="42" Margin="649,453,0,0"  VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="#FFCA5319" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFDCCB" Click="tämänHetkiButton_Click"/>
         <Border x:Name="RseptitBox" CornerRadius="20
                 " BorderThickness="1" HorizontalAlignment="Left" Height="299" Margin="138,224,0,0" VerticalAlignment="Top" Width="312" Background="White">
-            <ListBox x:Name="KayttajanReseptitBox" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,79,-1,105" FontFamily="Poppins Medium" MouseLeftButtonUp="Lista_Click" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontSize="13"/>
+            <ListBox x:Name="KayttajanReseptitBox" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,43,-1,141" FontFamily="Poppins Medium" MouseLeftButtonUp="Lista_Click" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontSize="13"/>
 
         </Border>
-        <TextBox x:Name="valmistetutRuotText" Style="{DynamicResource roundedTextBox2}" HorizontalAlignment="Left" Height="69" Margin="138,224,0,0" TextWrapping="Wrap" Padding="12" Text="Valmisteut Ruot &amp; Annosten määrä" VerticalAlignment="Top" Width="312" BorderBrush="{x:Null}" Background="#FF9AACE1" FontFamily="Poppins Medium" TextAlignment="Center" FontSize="14" Foreground="White"/>
+        <TextBox x:Name="valmistetutRuotText" HorizontalAlignment="Left" Height="43" Margin="138,224,0,0" TextWrapping="Wrap" Padding="12" Text="Valmistetut Ruoat &amp; Annosten määrä" VerticalAlignment="Top" Width="312" BorderBrush="{x:Null}" Background="#FF9AACE1" FontFamily="Poppins Medium" TextAlignment="Center" FontSize="14" Foreground="White" IsReadOnly="True">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TextBox">
+                                <Border CornerRadius="20,20,0,0" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
         <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="184,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Manuaalinen syöttö" Foreground="#FF2E334E"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,465,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF" Click="syöButton_Click"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,465,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3" Click="poistaButton_Click"/>
         <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Bottom"  Margin="537,52,108,223"/>
-        
-        <Border BorderThickness="0" HorizontalAlignment="Left" Height="26" Margin="139,267,0,0" VerticalAlignment="Top" Width="310" Background="White"/>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

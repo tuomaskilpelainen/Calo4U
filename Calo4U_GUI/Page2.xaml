@@ -311,7 +311,7 @@
             HorizontalAlignment="Left" Height="445" Margin="13,69,0,0" 
             VerticalAlignment="Top" Width="230" Background="White"
         >
-            <ListBox x:Name="Lista_Box" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="9,85,9,0" FontFamily="Poppins Medium" Height="303" VerticalAlignment="Top" FontSize="14" MouseLeftButtonUp="Lista_Click"/>
+            <ListBox x:Name="Lista_Box" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="9,110,9,0" FontFamily="Poppins Medium" Height="278" VerticalAlignment="Top" FontSize="14" MouseLeftButtonUp="Lista_Click"/>
         </Border>
         <Border x:Name="bigBox2" BorderThickness="1" CornerRadius="10                 " 
         HorizontalAlignment="Left" Height="445" Margin="258,69,0,0" 
@@ -368,7 +368,7 @@
         <Button x:Name="katsoReseptitNavButton" Content="Katso reseptit" Height="44" Margin="327,-1,508,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="#FF2E334E" Background="#FFEEEFEA" FontFamily="Poppins Medium" FontSize="14"/>
         <Button x:Name="kaloritarveNavButton" Content="Kaloritarve" HorizontalAlignment="Left" Height="44" Margin="476,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="#FF2E334E" FontFamily="Poppins Medium" FontSize="14" Click="kaloritarveNavButton_Click"/>
         <Button x:Name="etusivuNavButton" Content="Etusivu" HorizontalAlignment="Left" Height="44" Margin="29,-1,0,0" VerticalAlignment="Top" Width="150" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}" FontFamily="Poppins Medium" FontSize="14" Click="etusivuNavButton_Click"/>
-        <TextBox Style="{DynamicResource roundedTex}" x:Name="Haku_Box" HorizontalAlignment="Left" Margin="30,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="24" TextChanged="Lista_Box_TextChance" BorderBrush="#FF8299DF"/>
+        <TextBox Style="{DynamicResource roundedTex}" x:Name="Haku_Box" HorizontalAlignment="Left" Margin="30,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="24" TextChanged="Lista_Box_TextChance" BorderBrush="#FF8299DF"/>
         <Button Style="{DynamicResource roundedButton2}" x:Name="ValmistaRuoanButton" Content="Valmista ruoan" HorizontalAlignment="Left" Height="34" Margin="775,336,0,0" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" BorderBrush="{x:Null}" Background="#FFDEFADD" Foreground="#FF467640" Click="ValmistaRuoanButton_Click" FontSize="13"/>
         <TextBox x:Name="reseptinNimiText" HorizontalAlignment="Left" Height="20" Margin="30,99,0,0" TextWrapping="Wrap" Text="Reseptin nimi:" VerticalAlignment="Top" Width="134" FontFamily="Poppins Medium" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E334E"/>
         <TextBlock x:Name="AnnosMääräText" HorizontalAlignment="Left" Height="20" Margin="735,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontFamily="Poppins Medium" Foreground="#FF2E334E" FontSize="14"><Run Language="en-gb" Text="Annoksien määrä:"/><LineBreak/><Run Language="en-gb"/><LineBreak/><Run Language="en-gb"/></TextBlock>

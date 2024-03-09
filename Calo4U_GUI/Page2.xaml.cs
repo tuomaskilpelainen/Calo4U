@@ -101,7 +101,6 @@ namespace Calo4U_GUI
 
 
 
-
         }
         private void NaytaResepti(string resepti, int annokset)
         {

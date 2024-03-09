@@ -527,6 +527,16 @@ namespace Calo4U_Sisa
             Tallentaja.TallennaKayttaja(kayttaja);
 
         }
+        public bool TarkistaKayttaja()
+        {
+            List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat();
+            if (kaikki.Count > 0)
+            {
+                return true;
+            }
+            else { return false; }
+
+        }
 
     }
 

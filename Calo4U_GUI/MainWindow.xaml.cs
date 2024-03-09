@@ -104,23 +104,46 @@ namespace Calo4U_GUI
             viikkohakija.CheckJson();
             RemainingCalories = Convert.ToInt32(calJälBlock.Text);
             PieChartCalories = Convert.ToInt32(saavMääräNroBlock.Text);
-            pieChart.Series = new LiveCharts.SeriesCollection
+            if (RemainingCalories < 0)
             {
-                new LiveCharts.Wpf.PieSeries
+                pieChart.Series = new LiveCharts.SeriesCollection
                 {
-                    Title = "Viikon syödyt kalorit",
-                    Values = new LiveCharts.ChartValues<int> { PieChartCalories },
-                    DataLabels = true,
-                    Fill = new SolidColorBrush(Color.FromRgb(46, 51, 78))
-                },
-                new LiveCharts.Wpf.PieSeries
+                    new LiveCharts.Wpf.PieSeries
+                    {
+                        Title = "Viikon syödyt kalorit",
+                        Values = new LiveCharts.ChartValues<int> { PieChartCalories },
+                        DataLabels = true,
+                        Fill = new SolidColorBrush(Color.FromRgb(46, 51, 78))
+                    },
+                    new LiveCharts.Wpf.PieSeries
+                    {
+                        Title = "Viikon jäljellä olevat kalorit",
+                        Values = new LiveCharts.ChartValues<int> { 0 },
+                        DataLabels = true,
+                        Fill = new SolidColorBrush(Color.FromRgb(255, 138, 81))
+                    }
+                };
+            }
+            else
+            {
+                pieChart.Series = new LiveCharts.SeriesCollection
                 {
-                    Title = "Viikon Jäljellä olevat kalorit",
-                    Values = new LiveCharts.ChartValues<int> { RemainingCalories },
-                    DataLabels = true,
-                    Fill = new SolidColorBrush(Color.FromRgb(255, 138, 81))
-                }
-            };
+                    new LiveCharts.Wpf.PieSeries
+                    {
+                        Title = "Viikon syödyt kalorit",
+                        Values = new LiveCharts.ChartValues<int> { PieChartCalories },
+                        DataLabels = true,
+                        Fill = new SolidColorBrush(Color.FromRgb(46, 51, 78))
+                    },
+                    new LiveCharts.Wpf.PieSeries
+                    {
+                        Title = "Viikon jäljellä olevat kalorit",
+                        Values = new LiveCharts.ChartValues<int> { RemainingCalories },
+                        DataLabels = true,
+                        Fill = new SolidColorBrush(Color.FromRgb(255, 138, 81))
+                    }
+                };
+            }
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)

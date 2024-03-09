@@ -100,7 +100,7 @@ namespace Calo4U_GUI
         {
             int RemainingCalories = 0;
             int PieChartCalories = 0;
-
+            Main main = new Main();
             Viikkotallennus viikkohakija = new Viikkotallennus();
             viikkohakija.CheckJson();
 
@@ -109,6 +109,7 @@ namespace Calo4U_GUI
 
             if (RemainingCalories < 0)
             {
+                
                 pieChart.Series = new LiveCharts.SeriesCollection
                 {
                 new LiveCharts.Wpf.PieSeries
@@ -126,11 +127,15 @@ namespace Calo4U_GUI
                     Fill = new SolidColorBrush(Color.FromRgb(255, 138, 81))
                 }
                 };
-                Main main = new Main();
-                bool ok = main.TarkistaKayttaja();
-                if (ok == true) 
+                
+                
+                if (main.TarkistaKayttaja()) 
                 {
                     TeeKayttajaBox.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    TeeKayttajaBox.Visibility = Visibility.Visible;
                 }
             }
             else
@@ -152,6 +157,14 @@ namespace Calo4U_GUI
                     Fill = new SolidColorBrush(Color.FromRgb(255, 138, 81))
                 }
                 };
+                if (main.TarkistaKayttaja())
+                {
+                    TeeKayttajaBox.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    TeeKayttajaBox.Visibility = Visibility.Visible;
+                }
             }
         }
 

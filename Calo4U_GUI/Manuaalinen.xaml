@@ -67,7 +67,7 @@
         <TextBlock HorizontalAlignment="Center" Margin="0,12,0,0" TextWrapping="Wrap" Text="Ilmoita päivittäinen kalorintarve&#xD;&#xA;" VerticalAlignment="Top" Width="227" Height="19" FontSize="14" FontWeight="Bold" FontFamily="Poppins Medium"/>
         <Button Style="{DynamicResource ButtonStyle1}" Content="Syötä" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Margin="0,59,0,0" Foreground="#FFCA5319" Background="#FFFFDCCB" BorderBrush="{x:Null}" Click="Button_Click"/>
         <TextBox Name="Kaloritextbox" HorizontalAlignment="Center" Margin="0,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Name="IlmoitusBox" HorizontalAlignment="Center" Margin="0,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="18" Foreground="Red"/>
+        <TextBlock Name="IlmoitusBox" HorizontalAlignment="Center" Margin="0,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="18" Foreground="Red"/>
 
     </Grid>
 </UserControl>

@@ -30,10 +30,10 @@ namespace Calo4U_GUI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string input = Kaloritextbox.Text;
-            double kalorit;
-            if (double.TryParse(input, out kalorit))
+            int kalorit;
+            if (int.TryParse(input, out kalorit) && Convert.ToInt32(Kaloritextbox.Text) > 0)
             {
-                kalorit = Convert.ToDouble(input);
+                kalorit = Convert.ToInt32(input);
                 IlmoitusBox.Foreground = new SolidColorBrush(Colors.Green);
                 IlmoitusBox.Text = "Tallennettu";
                 IlmoitusBox.TextAlignment = TextAlignment.Center;
@@ -43,7 +43,7 @@ namespace Calo4U_GUI
             else
             {
                 IlmoitusBox.Foreground = new SolidColorBrush(Colors.Red);
-                IlmoitusBox.Text = "Syötä numeerinen arvo";
+                IlmoitusBox.Text = "Syötä positiivinen numeerinen arvo";
             }
         }
     }

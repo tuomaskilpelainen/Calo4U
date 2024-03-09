@@ -107,9 +107,53 @@
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Border1" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border1" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border1" Color="#FF569DE5"/>
+        <Style x:Key="roundedTextBox2" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Grid>
-        <Image Source="/Core/Kuvat/logo_calo4u.PNG" Margin="166,52,555,328" RenderTransformOrigin="0.432,0.5"/>
+        <Image Source="/Core/Kuvat/logo_calo4u.PNG" Margin="178,62,571,340" RenderTransformOrigin="0.432,0.5"/>
         <Image Source="/Core/Kuvat/ellipse1.png" Margin="-43,137,842,31"/>
         <Image Source="/Core/Kuvat/ellipse2.png" Margin="830,-16,0,384"/>
 
@@ -136,13 +180,17 @@
         <Button Style="{DynamicResource roundedButton1}" x:Name="seuraavaButton" Content="&gt;" HorizontalAlignment="Left" Height="34" Margin="781,457,0,0" VerticalAlignment="Top" Width="38" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontFamily="Poppins Medium" FontSize="22" Background="#FFE5E5E5" Click="seuraavaButton_Click"/>
         <Button Style="{DynamicResource roundedButton1}" x:Name="tämänHetkiButton" Content="Tämä viikko" HorizontalAlignment="Left" Height="42" Margin="649,453,0,0"  VerticalAlignment="Top" Width="116" BorderBrush="{x:Null}" Foreground="#FFCA5319" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFDCCB" Click="tämänHetkiButton_Click"/>
         <Border x:Name="RseptitBox" CornerRadius="20
-                " BorderThickness="1" HorizontalAlignment="Left" Height="276" Margin="138,247,0,0" VerticalAlignment="Top" Width="312" Background="White">
-            <ListBox x:Name="KayttajanReseptitBox" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,-1,-1,124" FontFamily="Poppins" MouseLeftButtonUp="Lista_Click" BorderBrush="{x:Null}"/>
+                " BorderThickness="1" HorizontalAlignment="Left" Height="299" Margin="138,224,0,0" VerticalAlignment="Top" Width="312" Background="White">
+            <ListBox x:Name="KayttajanReseptitBox" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="0,79,-1,105" FontFamily="Poppins Medium" MouseLeftButtonUp="Lista_Click" BorderBrush="{x:Null}" Foreground="#FF2E334E" FontSize="13"/>
+
         </Border>
-        <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="184,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Manuaalinen syöttö"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF" Click="syöButton_Click"/>
-        <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,458,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3" Click="poistaButton_Click"/>
+        <TextBox x:Name="valmistetutRuotText" Style="{DynamicResource roundedTextBox2}" HorizontalAlignment="Left" Height="69" Margin="138,224,0,0" TextWrapping="Wrap" Padding="12" Text="Valmisteut Ruot &amp; Annosten määrä" VerticalAlignment="Top" Width="312" BorderBrush="{x:Null}" Background="#FF9AACE1" FontFamily="Poppins Medium" TextAlignment="Center" FontSize="14" Foreground="White"/>
+        <TextBox x:Name="calSyöttöTextBox" Style="{DynamicResource roundedtBox1}" BorderThickness="0.5" HorizontalAlignment="Left" Height="26" Margin="184,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" BorderBrush="#FF8299DF" FontFamily="Poppins Medium" FontSize="13" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Manuaalinen syöttö" Foreground="#FF2E334E"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="syöButton" Content="Syö" HorizontalAlignment="Left" Height="42" Margin="184,465,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FF4C62A7" FontFamily="Poppins Medium" FontSize="14" Background="#FFDDE4FF" Click="syöButton_Click"/>
+        <Button Style="{DynamicResource roundedButton1}" x:Name="poistaButton" Content="Poista" HorizontalAlignment="Left" Height="42" Margin="308,465,0,0"  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Foreground="#FFC55B5B" FontFamily="Poppins Medium" FontSize="14" Background="#FFFFE3E3" Click="poistaButton_Click"/>
         <lvc:PieChart StartingRotationAngle="-90" Name="pieChart" LegendLocation="Bottom"  Margin="537,52,108,223"/>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"  />
+        
+        <Border BorderThickness="0" HorizontalAlignment="Left" Height="26" Margin="139,267,0,0" VerticalAlignment="Top" Width="310" Background="White"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

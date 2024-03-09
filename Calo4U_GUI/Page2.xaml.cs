@@ -91,8 +91,11 @@ namespace Calo4U_GUI
         {
             int annokset = 0;
             string resepti = (string)Lista_Box.SelectedItem as string;
-            NaytaResepti(resepti.ToLower(), annokset);
-            ValitseResepti();
+            if (resepti != null)
+            {
+                NaytaResepti(resepti.ToLower(), annokset);
+                ValitseResepti();
+            }
 
 
 

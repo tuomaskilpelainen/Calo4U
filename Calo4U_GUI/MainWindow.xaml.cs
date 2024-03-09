@@ -126,6 +126,12 @@ namespace Calo4U_GUI
                     Fill = new SolidColorBrush(Color.FromRgb(255, 138, 81))
                 }
                 };
+                Main main = new Main();
+                bool ok = main.TarkistaKayttaja();
+                if (ok == true) 
+                {
+                    TeeKayttajaBox.Visibility = Visibility.Collapsed;
+                }
             }
             else
             {

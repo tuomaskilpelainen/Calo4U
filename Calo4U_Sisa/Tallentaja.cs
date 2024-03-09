@@ -198,6 +198,21 @@ namespace Calo4U_Sisa
             string updatedViikkoJsonData = JsonSerializer.Serialize(viikkoTiedot, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(VIIKKO_TIEDOSTO, updatedViikkoJsonData);
         }
+        public void TallennnaReseptiLista(List<Resepti> kaikki)
+        {
+            var option = new JsonSerializerOptions();
+            option.WriteIndented = true; //Tämä optio tekee json Filesta helposti luettavaa.
+            if (kaikki.Count <= 0)
+            {
+                return;
+            }
+            else
+            {
+                string json = JsonSerializer.Serialize<List<Resepti>>(kaikki, option);
+                File.WriteAllText(RESEPTI_TIEDOSTO, json);
+            }
+;
+        }
     }
 }
 

@@ -182,6 +182,7 @@ namespace Calo4U_GUI
 
         private void poistaButton_Click(object sender, RoutedEventArgs e)
         {
+            Main main = new Main(); 
             bool miinus = true;
             double kalorit = 0;
             bool ok; //True jos kalorit talenettiin onnistuneesti false jos ei
@@ -190,7 +191,6 @@ namespace Calo4U_GUI
                 try
                 {
                     kalorit -= double.Parse(calSyöttöTextBox.Text);
-                    Main main = new Main();
                     ok = main.SyoKalorit(kalorit); // +- kalorit käyttäjältä paluttaa true tai false onnistui / ei
                     calSyöttöTextBox.Text = string.Empty;
                     LataaKayttajanTiedot();
@@ -201,7 +201,7 @@ namespace Calo4U_GUI
                 {
                     if (!string.IsNullOrEmpty(resepti))
                     {
-                        Main.SyoResepti(resepti.ToLower(), miinus);
+                        main.PoistaKayttajanResepti(resepti); // Poistaa käyttäjän reseptin kokonaan
                         LataaKayttajanTiedot();
                         LataaKayttajanReseptit();
                     }

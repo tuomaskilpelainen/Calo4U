@@ -212,5 +212,19 @@ namespace Calo4U_GUI
         {
             resepti = nimi.ToLower();
         }
+
+        private void RaakaineDeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main main = new Main(); 
+            if (!string.IsNullOrEmpty(resepti))
+            {
+                main.PostaResepti(resepti);
+                Resepetit = main.ReseptitS();
+                Lista_Box.ItemsSource = null;
+                Lista_Box.ItemsSource = Resepetit;
+
+
+            }
+        }
     }
 }

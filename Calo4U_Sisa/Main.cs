@@ -491,6 +491,42 @@ namespace Calo4U_Sisa
             }
             return false;
         }
+        public void PostaResepti(string nimi)
+        {
+            Resepti x = Resepti.LuoTyhja();
+            Tallentaja talentaja = new Tallentaja();
+            List<Resepti> kaikki = Tallentaja.LaataakaikkiReseptit();
+            foreach (Resepti k in kaikki)
+            {
+                if (k.Nimi == nimi)
+                {
+                    x = k;break;
+                    
+                }
+            }
+            kaikki.Remove(x);
+            talentaja.TallennnaReseptiLista(kaikki);
+        }
+        public void PoistaKayttajanResepti(string nimi)
+        {
+            Kayttaja kayttaja = new Kayttaja();
+            Resepti poista = Resepti.LuoTyhja();
+            List<Kayttaja> kaikki = Tallentaja.LataaKaikkiKayttajat();
+            foreach(Kayttaja k in kaikki)
+            {
+                foreach(Resepti r in k.ValmiitRuuat)
+                {
+                    if (r.Nimi == nimi)
+                    {
+                        kayttaja = k;
+                        poista = r; break;  
+                    }
+                }
+            }
+            kayttaja.ValmiitRuuat.Remove(poista);
+            Tallentaja.TallennaKayttaja(kayttaja);
+
+        }
 
     }
 
